@@ -72,38 +72,60 @@
 
 /* ================================
    WRAPPER DA LOGO
-   Posiciona a logo acima da hero
+   Responsável por posicionar
+   a logo sobre a hero
 ================================ */
 .logoWrapper {
+
+  /* permite posicionamento livre */
   position: absolute;
 
-  top: 42px; /* distância do topo */
+  /* distância da logo até o topo */
+  top: 42px;
 
+  /* centraliza horizontalmente */
   left: 50%;
+
+  /* corrige a centralização real */
   transform: translateX(-50%);
 
-  z-index: 20; /* acima do vídeo e overlay */
+  /* garante que fique acima
+     do vídeo, máscara e overlay */
+  z-index: 20;
 
+  /* centralização interna */
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /* impede clique acidental */
   pointer-events: none;
 }
 
 /* ================================
    IMAGEM DA LOGO
-   Controla tamanho e suavidade
+   Controla tamanho,
+   transparência e suavidade
 ================================ */
 .logo {
+
+  /* tamanho responsivo:
+     mínimo, adaptável e máximo */
   width: clamp(160px, 22vw, 320px);
 
+  /* mantém proporção original */
   height: auto;
 
+  /* evita distorção da imagem */
   object-fit: contain;
 
+  /* leve transparência elegante */
   opacity: 0.92;
 
+  /* sombra suave para destacar
+     a logo sobre o fundo */
   filter:
-    drop-shadow(0 8px 18px rgba(0,0,0,0.28));
+    drop-shadow(
+      0 8px 18px rgba(0,0,0,0.28)
+    );
 }
