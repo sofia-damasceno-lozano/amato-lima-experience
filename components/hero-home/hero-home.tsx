@@ -24,6 +24,21 @@ export default function HeroHome() {
 
       </div>
 
+      {/* ================================
+         BOTÃO MENU
+      Ícone minimalista de navegação
+================================ */}
+
+     <button className={styles.menuButton}>
+
+     {/* linha superior */}
+     <span></span>
+
+     {/* linha inferior */}
+     <span></span>
+
+     </button>
+
       {/* Vídeo que aparece por trás da máscara */}
       <video
         className={styles.video}
