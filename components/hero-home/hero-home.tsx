@@ -6,6 +6,24 @@ export default function HeroHome() {
     /* Hero Home - fundo principal */
     <section className={styles.hero}>
 
+      {/* ================================
+          LOGO CENTRAL
+          Posiciona a marca no topo da hero
+      ================================ */}
+      <div className={styles.logoWrapper}>
+
+        {/* ================================
+            IMAGEM DA LOGO
+            Logo principal da Amato Lima
+        ================================ */}
+        <img
+          src="/amato-lima-experience/logo/logo.png"
+          alt="Amato Lima"
+          className={styles.logo}
+        />
+
+      </div>
+
       {/* Vídeo que aparece por trás da máscara */}
       <video
         className={styles.video}
@@ -34,23 +52,3 @@ export default function HeroHome() {
     </section>
   );
 }
-
-{/* CONTAINER DA LOGO -
-    Responsável por posicionar
-    a logo sobre a hero */}
-
-<div className={styles.logoWrapper}>
-
-  {/* IMAGEM DA LOGO -
-      Logo principal da marca */}
-
-  <img
-    
-    src="/amato-lima-experience/logo/logo.png" /* caminho da imagem dentro da pasta public */
-    
-    alt="Amato Lima" /* acessibilidade e SEO */
-
-    className={styles.logo} /* classe de estilização */
-  />
-
-</div>
