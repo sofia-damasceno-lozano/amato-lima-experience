@@ -84,7 +84,7 @@
   top: -18px;
 
   /* centraliza horizontalmente */
-  left: 50%;
+  left: 60%;
 
   /* corrige a centralização real */
   transform: translateX(-50%);
