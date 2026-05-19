@@ -129,3 +129,79 @@
       0 8px 18px rgba(0,0,0,0.28)
     );
 }
+
+/* ================================
+   BOTÃO MENU
+   Posiciona o menu no topo direito
+================================ */
+.menuButton {
+
+  /* posicionamento livre */
+  position: absolute;
+
+  /* alinhamento com a logo */
+  top: 22px;
+  right: 26px;
+
+  /* mantém acima dos elementos */
+  z-index: 20;
+
+  /* remove estilo padrão */
+  border: none;
+  background: transparent;
+
+  /* organização das linhas */
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  /* área de clique */
+  padding: 12px;
+
+  cursor: pointer;
+}
+
+/* ================================
+   LINHAS DO MENU
+   Visual minimalista sofisticado
+================================ */
+.menuButton span {
+
+  /* largura da linha */
+  width: 30px;
+
+  /* espessura */
+  height: 1px;
+
+  /* cor suave quente */
+  background: rgba(228, 210, 188, 0.72);
+
+  /* suaviza visual */
+  border-radius: 999px;
+
+  /* sombra sutil */
+  box-shadow:
+    0 0 8px rgba(0,0,0,0.18);
+
+  /* animação suave */
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    width 0.4s ease;
+}
+
+/* ================================
+   HOVER
+   Micro interação elegante
+================================ */
+.menuButton:hover span:first-child {
+
+  /* linha superior reduz */
+  width: 22px;
+}
+
+.menuButton:hover span:last-child {
+
+  /* linha inferior aumenta */
+  width: 36px;
+}
