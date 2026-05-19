@@ -25,7 +25,7 @@
   height: 100%; /* altura total */
 
   object-fit: cover; /* preenche a tela sem distorcer */
-  object-position: center 20%; /* sobe o enquadramento do vídeo */
+  object-position: center 10%; /* sobe o enquadramento do vídeo */
 
   z-index: 1; /* fica atrás da máscara */
 }
