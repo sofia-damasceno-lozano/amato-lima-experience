@@ -29,7 +29,7 @@
 
   object-position: center top; /* prioriza a parte superior do vídeo */
 
-  transform: translateY(-2%); /* sobe o vídeo visualmente */
+  transform: translateY(-15%); /* sobe o vídeo visualmente */
 
   z-index: 1; /* fica atrás da máscara */
 }
