@@ -45,7 +45,8 @@ export default function HeroHome() {
       Logo principal da marca */}
 
   <img
-    src="/logo.png" /* caminho da imagem dentro da pasta public */
+    
+    src="/amato-lima-experience/logo/logo.png" /* caminho da imagem dentro da pasta public */
     
     alt="Amato Lima" /* acessibilidade e SEO */
 
