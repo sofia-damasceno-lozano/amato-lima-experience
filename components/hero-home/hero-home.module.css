@@ -111,7 +111,7 @@
 
   /* tamanho responsivo:
      mínimo, adaptável e máximo */
-  width: clamp(160px, 22vw, 320px);
+  width: clamp(140px, 20vw, 310px);
 
   /* mantém proporção original */
   height: auto;
