@@ -1,23 +1,33 @@
-{/* Hero Home - fundo principal */}
-<section className={styles.hero}>
+import Image from "next/image";
+import styles from "./hero-home.module.css";
 
-  {/* Vídeo que aparece por trás da máscara */}
-  <video
-    className={styles.video}
-    autoPlay
-    muted
-    loop
-    playsInline
-    poster="/hero-home/hero-poster.png"
-  >
-    <source src="/hero-home/hero-video.mp4" type="video/mp4" />
-  </video>
+export default function HeroHome() {
+  return (
+    /* Hero Home - fundo principal */
+    <section className={styles.hero}>
 
-  {/* Máscara PNG da madeira */}
-  <img
-    src="/hero-home/hero-mask.png"
-    alt=""
-    className={styles.mask}
-  />
+      {/* Vídeo que aparece por trás da máscara */}
+      <video
+        className={styles.video}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/hero-home/hero-poster.png"
+      >
+        <source src="/hero-home/hero-video.mp4" type="video/mp4" />
+      </video>
 
-</section>
+      {/* Máscara PNG da madeira */}
+      <Image
+        src="/hero-home/hero-mask.png"
+        alt=""
+        fill
+        priority
+        className={styles.mask}
+      />
+
+    </section>
+  );
+}
