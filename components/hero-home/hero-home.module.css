@@ -14,6 +14,30 @@
 }
 
 /* ================================
+   OVERLAY CINEMATOGRÁFICO
+   Escurece levemente o vídeo
+   para dar profundidade e contraste
+================================ */
+
+.hero::after {
+  content: ""; /* pseudo elemento obrigatório */
+
+  position: absolute; /* fica sobre o vídeo */
+  inset: 0; /* ocupa hero inteira */
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.18), /* topo mais escuro */
+      rgba(0, 0, 0, 0.05)  /* base mais suave */
+    );
+
+  z-index: 2; /* fica acima do vídeo */
+
+  pointer-events: none; /* overlay não bloqueia clique */
+}
+
+/* ================================
    HERO VIDEO
    Controla o vídeo que aparece por trás da máscara
 ================================ */
