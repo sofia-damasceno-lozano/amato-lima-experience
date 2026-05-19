@@ -4,9 +4,12 @@
 ================================ */
 .hero {
   position: relative; /* permite posicionar vídeo e máscara dentro da hero */
+
   width: 100%; /* ocupa toda a largura da tela */
-  height: 100svh; /* ocupa a altura visível da tela no mobile */
+  height: 100svh; /* ocupa a altura visível da tela */
+
   overflow: hidden; /* esconde qualquer sobra fora da tela */
+
   background: #f3eee7; /* cor base caso vídeo/imagem demorem carregar */
 }
 
@@ -16,23 +19,24 @@
 ================================ */
 .video {
   position: absolute; /* posiciona o vídeo sobre a hero */
-  inset: 0; /* cola o vídeo em todos os lados: top/right/bottom/left */
+  inset: 0; /* cola o vídeo em todos os lados */
+
   width: 100%; /* largura total */
   height: 100%; /* altura total */
+
   object-fit: cover; /* preenche a tela sem distorcer */
+
   z-index: 1; /* fica atrás da máscara */
 }
 
 /* ================================
    HERO MASK
-   Controla a imagem PNG da madeira com o buraco transparente
+   Controla a imagem PNG da madeira
 ================================ */
 .mask {
-  position: absolute; /* coloca a máscara por cima do vídeo */
-  inset: 0; /* ocupa toda a hero */
-  width: 100%; /* largura total */
-  height: 100%; /* altura total */
-  object-fit: cover; /* preenche a tela mantendo proporção */
+  object-fit: cover; /* preenche a hero mantendo proporção */
+
   z-index: 2; /* fica acima do vídeo */
-  pointer-events: none; /* impede a imagem de bloquear cliques */
+
+  pointer-events: none; /* impede a máscara de bloquear interações */
 }
