@@ -81,7 +81,7 @@
   position: absolute;
 
   /* distância da logo até o topo */
-  top: 0px;
+  top: -10px;
 
   /* centraliza horizontalmente */
   left: 50%;
