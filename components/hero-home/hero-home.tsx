@@ -34,3 +34,22 @@ export default function HeroHome() {
     </section>
   );
 }
+
+{/* CONTAINER DA LOGO -
+    Responsável por posicionar
+    a logo sobre a hero */}
+
+<div className={styles.logoWrapper}>
+
+  {/* IMAGEM DA LOGO -
+      Logo principal da marca */}
+
+  <img
+    src="/logo.png" /* caminho da imagem dentro da pasta public */
+    
+    alt="Amato Lima" /* acessibilidade e SEO */
+
+    className={styles.logo} /* classe de estilização */
+  />
+
+</div>
