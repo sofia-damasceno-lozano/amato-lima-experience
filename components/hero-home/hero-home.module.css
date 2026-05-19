@@ -69,3 +69,38 @@
 
   pointer-events: none; /* impede a máscara de bloquear interações */
 }
+
+/* ================================
+   CONTAINER DA LOGO
+   Centraliza no topo da hero
+================================ */
+
+.logoWrapper {
+  position: absolute;
+
+  top: 32px; /* distância do topo */
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3; /* acima do overlay */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================
+   IMAGEM DA LOGO
+   Controla tamanho e suavidade
+================================ */
+
+.logo {
+  width: clamp(140px, 32vw, 220px);
+
+  height: auto;
+
+  opacity: 0.92; /* suaviza presença */
+
+  object-fit: contain;
+}
