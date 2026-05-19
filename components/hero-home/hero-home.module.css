@@ -71,36 +71,39 @@
 }
 
 /* ================================
-   CONTAINER DA LOGO
-   Centraliza no topo da hero
+   WRAPPER DA LOGO
+   Posiciona a logo acima da hero
 ================================ */
-
 .logoWrapper {
   position: absolute;
 
-  top: 32px; /* distância do topo */
-  left: 50%;
+  top: 42px; /* distância do topo */
 
+  left: 50%;
   transform: translateX(-50%);
 
-  z-index: 3; /* acima do overlay */
+  z-index: 20; /* acima do vídeo e overlay */
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  pointer-events: none;
 }
 
 /* ================================
    IMAGEM DA LOGO
    Controla tamanho e suavidade
 ================================ */
-
 .logo {
-  width: clamp(140px, 32vw, 220px);
+  width: clamp(160px, 22vw, 320px);
 
   height: auto;
 
-  opacity: 0.92; /* suaviza presença */
-
   object-fit: contain;
+
+  opacity: 0.92;
+
+  filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,0.28));
 }
