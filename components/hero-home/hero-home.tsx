@@ -14,14 +14,17 @@ export default function HeroHome() {
         loop
         playsInline
         preload="metadata"
-        poster="/hero-home/hero-poster.png"
+        poster="/amato-lima-experience/hero-home/hero-poster.png"
       >
-        <source src="/hero-home/hero-video.mp4" type="video/mp4" />
+        <source
+          src="/amato-lima-experience/hero-home/hero-video.mp4"
+          type="video/mp4"
+        />
       </video>
 
       {/* Máscara PNG da madeira */}
       <Image
-        src="/hero-home/hero-mask.png"
+        src="/amato-lima-experience/hero-home/hero-mask.png"
         alt=""
         fill
         priority
