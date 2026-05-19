@@ -23,7 +23,7 @@
 
   width: 100%; /* largura total */
 
-  height: 125%; /* aumenta a altura do vídeo para permitir deslocamento */
+  height: 112%; /* aumenta a altura do vídeo para permitir deslocamento */
 
   object-fit: cover; /* preenche sem distorcer */
 
