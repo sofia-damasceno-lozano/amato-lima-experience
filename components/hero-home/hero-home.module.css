@@ -111,7 +111,7 @@
 
   /* tamanho responsivo:
      mínimo, adaptável e máximo */
-  width: clamp(140px, 20vw, 310px);
+  width: clamp(140px, 18vw, 280px);
 
   /* mantém proporção original */
   height: auto;
@@ -120,7 +120,7 @@
   object-fit: contain;
 
   /* leve transparência elegante */
-  opacity: 0.92;
+  opacity: 0.82;
 
   /* sombra suave para destacar
      a logo sobre o fundo */
