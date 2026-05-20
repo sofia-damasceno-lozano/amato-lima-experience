@@ -230,8 +230,8 @@
 .lineTop {
   position: absolute;
 
-  top: 12vh;
-  left: 5vw;
+  top: 11.5vh;
+  left: 2.6vw;
 
   /* fonte */
   font-family: var(--font-mirage);
@@ -246,7 +246,7 @@
   line-height: 0.86;
 
   /* mais editorial/luxo */
-  letter-spacing: 0.05em;
+  letter-spacing: 0.045em;
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.48);
