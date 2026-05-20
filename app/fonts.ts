@@ -1,9 +1,17 @@
 import localFont from "next/font/local";
 
-export const classyVogue = localFont({
-  src: "../public/fonts/classy-vogue-regular.ttf",
+/* ================================
+   FONTE PRINCIPAL DA HERO
+   Bile Demo
+================================ */
+export const bileDemo = localFont({
+  
+  /* caminho da fonte dentro do public */
+  src: "../public/fonts/bile-demo.ttf",
 
-  variable: "--font-classy-vogue",
+  /* variável CSS global */
+  variable: "--font-bile",
 
+  /* evita flash estranho no carregamento */
   display: "swap",
 });
