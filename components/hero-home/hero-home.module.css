@@ -81,7 +81,7 @@
   brightness(0.98)
   contrast(1.12)
   saturate(0.92)
-  sepia(0.07)
+  sepia(0.04)
   blur(0.2px);
 }
 
@@ -261,7 +261,7 @@
   line-height: 0.86;
 
   /* mais editorial/luxo */
-  letter-spacing: 0.045em;
+  letter-spacing: 0.025em;
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.38);
