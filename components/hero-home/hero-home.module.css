@@ -225,17 +225,35 @@
 
 /* ================================
    LINHA SUPERIOR
-   "Arte"
+   Texto "Arte"
 ================================ */
 .lineTop {
+  position: absolute; /* posiciona livremente dentro da hero */
 
-  font-family: var(--font-celine);
+  top: 14vh; /* distância do topo */
+  left: 4vw; /* distância da esquerda */
 
-  font-weight: 200;
+  font-family: var(--font-tangier); /* fonte Tangier */
 
-  letter-spacing: 0.01em;
+  font-size: clamp(92px, 17vw, 250px); /* tamanho responsivo */
 
-  transform: scaleX(1.08);
+  font-weight: 200; /* tenta manter leve */
+
+  line-height: 0.86; /* aproxima altura da palavra */
+
+  letter-spacing: 0.015em; /* dá respiro editorial */
+
+  transform: scaleX(1.06); /* alonga levemente a palavra */
+
+  color: rgba(233, 214, 193, 0.76); /* bege suave */
+
+  text-transform: none; /* mantém Arte com A maiúsculo */
+
+  opacity: 0.86; /* integra ao fundo */
+
+  -webkit-font-smoothing: antialiased; /* suaviza renderização */
+
+  text-rendering: geometricPrecision; /* melhora leitura fina */
 }
 
 /* ================================
