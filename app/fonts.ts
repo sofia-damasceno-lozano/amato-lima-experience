@@ -1,20 +1,20 @@
 import localFont from "next/font/local";
 
 /* ================================
-   FONTE PRINCIPAL DO PROJETO
-   Celine Sans
+   FONTE DO TÍTULO "ARTE"
+   Tangier
 ================================ */
-export const celineSans = localFont({
+export const tangier = localFont({
 
   /* caminho da fonte dentro
      da pasta public/fonts */
-  src: "../public/fonts/celine-sans.otf",
+  src: "../public/fonts/Tangier.otf",
 
   /* variável CSS global
-     usada no projeto */
-  variable: "--font-celine",
+     usada no título Arte */
+  variable: "--font-tangier",
 
-  /* evita flash visual
-     estranho no carregamento */
+  /* evita troca brusca
+     durante carregamento */
   display: "swap",
 });
