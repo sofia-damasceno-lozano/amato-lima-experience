@@ -330,9 +330,9 @@
   top: 44vh;
   left: 1.0vw;
    
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font-mirage);
 
-  font-size: clamp(110px, 18vw, 320px);
+  font-size: clamp(98px, 14vw, 300px);
 
   font-weight: 300;
 
@@ -357,9 +357,9 @@
   top: 54vh;
   left: 3.0vw;
    
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font-mirage);
 
-  font-size: clamp(110px, 18vw, 320px);
+  font-size: clamp(108px, 14vw, 300px);
 
   font-weight: 300;
 
