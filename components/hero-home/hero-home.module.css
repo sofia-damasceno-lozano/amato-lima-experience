@@ -245,8 +245,8 @@
 .lineTop {
   position: absolute;
 
-  top: 16vh;
-  left: 1.6vw;
+  top: 18vh;
+  left: 1.0vw;
 
   /* fonte */
   font-family: var(--font-mirage);
@@ -264,7 +264,7 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(1.88);
+  transform: scaleX(1.10) scaleY(1.68);
 
   /* cor */
   color: #B1957F !important;
