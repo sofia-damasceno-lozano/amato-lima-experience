@@ -230,8 +230,8 @@
 .lineTop {
   position: absolute;
 
-  top: 14vh;
-  left: 4vw;
+  top: 12vh;
+  left: 5vw;
 
   /* fonte */
   font-family: var(--font-mirage);
@@ -246,17 +246,19 @@
   line-height: 0.86;
 
   /* mais editorial/luxo */
-  letter-spacing: 0.035em;
+  letter-spacing: 0.05em;
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.48);
 
   /* cor */
-  color: rgba(170, 146, 125, 1);
+  color: #B29B88;
 
   text-transform: none;
 
-  opacity: 0.98;
+  opacity: 0.9;
+
+  filter: blur(0.15px);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
