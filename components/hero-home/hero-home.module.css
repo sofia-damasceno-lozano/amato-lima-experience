@@ -273,7 +273,7 @@
 
   opacity: 0.9;
 
-  filter: blur(0.15px);
+  filter: none;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
