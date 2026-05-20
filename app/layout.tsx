@@ -1,6 +1,5 @@
-
 import "./globals.css";
-import { classyVogue } from "./fonts";
+import { bileDemo } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -9,9 +8,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={classyVogue.variable}>
+      
+      {/* aplica variável da fonte */}
+      <body className={bileDemo.variable}>
         {children}
       </body>
+
     </html>
   );
 }
