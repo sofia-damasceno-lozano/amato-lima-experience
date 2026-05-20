@@ -1,7 +1,7 @@
 import "./globals.css";
 
 /* fonte usada no título principal */
-import { tangier } from "./fonts";
+import { mirage } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
     <html lang="pt-BR">
 
       {/* aplica variável global da fonte */}
-      <body className={tangier.variable}>
+      <body className={mirage.variable}>
 
         {/* renderiza o site */}
         {children}
