@@ -246,7 +246,7 @@
   position: absolute;
 
   top: 16vh;
-  left: 2.2vw;
+  left: 2.0vw;
 
   /* fonte */
   font-family: var(--font-mirage);
@@ -267,7 +267,7 @@
   transform: scaleX(1.10) scaleY(1.38);
 
   /* cor */
-  color:#AC9684;
+  color:​#D2C4B4;
 
   text-transform: none;
 
