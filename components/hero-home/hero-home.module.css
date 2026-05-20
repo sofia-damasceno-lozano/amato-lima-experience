@@ -245,11 +245,11 @@
 
   transform: scaleX(1.06) scaleY(1.28); /* alonga levemente a palavra */
 
-  color: rgba(233, 214, 193, 0.64); /* bege suave */
+  color: rgba(224, 206, 186, 0.85); /* bege suave */
 
   text-transform: none; /* mantém Arte com A maiúsculo */
 
-  opacity: 0.86; /* integra ao fundo */
+  opacity: 0.66; /* integra ao fundo */
 
   -webkit-font-smoothing: antialiased; /* suaviza renderização */
 
