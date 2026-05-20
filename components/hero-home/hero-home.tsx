@@ -39,6 +39,30 @@ export default function HeroHome() {
 
      </button>
 
+      {/* ================================
+       TEXTO PRINCIPAL DA HERO
+       Composição editorial cinematic
+================================ */}
+
+    <div className={styles.heroTitle}>
+
+    {/* Linha superior */}
+    <span className={styles.lineTop}>
+     Arte
+    </span>
+
+    {/* Palavra pequena lateral */}
+    <span className={styles.lineSmall}>
+     de
+    </span>
+
+    {/* Linha inferior */}
+    <span className={styles.lineBottom}>
+     Habitar
+    </span>
+
+    </div>
+
       {/* Vídeo que aparece por trás da máscara */}
       <video
         className={styles.video}
