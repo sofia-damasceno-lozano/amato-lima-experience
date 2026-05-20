@@ -327,7 +327,7 @@
 ================================ */
 .ha {
 
-  top: 42vh;
+  top: 32vh;
   left: 1.0vw;
 
   /* fonte */
@@ -346,7 +346,7 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(1.48);
+  transform: scaleX(1.10) scaleY(1.28);
 
   /* cor */
   color: #B1957F !important;
