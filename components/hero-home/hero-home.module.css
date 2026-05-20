@@ -327,9 +327,6 @@
 ================================ */
 .ha {
 
-  top: 32vh;
-  left: 1.0vw;
-
   /* fonte */
   font-family: var(--font-mirage);
 
@@ -347,6 +344,7 @@
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.28);
+  transform: translateY(20vh);
 
   /* cor */
   color: #B1957F !important;
