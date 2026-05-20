@@ -255,7 +255,7 @@
   font-size: clamp(112px, 32vw, 266px);
 
   /* Mirage já é thin */
-  font-weight: 400;
+  font-weight: 300;
 
   /* compacta vertical */
   line-height: 0.86;
@@ -267,7 +267,7 @@
   transform: scaleX(1.10) scaleY(1.38);
 
   /* cor */
-  color:​#B29B88;
+  color: ​#B29B88;
 
   text-transform: none;
 
