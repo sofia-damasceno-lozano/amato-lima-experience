@@ -1,20 +1,17 @@
 import localFont from "next/font/local";
 
 /* ================================
-   FONTE DO TÍTULO "ARTE"
-   Mirage
+   FONTE PRINCIPAL
+   Mirage Thin
 ================================ */
-export const tangier = localFont({
+export const mirage = localFont({
 
-  /* caminho da fonte dentro
-     da pasta public/fonts */
+  /* caminho da fonte */
   src: "../public/fonts/Mirage-thin.otf",
 
-  /* variável CSS global
-     usada no título Arte */
-  variable: "--font-Mirage",
+  /* variável CSS global */
+  variable: "--font-mirage",
 
-  /* evita troca brusca
-     durante carregamento */
+  /* evita flicker */
   display: "swap",
 });
