@@ -233,7 +233,7 @@
   top: 14vh; /* distância do topo */
   left: 4vw; /* distância da esquerda */
 
-  font-family: var(--font-tangier); /* fonte Tangier */
+  font-family: var(--font-mirage); /* fonte Mirage*/
 
   font-size: clamp(92px, 17vw, 250px); /* tamanho responsivo */
 
@@ -249,7 +249,7 @@
 
   text-transform: none; /* mantém Arte com A maiúsculo */
 
-  opacity: 0.42; /* integra ao fundo */
+  opacity: 0.98; /* integra ao fundo */
 
   -webkit-font-smoothing: antialiased; /* suaviza renderização */
 
