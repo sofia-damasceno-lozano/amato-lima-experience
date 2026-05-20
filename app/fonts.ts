@@ -2,17 +2,17 @@ import localFont from "next/font/local";
 
 /* ================================
    FONTE DO TÍTULO "ARTE"
-   Tangier
+   Mirage
 ================================ */
 export const tangier = localFont({
 
   /* caminho da fonte dentro
      da pasta public/fonts */
-  src: "../public/fonts/Tangier.otf",
+  src: "../public/fonts/Mirage-thin.otf",
 
   /* variável CSS global
      usada no título Arte */
-  variable: "--font-tangier",
+  variable: "--font-Mirage",
 
   /* evita troca brusca
      durante carregamento */
