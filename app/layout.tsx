@@ -1,6 +1,6 @@
 import "./globals.css";
 
-/* fonte usada no título principal */
+/* importa a fonte */
 import { mirage } from "./fonts";
 
 export default function RootLayout({
@@ -11,12 +11,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
 
-      {/* aplica variável global da fonte */}
+      {/* aplica variável global */}
       <body className={mirage.variable}>
-
-        {/* renderiza o site */}
         {children}
-
       </body>
 
     </html>
