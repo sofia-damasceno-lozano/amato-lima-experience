@@ -175,6 +175,9 @@
 
   /* cor suave terrosa */
   background: rgba(145, 118, 96, 0.82);
+   
+ /* opacidade suave */
+  opacity: 0.78;
 
   /* suaviza visual */
   border-radius: 999px;
