@@ -237,7 +237,7 @@
 
   font-size: clamp(92px, 17vw, 250px); /* tamanho responsivo */
 
-  font-weight: 100; /* tenta manter leve */
+  font-weight: 80 !important; /* tenta manter leve */
 
   line-height: 0.86; /* aproxima altura da palavra */
 
@@ -249,7 +249,7 @@
 
   text-transform: none; /* mantém Arte com A maiúsculo */
 
-  opacity: 0.66; /* integra ao fundo */
+  opacity: 0.42; /* integra ao fundo */
 
   -webkit-font-smoothing: antialiased; /* suaviza renderização */
 
