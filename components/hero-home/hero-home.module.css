@@ -316,18 +316,60 @@
   bottom: 6vh;
   left: 2vw;
 
+  display: flex;
+  align-items: flex-end;
+
+  z-index: 4;
+}
+
+/* ================================
+   HA
+================================ */
+.ha {
+
+  top: 44vh;
+  left: 1.0vw;
+   
   font-family: var(--font-classy-vogue);
 
   font-size: clamp(110px, 18vw, 320px);
 
   font-weight: 300;
-  line-height: 0.82;
 
-  letter-spacing: -0.05em;
+  line-height: 0.86;
 
-  color: rgba(233, 214, 193, 0.82);
+  letter-spacing: -0.010em;
+
+  color: #B1957F !important;
 
   text-transform: uppercase;
 
-  z-index:4;
+  margin-right: 2.8vw;
+
+  transform: translateY(-1.2vh);
+}
+
+/* ================================
+   BITAR
+================================ */
+.bitar {
+
+  top: 54vh;
+  left: 3.0vw;
+   
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(110px, 18vw, 320px);
+
+  font-weight: 300;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.010em;
+
+  color: #B1957F !important;
+
+  text-transform: uppercase;
+
+  transform: translateY(0vh);
 }
