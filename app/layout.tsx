@@ -1,7 +1,7 @@
 import "./globals.css";
 
-/* fonte principal do projeto */
-import { celineSans } from "./fonts";
+/* fonte usada no título principal */
+import { tangier } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -9,14 +9,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-
-    /* idioma principal */
     <html lang="pt-BR">
 
       {/* aplica variável global da fonte */}
-      <body className={celineSans.variable}>
+      <body className={tangier.variable}>
 
-        {/* renderiza páginas */}
+        {/* renderiza o site */}
         {children}
 
       </body>
