@@ -291,16 +291,17 @@
 .lineSmall {
   position: absolute;
 
-  top: 36vh;
+  top: 46vh;
   left: 5vw;
 
-  font-family: var(--font-bile);
+  font-family: var(--font-mirage);
+
 
   font-size: clamp(26px, 3vw, 48px);
 
-  font-weight: 300;
+  font-weight: 100;
 
-  color: rgba(233, 214, 193, 0.72);
+  color: #B1957F !important;
 
   z-index:4;
 }
