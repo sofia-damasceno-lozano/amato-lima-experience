@@ -57,9 +57,17 @@ export default function HeroHome() {
     </span>
 
     {/* Linha inferior */}
-    <span className={styles.lineBottom}>
-     Habitar
-    </span>
+<span className={styles.lineBottom}>
+
+  <span className={styles.ha}>
+    HA
+  </span>
+
+  <span className={styles.bitar}>
+    BITAR
+  </span>
+
+</span>
 
     </div>
 
