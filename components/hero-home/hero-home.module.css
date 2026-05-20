@@ -208,3 +208,83 @@
   /* linha inferior aumenta */
   width: 36px;
 }
+
+/* ================================
+   BLOCO DO TÍTULO PRINCIPAL
+   Responsável pela composição editorial
+================================ */
+.heroTitle {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 15;
+
+  pointer-events: none;
+}
+
+/* ================================
+   LINHA SUPERIOR
+   "Arte"
+================================ */
+.lineTop {
+  position: absolute;
+
+  top: 12vh;
+  left: 4vw;
+
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(90px, 16vw, 240px);
+
+  font-weight: 300;
+  line-height: 0.9;
+
+  letter-spacing: -0.04em;
+
+  color: rgba(233, 214, 193, 0.82);
+
+  text-transform: none;
+}
+
+/* ================================
+   TEXTO PEQUENO "de"
+================================ */
+.lineSmall {
+  position: absolute;
+
+  top: 36vh;
+  left: 5vw;
+
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(26px, 3vw, 48px);
+
+  font-weight: 300;
+
+  color: rgba(233, 214, 193, 0.72);
+}
+
+/* ================================
+   LINHA INFERIOR
+   "Habitar"
+================================ */
+.lineBottom {
+  position: absolute;
+
+  bottom: 6vh;
+  left: 2vw;
+
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(110px, 18vw, 320px);
+
+  font-weight: 300;
+  line-height: 0.82;
+
+  letter-spacing: -0.05em;
+
+  color: rgba(233, 214, 193, 0.82);
+
+  text-transform: uppercase;
+}
