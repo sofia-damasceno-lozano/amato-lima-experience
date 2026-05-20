@@ -68,16 +68,18 @@
    Controla a imagem PNG da madeira
 ================================ */
 .mask {
-  object-fit: cover; /* preenche a hero mantendo proporção */
+  object-fit: cover;
 
-  z-index: 2; /* fica acima do vídeo */
+  z-index: 2;
 
-  pointer-events: none; /* impede a máscara de bloquear interações */
+  pointer-events: none;
+
+  opacity: 1;
 
   filter:
-    brightness(1.08) /* ilumina madeira */
-    contrast(0.9) /* reduz contraste agressivo */
-    saturate(0.88); /* deixa menos avermelhada */
+    brightness(1)
+    contrast(1.12)
+    saturate(0.92);
 }
 
 /* ================================
