@@ -58,9 +58,11 @@
 
   filter:
     brightness(0.97)
-    contrast(1.1)
-    saturate(0.9)
-    sepia(0.08);
+    contrast(1.08)
+    saturate(0.92)
+    sepia(0.05)
+    blur(0.3px);
+  }
 }
 
 /* ================================
@@ -77,9 +79,11 @@
   opacity: 1;
 
   filter:
-    brightness(0.98)
-    contrast(1.15)
-    saturate(0.88);
+  brightness(0.98)
+  contrast(1.15)
+  saturate(0.92)
+  sepia(0.03)
+  blur(0.2px);
 }
 
 /* ================================
