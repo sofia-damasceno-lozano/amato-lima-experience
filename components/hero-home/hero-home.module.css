@@ -233,7 +233,7 @@
   top: 12vh;
   left: 4vw;
 
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font-bile);
 
   font-size: clamp(90px, 16vw, 240px);
 
@@ -256,7 +256,7 @@
   top: 36vh;
   left: 5vw;
 
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font-bile);
 
   font-size: clamp(26px, 3vw, 48px);
 
