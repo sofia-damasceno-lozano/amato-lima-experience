@@ -1,5 +1,7 @@
 import "./globals.css";
-import { bileDemo } from "./fonts";
+
+/* fonte principal do projeto */
+import { celineSans } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -7,11 +9,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+
+    /* idioma principal */
     <html lang="pt-BR">
-      
-      {/* aplica variável da fonte */}
-      <body className={bileDemo.variable}>
+
+      {/* aplica variável global da fonte */}
+      <body className={celineSans.variable}>
+
+        {/* renderiza páginas */}
         {children}
+
       </body>
 
     </html>
