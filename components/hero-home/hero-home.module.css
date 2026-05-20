@@ -249,7 +249,7 @@
   letter-spacing: 0.035em;
 
   /* alongamento elegante */
-  transform: scaleX(1.04) scaleY(1.18);
+  transform: scaleX(1.10) scaleY(1.32);
 
   /* cor */
   color: rgba(170, 146, 125, 1);
