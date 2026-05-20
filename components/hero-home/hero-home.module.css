@@ -344,7 +344,7 @@
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.28);
-  transform: translateY(20vh);
+  transform: translateY(1vh);
 
   /* cor */
   color: #B1957F !important;
