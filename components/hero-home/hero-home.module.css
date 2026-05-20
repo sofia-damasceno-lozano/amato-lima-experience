@@ -230,8 +230,8 @@
 .lineTop {
   position: absolute;
 
-  top: 11.5vh;
-  left: 2.6vw;
+  top: 16vh;
+  left: 2.2vw;
 
   /* fonte */
   font-family: var(--font-mirage);
