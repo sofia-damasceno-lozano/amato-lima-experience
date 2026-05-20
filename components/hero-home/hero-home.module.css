@@ -228,32 +228,42 @@
    Texto "Arte"
 ================================ */
 .lineTop {
-  position: absolute; /* posiciona livremente dentro da hero */
+  position: absolute;
 
-  top: 14vh; /* distância do topo */
-  left: 4vw; /* distância da esquerda */
+  top: 14vh;
+  left: 4vw;
 
-  font-family: var(--font-mirage); /* fonte Mirage*/
+  /* fonte */
+  font-family: var(--font-mirage);
 
-  font-size: clamp(92px, 17vw, 250px); /* tamanho responsivo */
+  /* tamanho */
+  font-size: clamp(92px, 17vw, 250px);
 
-  font-weight: 80 !important; /* tenta manter leve */
+  /* Mirage já é thin */
+  font-weight: 100;
 
-  line-height: 0.86; /* aproxima altura da palavra */
+  /* compacta vertical */
+  line-height: 0.86;
 
-  letter-spacing: 0.01em; /* dá respiro editorial */
+  /* mais editorial/luxo */
+  letter-spacing: 0.035em;
 
-  transform: scaleX(1.06) scaleY(1.28); /* alonga levemente a palavra */
+  /* alongamento elegante */
+  transform: scaleX(1.04) scaleY(1.18);
 
-  color: rgba(224, 206, 186, 0.85); /* bege suave */
+  /* cor */
+  color: rgba(170, 146, 125, 1);
 
-  text-transform: none; /* mantém Arte com A maiúsculo */
+  text-transform: none;
 
-  opacity: 0.98; /* integra ao fundo */
+  opacity: 0.98;
 
-  -webkit-font-smoothing: antialiased; /* suaviza renderização */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  text-rendering: geometricPrecision; /* melhora leitura fina */
+  text-rendering: geometricPrecision;
+
+  transform-origin: left center;
 }
 
 /* ================================
