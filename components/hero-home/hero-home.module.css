@@ -243,7 +243,7 @@
 
   letter-spacing: 0.01em; /* dá respiro editorial */
 
-  transform: scaleX(1.06) scaleY(1.18); /* alonga levemente a palavra */
+  transform: scaleX(1.06) scaleY(1.28); /* alonga levemente a palavra */
 
   color: rgba(233, 214, 193, 0.64); /* bege suave */
 
