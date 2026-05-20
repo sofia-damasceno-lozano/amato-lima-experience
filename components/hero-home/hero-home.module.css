@@ -252,7 +252,7 @@
   font-family: var(--font-mirage);
 
   /* tamanho */
-  font-size: clamp(112px, 32vw, 266px);
+  font-size: clamp(108px, 28vw, 262px);
 
   /* Mirage já é thin */
   font-weight: 300;
@@ -261,13 +261,13 @@
   line-height: 0.86;
 
   /* mais editorial/luxo */
-  letter-spacing: 0.016em;
+  letter-spacing: 0.010em;
 
   /* alongamento elegante */
   transform: scaleX(1.10) scaleY(1.38);
 
   /* cor */
-  color: #AC9684 !important;
+  color: #B1957F !important;
 
   text-transform: none;
 
