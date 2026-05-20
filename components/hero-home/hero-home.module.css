@@ -327,26 +327,44 @@
 ================================ */
 .ha {
 
-  top: 44vh;
+  top: 42vh;
   left: 1.0vw;
-   
+
+  /* fonte */
   font-family: var(--font-mirage);
 
-  font-size: clamp(98px, 14vw, 300px);
+  /* tamanho */
+  font-size: clamp(108px, 14vw, 300px);
 
+  /* Mirage já é thin */
   font-weight: 300;
 
+  /* compacta vertical */
   line-height: 0.86;
 
-  letter-spacing: -0.010em;
+  /* mais editorial/luxo */
+  letter-spacing: 0.010em;
 
+  /* alongamento elegante */
+  transform: scaleX(1.10) scaleY(1.48);
+
+  /* cor */
   color: #B1957F !important;
 
-  text-transform: uppercase;
+  text-transform: none;
 
-  margin-right: 2.8vw;
+  opacity: 0.9;
 
-  transform: translateY(-1.2vh);
+  filter: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: geometricPrecision;
+
+  transform-origin: left center;
+
+  z-index:4;
 }
 
 /* ================================
