@@ -11,65 +11,73 @@ export default function HeroHome() {
           Posiciona a marca no topo da hero
       ================================ */}
       <div className={styles.logoWrapper}>
-
-        {/* ================================
-            IMAGEM DA LOGO
-            Logo principal da Amato Lima
-        ================================ */}
         <img
           src="/amato-lima-experience/logo/logo.png"
           alt="Amato Lima"
           className={styles.logo}
         />
-
       </div>
 
       {/* ================================
-         BOTÃO MENU
-      Ícone minimalista de navegação
-================================ */}
-
-     <button className={styles.menuButton}>
-
-     {/* linha superior */}
-     <span></span>
-
-     {/* linha inferior */}
-     <span></span>
-
-     </button>
+          BOTÃO MENU
+          Ícone minimalista de navegação
+      ================================ */}
+      <button className={styles.menuButton}>
+        <span></span>
+        <span></span>
+      </button>
 
       {/* ================================
-       TEXTO PRINCIPAL DA HERO
-       Composição editorial cinematic
-================================ */}
+          TEXTO PRINCIPAL DA HERO
+          Composição editorial cinematic
+      ================================ */}
+      <div className={styles.heroTitle}>
+        <span className={styles.lineTop}>
+          Arte
+        </span>
 
-    <div className={styles.heroTitle}>
+        <span className={styles.lineSmall}>
+          de
+        </span>
 
-    {/* Linha superior */}
-    <span className={styles.lineTop}>
-     Arte
-    </span>
+        <span className={styles.lineBottom}>
+          <span className={styles.ha}>
+            HA
+          </span>
 
-    {/* Palavra pequena lateral */}
-    <span className={styles.lineSmall}>
-     de
-    </span>
+          <span className={styles.bitar}>
+            BITAR
+          </span>
+        </span>
+      </div>
 
-    {/* Linha inferior */}
-<span className={styles.lineBottom}>
+      {/* detalhe inferior esquerdo */}
+      <div className={styles.exploreWrap}>
+        <span className={styles.exploreText}>
+          EXPLORAR
+        </span>
 
-  <span className={styles.ha}>
-    HA
-  </span>
+        <span className={styles.exploreLine} />
+      </div>
 
-  <span className={styles.bitar}>
-    BITAR
-  </span>
+      {/* detalhe lateral direito */}
+      <div className={styles.sideDetails}>
+        <span>ATIVOS</span>
+        <span>EXCLUSIVOS</span>
+        <span>LEGADO</span>
+        <span>QUE PERMANECE</span>
+      </div>
 
-</span>
+      {/* coordenadas esquerda */}
+      <div className={styles.coordinates}>
+        <span>23°35'28.8"S</span>
+        <span>46°41'30.7"W</span>
 
-    </div>
+        <span className={styles.coordDash}>—</span>
+
+        <span>SÃO PAULO</span>
+        <span>BRASIL</span>
+      </div>
 
       {/* Vídeo que aparece por trás da máscara */}
       <video
