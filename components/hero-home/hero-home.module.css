@@ -369,23 +369,42 @@
    BITAR
 ================================ */
 .bitar {
-
-  top: 54vh;
-  left: 3.0vw;
    
+  /* fonte */
   font-family: var(--font-mirage);
 
-  font-size: clamp(108px, 14vw, 300px);
+  /* tamanho */
+  font-size: clamp(104px, 10vw, 296px);
 
+  /* Mirage já é thin */
   font-weight: 300;
 
+  /* compacta vertical */
   line-height: 0.86;
 
-  letter-spacing: -0.010em;
+  /* mais editorial/luxo */
+  letter-spacing: 0.010em;
 
+  /* alongamento elegante */
+  transform: scaleX(1.10) scaleY(1.50);
+  transform: translateY(-1vh);
+
+  /* cor */
   color: #B1957F !important;
 
-  text-transform: uppercase;
+  text-transform: none;
 
-  transform: translateY(0vh);
+  opacity: 0.9;
+
+  filter: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: geometricPrecision;
+
+  transform-origin: left center;
+
+  z-index:4;
 }
+  
