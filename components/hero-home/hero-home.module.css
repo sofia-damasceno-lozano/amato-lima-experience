@@ -413,7 +413,7 @@
   position: absolute;
 
   left: 3vw;
-  bottom: 4vh;
+  bottom: 1vh;
 
   display: flex;
   align-items: center;
@@ -425,7 +425,7 @@
 .exploreText {
   font-family: var(--font-classy-vogue);
 
-  font-size: 0.72rem;
+  font-size: 0.42rem;
 
   letter-spacing: 0.22em;
 
