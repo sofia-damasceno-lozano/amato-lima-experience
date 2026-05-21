@@ -331,7 +331,7 @@
   font-family: var(--font-mirage);
 
   /* tamanho */
-  font-size: clamp(88px, 6vw, 268px);
+  font-size: clamp(98px, 8vw, 278px);
 
   /* Mirage já é thin */
   font-weight: 300;
