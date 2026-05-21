@@ -61,12 +61,21 @@ export default function HeroHome() {
       </div>
 
       {/* detalhe lateral direito */}
-      <div className={styles.sideDetails}>
-        <span>ATIVOS</span>
-        <span>EXCLUSIVOS</span>
-        <span>LEGADO</span>
-        <span>QUE PERMANECE</span>
-      </div>
+<div className={styles.sideDetails}>
+
+  <span className={styles.ativos}>
+    ATIVOS
+  </span>
+
+  <span>EXCLUSIVOS</span>
+
+  <span className={styles.legado}>
+    LEGADO
+  </span>
+
+  <span>QUE PERMANECE</span>
+
+</div>
 
       {/* coordenadas esquerda */}
       <div className={styles.coordinates}>
