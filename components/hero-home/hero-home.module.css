@@ -334,7 +334,7 @@
   font-size: clamp(82px, 4vw, 262px);
 
   /* Mirage já é thin */
-  font-weight: 300;
+  font-weight: 200;
 
   /* compacta vertical */
   line-height: 0.86;
@@ -376,7 +376,7 @@
   font-size: clamp(83px, 3vw, 263px);
 
   /* Mirage já é thin */
-  font-weight: 300;
+  font-weight: 200;
 
   /* compacta vertical */
   line-height: 0.86;
