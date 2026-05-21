@@ -482,7 +482,7 @@
 .sideDetails {
   position: absolute;
 
-  top: 32vh;
+  top: 34vh;
   right: 4vw;
 
   display: flex;
@@ -498,7 +498,7 @@
 .sideDetails span {
   font-family: var(--font-classy-vogue);
 
-  font-size: 0.38rem;
+  font-size: 0.26rem;
 
   letter-spacing: 0.22em;
 
