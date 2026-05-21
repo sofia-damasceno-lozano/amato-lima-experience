@@ -386,8 +386,7 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(2.0);
-  transform: translateY(-1vh);
+  transform: scaleX(1.10) scaleY(2.0) translateY(-1vh);
 
   /* cor */
   color: #B1957F !important;
