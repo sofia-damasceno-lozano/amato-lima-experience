@@ -405,4 +405,107 @@
 
   z-index:4;
 }
+
+/* ================================
+   EXPLORE
+================================ */
+.exploreWrap {
+  position: absolute;
+
+  left: 3vw;
+  bottom: 4vh;
+
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+
+  z-index: 5;
+}
+
+.exploreText {
+  font-family: var(--font-classy-vogue);
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.22em;
+
+  color: rgba(233, 214, 193, 0.58);
+
+  text-transform: uppercase;
+}
+
+.exploreLine {
+  width: 11vw;
+  height: 1px;
+
+  background: rgba(233, 214, 193, 0.28);
+}
+
+/* ================================
+   COORDENADAS ESQUERDA
+================================ */
+.coordinates {
+  position: absolute;
+
+  left: 3vw;
+  top: 63vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.2vh;
+
+  z-index: 5;
+}
+
+.coordinates span {
+  font-family: var(--font-classy-vogue);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.4;
+
+  color: rgba(233, 214, 193, 0.42);
+
+  text-transform: uppercase;
+}
+
+.coordDash {
+  margin: 0.6vh 0;
+}
+
+/* ================================
+   DETALHES LATERAIS DIREITA
+================================ */
+.sideDetails {
+  position: absolute;
+
+  top: 32vh;
+  right: 4vw;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 0.5vh;
+
+  z-index: 5;
+}
+
+.sideDetails span {
+  font-family: var(--font-classy-vogue);
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.22em;
+
+  line-height: 1.5;
+
+  color: rgba(233, 214, 193, 0.45);
+
+  text-transform: uppercase;
+}
   
