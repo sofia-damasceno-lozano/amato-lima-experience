@@ -327,6 +327,8 @@
 ================================ */
 .ha {
 
+   left: 4vw;
+
   /* fonte */
   font-family: var(--font-mirage);
 
