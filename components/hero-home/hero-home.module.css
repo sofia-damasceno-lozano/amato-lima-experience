@@ -508,4 +508,10 @@
 
   text-transform: uppercase;
 }
-  
+  .ativos {
+  transform: translateX(-1.2vw);
+}
+
+.legado {
+  transform: translateX(-0.9vw);
+}
