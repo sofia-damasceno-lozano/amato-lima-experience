@@ -448,7 +448,7 @@
   position: absolute;
 
   left: 3vw;
-  top: 63vh;
+  top: 42vh;
 
   display: flex;
   flex-direction: column;
@@ -461,7 +461,7 @@
 .coordinates span {
   font-family: var(--font-classy-vogue);
 
-  font-size: 0.62rem;
+  font-size: 0.32rem;
 
   letter-spacing: 0.18em;
 
