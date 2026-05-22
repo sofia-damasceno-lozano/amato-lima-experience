@@ -509,11 +509,11 @@
   text-transform: uppercase;
 }
   .ativos {
-  transform: translateX(-10.0vw);
+  transform: translateX(-7.0vw);
 }
 
 .exclusivos {
-  transform: translateX(-1.0vw);
+  transform: translateX(-0.8vw);
 }
 
 .legado {
