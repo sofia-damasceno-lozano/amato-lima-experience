@@ -509,13 +509,13 @@
   text-transform: uppercase;
 }
   .ativos {
-  transform: translateX(-5.2vw);
+  transform: translateX(-5.0vw);
 }
 
 .legado {
-  transform: translateX(-5.1vw);
+  transform: translateX(-5.vw);
 }
 
 .permanece {
-  transform: translateX(2.0vw);
+  transform: translateX(4.0vw);
 }
