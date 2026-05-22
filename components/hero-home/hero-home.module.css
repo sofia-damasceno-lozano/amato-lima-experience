@@ -46,22 +46,21 @@
   inset: 0;
 
   width: 100%;
-  height: 118%;
+  height: 122%;
 
   object-fit: cover;
+  object-position: center 18%;
 
-  object-position: center top;
-
-  transform: translateY(-8%);
+  transform: translateY(-10%) scale(1.04);
 
   z-index: 1;
 
   filter:
-    brightness(0.97)
-    contrast(1.08)
-    saturate(0.92)
-    sepia(0.05)
-    blur(0.65px);
+    brightness(1.03)
+    contrast(0.96)
+    saturate(0.82)
+    sepia(0.08)
+    blur(1.1px);
 }
 
 /* ================================
@@ -70,19 +69,19 @@
 ================================ */
 .mask {
   object-fit: cover;
+  object-position: center center;
 
   z-index: 2;
-
   pointer-events: none;
-
   opacity: 1;
 
+  transform: scale(1.08);
+
   filter:
-  brightness(0.98)
-  contrast(1.12)
-  saturate(0.92)
-  sepia(0.04)
-  blur(0.2px);
+    brightness(0.92)
+    contrast(1.22)
+    saturate(0.9)
+    sepia(0.06);
 }
 
 /* ================================
@@ -243,16 +242,14 @@
    Texto "Arte"
 ================================ */
 .lineTop {
-  position: absolute;
-
   top: 14vh;
-  left: 1.0vw;
+  left: 0.6vw;
 
   /* fonte */
   font-family: var(--font-mirage);
 
   /* tamanho */
-  font-size: clamp(108px, 28vw, 262px);
+  font-size: clamp(106px, 27vw, 250px);
 
   /* Mirage já é thin */
   font-weight: 300;
@@ -264,14 +261,14 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(1.48);
+  transform: scaleX(1.08) scaleY(1.38);
 
   /* cor */
-  color: #B1957F !important;
+  color: #b99d87 !important;
 
   text-transform: none;
 
-  opacity: 0.9;
+  opacity: 0.82;
 
   filter: none;
 
@@ -291,17 +288,19 @@
 .lineSmall {
   position: absolute;
 
-  top: 32vh;
-  left: 5vw;
+  top: 34vh;
+  left: 4.8vw;
 
   font-family: var(--font-mirage);
 
 
-  font-size: clamp(26px, 3vw, 48px);
+  font-size: clamp(25px, 3vw, 44px);
 
   font-weight: 100;
 
-  color: #B1957F !important;
+  color: #b99d87 !important;
+
+  opacity: 0.78;
 
   z-index:4;
 }
@@ -313,7 +312,7 @@
 .lineBottom {
   position: absolute;
 
-  bottom: 6vh;
+  bottom: 5.2vh;
   left: 2vw;
 
   display: flex;
@@ -331,7 +330,7 @@
   font-family: var(--font-mirage);
 
   /* tamanho */
-  font-size: clamp(82px, 4vw, 262px);
+  font-size: clamp(88px, 15vw, 250px);
 
   /* Mirage já é thin */
   font-weight: 200;
@@ -343,14 +342,14 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(1.48) translateY(-8vh);
+  transform: scaleX(1.08) scaleY(1.42) translateY(-6.5vh);
 
   /* cor */
-  color: #B1957F !important;
+  color: #b99d87 !important;
 
   text-transform: none;
 
-  opacity: 0.9;
+  opacity: 0.84;
 
   filter: none;
 
@@ -373,7 +372,7 @@
   font-family: var(--font-mirage);
 
   /* tamanho */
-  font-size: clamp(83px, 3vw, 263px);
+  font-size: clamp(88px, 15vw, 250px);
 
   /* Mirage já é thin */
   font-weight: 200;
@@ -385,14 +384,14 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.10) scaleY(1.48) translateY(1vh) translateX(2.6vw);
+  transform: scaleX(1.08) scaleY(1.42) translateY(0.2vh) translateX(1.4vw);
 
   /* cor */
-  color: #B1957F !important;
+  color: #b99d87 !important;
 
   text-transform: none;
 
-  opacity: 0.9;
+  opacity: 0.84;
 
   filter: none;
 
@@ -467,7 +466,7 @@
 
   line-height: 1.4;
 
-  color: rgba(233, 214, 193, 0.42);
+  color: rgba(233, 214, 193, 0.36);
 
   text-transform: uppercase;
 }
@@ -482,8 +481,8 @@
 .sideDetails {
   position: absolute;
 
-  top: 28vh;
-  right: 4vw;
+  top: 29vh;
+  right: 4.5vw;
 
   display: flex;
   flex-direction: column;
@@ -498,13 +497,13 @@
 .sideDetails span {
   font-family: var(--font-classy-vogue);
 
-  font-size: 0.36rem;
+  font-size: 0.34rem;
 
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
 
   line-height: 1.5;
 
-  color: rgba(233, 214, 193, 0.45);
+  color: rgba(233, 214, 193, 0.36);
 
   text-transform: uppercase;
 }
