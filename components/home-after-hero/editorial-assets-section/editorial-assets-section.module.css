@@ -94,7 +94,7 @@
 
   color: rgba(244, 226, 198, 0.78);
 
-  transform: scaleY(1.02);
+  transform: scaleX(1.08) scaleY(1.42) translateY(-8.5vh);
 
   pointer-events: none;
 }
