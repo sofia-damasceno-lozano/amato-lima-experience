@@ -67,7 +67,9 @@ export default function HeroHome() {
     ATIVOS
   </span>
 
-  <span>EXCLUSIVOS</span>
+  <span className={styles.exclusivos}>
+    EXCLUSIVOS
+  </span>
 
   <span className={styles.legado}>
     LEGADO
