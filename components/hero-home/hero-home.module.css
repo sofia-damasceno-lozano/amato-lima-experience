@@ -515,3 +515,7 @@
 .legado {
   transform: translateX(-5.2vw);
 }
+
+.permanece {
+  transform: translateX(0.8vw);
+}
