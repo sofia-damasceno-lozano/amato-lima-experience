@@ -41,20 +41,25 @@
 .since {
   position: absolute;
 
-  top: 8.5vh;
-  right: 12vw;
+  top: 11vh;
+  right: 7vw;
 
-  font-family: var(--font-celine, serif);
-  font-size: clamp(0.58rem, 0.75vw, 0.82rem);
-  font-weight: 400;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 
-  letter-spacing: 0.42em;
-  line-height: 1.7;
+  font-family: var(--font-mirage);
+
+  font-size: clamp(0.52rem, 0.7vw, 0.78rem);
+  font-weight: 300;
+
+  letter-spacing: 0.38em;
+  line-height: 1.2;
 
   color: rgba(82, 62, 42, 0.72);
 
   text-transform: uppercase;
-  text-align: center;
+
+  transform: rotate(180deg);
 }
 
 /* linha vertical abaixo do desde */
@@ -63,17 +68,16 @@
 
   position: absolute;
 
+  top: 112%;
   left: 50%;
-  top: 115%;
 
   width: 1px;
-  height: 5.2vh;
+  height: 5vh;
 
   transform: translateX(-50%);
 
-  background: rgba(82, 62, 42, 0.55);
+  background: rgba(82, 62, 42, 0.5);
 }
-
 /* AMATO grande */
 
 .amato {
