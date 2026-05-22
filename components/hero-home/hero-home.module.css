@@ -512,6 +512,10 @@
   transform: translateX(-9.0vw);
 }
 
+.exclusivos {
+  transform: translateX(-0.2vw);
+}
+
 .legado {
   transform: translateX(-9.0vw);
 }
