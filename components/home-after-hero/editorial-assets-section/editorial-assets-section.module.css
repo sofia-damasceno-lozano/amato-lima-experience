@@ -86,11 +86,11 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(5.2rem, 14vw, 12rem);
+  font-size: clamp(3.2rem, 10vw, 8rem);
   font-weight: 300;
 
   line-height: 0.78;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
 
   color: rgba(244, 226, 198, 0.76);
 
