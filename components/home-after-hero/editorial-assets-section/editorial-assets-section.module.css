@@ -10,21 +10,21 @@
   min-height: 100svh;
 
   overflow: hidden;
-
-  background: #d8cbb6;
 }
 
 /* Imagem de fundo editorial */
+
 .backgroundImage {
   position: absolute;
   inset: 0;
 
   background-image: url("/hero-after-home/editorial-assets-section/editorial-assets-bg.png");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  z-index: 1;
+  z-index: 0;
 }
 
 /* Camada geral dos textos */
@@ -34,7 +34,8 @@
   width: 100%;
   min-height: 100svh;
 
-  z-index: 2;
+   position: relative;
+   z-index: 2;
 }
 
 /* DESDE 2010 */
