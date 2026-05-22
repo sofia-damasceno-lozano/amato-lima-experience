@@ -42,7 +42,7 @@
   position: absolute;
 
   top: 11vh;
-  right: 7vw;
+  right: 6vw;
 
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -52,7 +52,7 @@
   font-size: clamp(0.52rem, 0.7vw, 0.78rem);
   font-weight: 300;
 
-  letter-spacing: 0.38em;
+  letter-spacing: 0.58em;
   line-height: 1.2;
 
   color: rgba(82, 62, 42, 0.72);
