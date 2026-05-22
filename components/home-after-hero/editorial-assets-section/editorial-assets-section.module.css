@@ -75,6 +75,7 @@
 }
 
 /* AMATO grande */
+
 .amato {
   position: absolute;
 
@@ -83,14 +84,17 @@
 
   margin: 0;
 
-  font-family: var(--font-celine, serif);
+  font-family: var(--font-mirage);
+
   font-size: clamp(7rem, 18vw, 17rem);
   font-weight: 300;
 
   line-height: 0.82;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.01em;
 
   color: rgba(244, 226, 198, 0.78);
+
+  transform: scaleY(1.02);
 
   pointer-events: none;
 }
@@ -143,6 +147,7 @@
 }
 
 /* LIMA grande */
+
 .lima {
   position: absolute;
 
@@ -151,14 +156,17 @@
 
   margin: 0;
 
-  font-family: var(--font-celine, serif);
+  font-family: var(--font-mirage);
+
   font-size: clamp(7rem, 18vw, 17rem);
   font-weight: 300;
 
   line-height: 0.8;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.01em;
 
   color: rgba(244, 226, 198, 0.8);
+
+  transform: scaleY(1.02);
 
   pointer-events: none;
 }
