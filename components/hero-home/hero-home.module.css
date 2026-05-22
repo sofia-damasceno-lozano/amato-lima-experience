@@ -242,7 +242,7 @@
    Texto "Arte"
 ================================ */
 .lineTop {
-  top: 24vh;
+  top: 14vh;
   left: 0.6vw;
 
   /* fonte */
@@ -261,7 +261,7 @@
   letter-spacing: 0.010em;
 
   /* alongamento elegante */
-  transform: scaleX(1.08) scaleY(1.38);
+  transform: scaleX(1.08) scaleY(1.30) translateY(8vh);
 
   /* cor */
   color: #b99d87 !important;
@@ -277,7 +277,7 @@
 
   text-rendering: geometricPrecision;
 
-  transform-origin: left center;
+  transform-origin: left top;
 
   z-index:4;
 }
