@@ -86,7 +86,7 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(7rem, 18vw, 17rem);
+  font-size: clamp(4rem, 9vw, 8rem);
   font-weight: 300;
 
   line-height: 0.82;
@@ -94,7 +94,7 @@
 
   color: rgba(244, 226, 198, 0.78);
 
-  transform: scaleX(1.08) scaleY(1.42) translateY(-4.0vh);
+  transform: scaleX(1.08) scaleY(1.42) translateY(-2.0vh);
 
   pointer-events: none;
 }
