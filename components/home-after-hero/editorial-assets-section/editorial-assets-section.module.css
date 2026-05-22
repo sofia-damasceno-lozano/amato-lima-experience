@@ -86,7 +86,7 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(5.0rem, 8vw, 6rem);
+  font-size: clamp(5.0rem, 9vw, 7rem);
   font-weight: 300;
 
   line-height: 0.78;
