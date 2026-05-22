@@ -73,7 +73,9 @@ export default function HeroHome() {
     LEGADO
   </span>
 
-  <span>QUE PERMANECE</span>
+  <span className={styles.permanece}>
+  QUE PERMANECE
+</span>
 
 </div>
 
