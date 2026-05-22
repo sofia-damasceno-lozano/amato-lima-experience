@@ -1,4 +1,4 @@
-/* ================================
+q/* ================================
    EDITORIAL ASSETS SECTION
    Seção editorial após a hero
 ================================ */
@@ -19,7 +19,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("/editorial-assets-bg.png");
+  background-image: url("/hero-after-home/editorial-assets-section/editorial-assets-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
