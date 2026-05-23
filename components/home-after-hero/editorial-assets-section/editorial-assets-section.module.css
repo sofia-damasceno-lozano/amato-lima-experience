@@ -116,7 +116,7 @@
 
   max-width: 26vw;
 
-  color: rgba(92, 70, 48, 0.56);
+  color: rgba(92, 70, 48, 0.74);
 }
 
 .copyBlock p {
@@ -129,6 +129,7 @@
 
   line-height: 1.72;
   letter-spacing: 0.01em;
+  text-shadow: 0 0 10px rgba(255, 245, 230, 0.04);
 }
 
 .line {
