@@ -165,14 +165,14 @@
 .lima {
   position: absolute;
 
-  right: 6.0vw;
-  bottom: 19vh;
+  right: 6.2vw;
+  bottom: 19.5vh;
 
   margin: 0;
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(5rem, 11vw, 10rem);
+  font-size: clamp(5.5rem, 11.5vw, 10.5rem);
   font-weight: 300;
 
   line-height: 0.8;
