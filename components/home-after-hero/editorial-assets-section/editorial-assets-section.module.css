@@ -109,7 +109,7 @@
   position: absolute;
 
   top: 38vh;
-  right: 7vw;
+  right: -1.2vw;
 
   display: flex;
   flex-direction: column;
@@ -166,7 +166,7 @@
   position: absolute;
 
   right: -3.5vw;
-  bottom: 7pvh;
+  bottom: 14pvh;
 
   margin: 0;
 
