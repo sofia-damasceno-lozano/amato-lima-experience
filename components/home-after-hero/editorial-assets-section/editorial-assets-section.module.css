@@ -109,13 +109,13 @@
   position: absolute;
 
   top: 38vh;
-  right: 2vw;
+  right: 3.5vw;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 34vw;
+  max-width: 30vw;
 
   color: rgba(92, 70, 48, 0.82);
 }
