@@ -4,7 +4,7 @@ export default function HeroHome() {
   return (
     <section className={styles.hero}>
       <img
-        src="/hero-home/wood.png"
+        src="/hero-home/wood.jpg"
         alt=""
         className={styles.background}
       />
