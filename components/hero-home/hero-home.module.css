@@ -28,7 +28,7 @@
   ========================================================= */
 
   /* sobe/desce header inteiro */
-  --header-top: 2.2vh;
+  --header-top: 1vh;
 
   /* margem lateral */
   --header-x: 7vw;
@@ -38,13 +38,13 @@
   ========================================================= */
 
   /* esquerda/direita */
-  --location-x: 0vw;
+  --location-x: -2vw;
 
   /* cima/baixo */
   --location-y: 0vh;
 
   /* tamanho */
-  --location-size: 0.64rem;
+  --location-size: 0.42rem;
 
   /* opacidade */
   --location-opacity: 0.45;
@@ -60,7 +60,7 @@
   --logo-y: 0vh;
 
   /* tamanho */
-  --logo-width: 118px;
+  --logo-width: 110px;
 
   /* opacidade */
   --logo-opacity: 1;
@@ -76,7 +76,7 @@
   --menu-y: 0vh;
 
   /* largura das linhas */
-  --menu-width: 30px;
+  --menu-width: 26px;
 
   /* opacidade */
   --menu-opacity: 0.62;
@@ -97,7 +97,7 @@
   --script-x: -50%;
 
   /* cima/baixo */
-  --script-y: -6vh;
+  --script-y: 4vh;
 
   /* tamanho */
   --script-size: clamp(4rem, 16vw, 9rem);
