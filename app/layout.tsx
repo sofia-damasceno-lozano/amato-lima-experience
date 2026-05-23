@@ -1,7 +1,5 @@
 import "./globals.css";
-
-/* importa a fonte */
-import { mirage } from "./fonts";
+import { classyVogue, westwood } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -10,12 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-
-      {/* aplica variável global */}
-      <body className={mirage.variable}>
+      <body className={`${classyVogue.variable} ${westwood.variable}`}>
         {children}
       </body>
-
     </html>
   );
 }
