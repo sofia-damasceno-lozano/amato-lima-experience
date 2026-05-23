@@ -109,7 +109,7 @@
   position: absolute;
 
   top: 38vh;
-  right: -0.9vw;
+  right: -1.6vw;
 
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(0.95rem, 1.75vw, 1.55rem);
+  font-size: clamp(0.85rem, 1.65vw, 1.45rem);
   font-weight: 300;
 
   line-height: 1.42;
@@ -151,7 +151,7 @@
 
   font-family: var(--font-vogue);
 
-  font-size: clamp(0.75rem, 1.05vw, 1.0rem);
+  font-size: clamp(0.65rem, 0.95vw, 0.9rem);
   font-weight: 300;
 
   letter-spacing: 0.28em;
@@ -166,7 +166,7 @@
   position: absolute;
 
   right: 6.0vw;
-  bottom: 20vh;
+  bottom: 19vh;
 
   margin: 0;
 
