@@ -21,25 +21,25 @@ export default function HeroHome() {
 
       {/* topo */}
       <header className={styles.header}>
-        <button className={styles.menuButton}>
-          <span />
-          <span />
-        </button>
+  <span className={styles.location}>
+    SÃO PAULO
+  </span>
 
-        <div className={styles.logoWrapper}>
-          <Image
-            src="/amato-lima-experience/logo/logo.png"
-            alt="Amato Lima"
-            width={160}
-            height={50}
-            className={styles.logo}
-          />
-        </div>
+  <div className={styles.logoWrapper}>
+    <Image
+      src="/amato-lima-experience/logo/logo.png"
+      alt="Amato Lima"
+      width={130}
+      height={42}
+      className={styles.logo}
+    />
+  </div>
 
-        <span className={styles.contact}>
-          CONTATO
-        </span>
-      </header>
+  <button className={styles.menuButton}>
+    <span />
+    <span />
+  </button>
+</header>
 
       {/* conteúdo */}
       <div className={styles.content}>
