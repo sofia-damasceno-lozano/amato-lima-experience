@@ -109,7 +109,7 @@
   position: absolute;
 
   top: 38vh;
-  right: -1.6vw;
+  right: 2vw;
 
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(0.85rem, 1.65vw, 1.45rem);
+  font-size: clamp(0.75rem, 1.55vw, 1.35rem);
   font-weight: 300;
 
   line-height: 1.42;
