@@ -1,17 +1,11 @@
 import localFont from "next/font/local";
 
-/* ================================
-   FONTE PRINCIPAL
-   Mirage Thin
-================================ */
-export const mirage = localFont({
+export const classyVogue = localFont({
+  src: "../public/fonts/classy-vogue-regular.ttf",
+  variable: "--font-classy-vogue",
+});
 
-  /* caminho da fonte */
-  src: "../public/fonts/Mirage-thin.otf",
-
-  /* variável CSS global */
-  variable: "--font-mirage",
-
-  /* evita flicker */
-  display: "swap",
+export const westwood = localFont({
+  src: "../public/fonts/westwood-studio.ttf",
+  variable: "--font-westwood",
 });
