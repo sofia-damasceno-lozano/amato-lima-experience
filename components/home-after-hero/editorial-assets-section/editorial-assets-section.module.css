@@ -178,10 +178,10 @@
   line-height: 0.8;
   letter-spacing: -0.01em;
 
-  color: rgba(255, 244, 222, 0.92);
+  color: rgba(244, 226, 198, 0.8);
 
 
-  transform: scaleY(1.02);
+  transform: scaleY(1.52);
 
   pointer-events: none;
 }
