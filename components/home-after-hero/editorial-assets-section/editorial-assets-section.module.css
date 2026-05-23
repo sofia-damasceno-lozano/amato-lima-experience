@@ -97,7 +97,7 @@
   line-height: 0.78;
   letter-spacing: -0.035em;
 
-  color: rgba(244, 226, 198, 0.78);
+  color: rgba(244, 226, 198, 0.72);
 
   transform: scaleX(0.90) scaleY(1.58);
 
@@ -117,7 +117,7 @@
 
   max-width: 20vw;
 
-  color: rgba(92, 70, 48, 0.58);
+  color: rgba(92, 70, 48, 0.89);
 }
 
 .copyBlock p {
@@ -128,7 +128,7 @@
   font-size: clamp(0.74rem, 1.38vw, 1.18rem);
   font-weight: 300;
 
-  line-height: 1.92;
+  line-height: 1.72;
   letter-spacing: -0.02em;
   text-shadow: 0 0 10px rgba(255, 245, 230, 0.04);
 }
@@ -167,7 +167,7 @@
   position: absolute;
 
   right: 6.2vw;
-  bottom: 19.5vh;
+  bottom: 18.5vh;
 
   margin: 0;
 
