@@ -83,14 +83,14 @@
 .amato {
   position: absolute;
 
-  top: 12vh;
+  top: 13vh;
   left: -1vw;
 
   margin: 0;
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(5.5rem, 9.5vw, 7.5rem);
+  font-size: clamp(5.4rem, 9.4vw, 7.4rem);
   font-weight: 300;
 
   line-height: 0.78;
@@ -98,7 +98,7 @@
 
   color: rgba(255, 244, 222, 0.92);
 
-  transform: scaleX(0.96) scaleY(1.26);
+  transform: scaleX(0.96) scaleY(1.58);
 
   pointer-events: none;
 }
