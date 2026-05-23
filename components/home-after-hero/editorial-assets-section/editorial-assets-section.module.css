@@ -109,7 +109,7 @@
   position: absolute;
 
   top: 38vh;
-  right: -0.6vw;
+  right: -0.9vw;
 
   display: flex;
   flex-direction: column;
@@ -165,7 +165,7 @@
 .lima {
   position: absolute;
 
-  right: -3.5vw;
+  right: -6.0vw;
   bottom: 16vh;
 
   margin: 0;
