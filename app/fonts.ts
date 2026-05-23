@@ -5,7 +5,7 @@ export const classyVogue = localFont({
   variable: "--font-classy-vogue",
 });
 
-export const westwood = localFont({
+export const westwoodStudio = localFont({
   src: "../public/fonts/westwood-studio.ttf",
   variable: "--font-westwood",
 });
