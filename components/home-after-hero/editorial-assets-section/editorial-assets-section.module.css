@@ -117,7 +117,7 @@
 
   max-width: 30vw;
 
-  color: rgba(92, 70, 48, 0.82);
+  color: rgba(92, 70, 48, 0.44);
 }
 
 .copyBlock p {
@@ -128,18 +128,19 @@
   font-size: clamp(0.75rem, 1.55vw, 1.35rem);
   font-weight: 300;
 
-  line-height: 1.42;
-  letter-spacing: 0.01em;
+  line-height: 1.82;
+  letter-spacing: -0.015em;
   text-shadow: 0 0 10px rgba(255, 245, 230, 0.04);
 }
 
 .line {
   display: block;
 
-  width: 2.3rem;
+  width: 2rem;
   height: 1px;
 
   margin: 2.4vh 0 2.2vh;
+  opacity:0.55;
 
   background: rgba(92, 70, 48, 0.55);
 }
@@ -147,14 +148,14 @@
 .copyBlock strong {
   display: block;
 
-  padding-left: 0.4vw;
+  padding-left: 0.5vw;
 
   font-family: var(--font-vogue);
 
   font-size: clamp(0.45rem, 0.55vw, 0.4rem);
   font-weight: 300;
 
-  letter-spacing: 0.26em;
+  letter-spacing: 0.30em;
   text-transform: uppercase;
 
   color: rgba(92, 70, 48, 0.78);
@@ -176,12 +177,12 @@
   font-weight: 300;
 
   line-height: 0.8;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 
   color: rgba(244, 226, 198, 0.92);
 
 
-  transform: scaleY(1.84);
+  transform: scaleX(1.0) scaleY(1.84);
 
   pointer-events: none;
 }
