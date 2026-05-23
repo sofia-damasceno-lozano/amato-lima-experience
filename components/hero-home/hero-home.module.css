@@ -97,7 +97,7 @@
   --script-x: -50%;
 
   /* cima/baixo */
-  --script-y: -28vh;
+  --script-y: -10vh;
 
   /* tamanho */
   --script-size: clamp(4rem, 16vw, 9rem);
