@@ -139,20 +139,25 @@
   width: 2.4rem;
   height: 1px;
 
-  margin: 2.4vh 0 2.2vh;
+  margin: 3.8vh 0 4.8vh;
 
   background: rgba(92, 70, 48, 0.55);
 }
 
 .copyBlock strong {
-  font-family: var(--font-celine, serif);
-  font-size: clamp(0.9rem, 1.3vw, 1.25rem);
-  font-weight: 400;
+  display: block;
+
+  padding-left: 0.2vw;
+
+  font-family: var(--font-mirage);
+
+  font-size: clamp(0.82rem, 1.15vw, 1.08rem);
+  font-weight: 300;
 
   letter-spacing: 0.38em;
   text-transform: uppercase;
 
-  color: rgba(92, 70, 48, 0.68);
+  color: rgba(92, 70, 48, 0.78);
 }
 
 /* LIMA grande */
