@@ -1,546 +1,129 @@
-.hero {
-
-  /* =========================================================
-     BACKGROUND
-  ========================================================= */
-
-  /* move fundo esquerda/direita */
-  --bg-x: 50%;
-
-  /* move fundo cima/baixo */
-  --bg-y: 50%;
-
-  /* zoom do fundo */
-  --bg-scale: 1;
-
-  /* =========================================================
-     OVERLAY
-  ========================================================= */
-
-  /* overlay topo */
-  --overlay-opacity-top: 0.10;
-
-  /* overlay base */
-  --overlay-opacity-bottom: 0.18;
-
-  /* =========================================================
-     HEADER
-  ========================================================= */
-
-  /* sobe/desce header inteiro */
-  --header-top: 1vh;
-
-  /* margem lateral */
-  --header-x: 7vw;
-
-  /* =========================================================
-     SÃO PAULO
-  ========================================================= */
-
-  /* esquerda/direita */
-  --location-x: -2vw;
-
-  /* cima/baixo */
-  --location-y: 0vh;
-
-  /* tamanho */
-  --location-size: 0.42rem;
-
-  /* opacidade */
-  --location-opacity: 0.45;
-
-  /* =========================================================
-     LOGO
-  ========================================================= */
-
-  /* esquerda/direita */
-  --logo-x: 0vw;
-
-  /* cima/baixo */
-  --logo-y: 0vh;
-
-  /* tamanho */
-  --logo-width: 110px;
-
-  /* opacidade */
-  --logo-opacity: 1;
-
-  /* =========================================================
-     MENU
-  ========================================================= */
-
-  /* esquerda/direita */
-  --menu-x: 0vw;
-
-  /* cima/baixo */
-  --menu-y: 0vh;
-
-  /* largura das linhas */
-  --menu-width: 26px;
-
-  /* opacidade */
-  --menu-opacity: 0.62;
-
-  /* =========================================================
-     BLOCO TÍTULO
-  ========================================================= */
-
-  /* move tudo */
-  --title-block-x: 0vw;
-  --title-block-y: 8vh;
-
-  /* =========================================================
-     ARTE
-  ========================================================= */
-
-  /* esquerda/direita */
-  --script-x: -50%;
-
-  /* cima/baixo */
-  --script-y: -12vh;
-
-  /* tamanho */
-  --script-size: clamp(4rem, 16vw, 9rem);
-
-  /* opacidade */
-  --script-opacity: 0.9;
-
-  /* =========================================================
-     DE
-  ========================================================= */
-
-  /* esquerda/direita */
-  --de-x: -7vw;
-
-  /* cima/baixo */
-  --de-y: -14vh;
-
-  /* tamanho */
-  --de-size: clamp(1rem, 3vw, 2rem);
-
-  /* opacidade */
-  --de-opacity: 1;
-
-  /* =========================================================
-     HABITAR
-  ========================================================= */
-
-  /* tamanho */
-  --habitar-size: clamp(2.5rem, 9vw, 5rem);
-
-  /* opacidade */
-  --habitar-opacity: 1;
-
-  /* espaçamento */
-  --habitar-tracking: 0.02em;
-
-  /* =========================================================
-     SUBTÍTULO
-  ========================================================= */
-
-  /* esquerda/direita */
-  --subtitle-x: 0vw;
-
-  /* cima/baixo */
-  --subtitle-y: 6vh;
-
-  /* tamanho */
-  --subtitle-size: 0.8rem;
-
-  /* opacidade */
-  --subtitle-opacity: 0.7;
-
-  /* =========================================================
-     VÍDEO
-  ========================================================= */
-
-  /* esquerda/direita */
-  --video-x: 0vw;
-
-  /* cima/baixo */
-  --video-y: 6vh;
-
-  /* largura */
-  --video-width: 78vw;
-
-  /* altura */
-  --video-height: 24vh;
-
-  /* arredondamento */
-  --video-radius: 2rem;
-
-  /* =========================================================
-     VÍDEO INTERNO
-  ========================================================= */
-
-  /* move vídeo horizontal */
-  --video-inner-x: 50%;
-
-  /* move vídeo vertical */
-  --video-inner-y: 50%;
-
-  /* zoom */
-  --video-inner-scale: 1;
-
-  /* =========================================================
-     EXPLORAR
-  ========================================================= */
-
-  /* esquerda/direita */
-  --explore-x: 0vw;
-
-  /* cima/baixo */
-  --explore-y: 5vh;
-
-  /* tamanho */
-  --explore-size: 0.9rem;
-
-  /* opacidade */
-  --explore-opacity: 0.75;
-
-  position: relative;
-
-  width: 100%;
-  height: 100svh;
-
-  overflow: hidden;
-
-  background: #e8dfd5;
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-.background {
-  object-fit: cover;
-
-  object-position:
-    var(--bg-x)
-    var(--bg-y);
-
-  transform:
-    scale(var(--bg-scale));
-
-  z-index: 1;
-}
-
-/* =========================================================
-   OVERLAY
-========================================================= */
-
-.overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,var(--overlay-opacity-top)),
-      rgba(0,0,0,var(--overlay-opacity-bottom))
-    );
-
-  z-index: 2;
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header {
-  position: absolute;
-
-  top: var(--header-top);
-
-  left: 0;
-
-  width: 100%;
-
-  padding: 0 var(--header-x);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  z-index: 10;
-}
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logoWrapper {
-  transform:
-    translate(
-      var(--logo-x),
-      var(--logo-y)
-    );
-}
-
-.logo {
-  width: var(--logo-width);
-
-  height: auto;
-
-  opacity: var(--logo-opacity);
-
-  object-fit: contain;
-}
-
-/* =========================================================
-   SÃO PAULO
-========================================================= */
-
-.location {
-  transform:
-    translate(
-      var(--location-x),
-      var(--location-y)
-    );
-
-  font-family:
-    var(--font-classy-vogue);
-
-  font-size:
-    var(--location-size);
-
-  letter-spacing: 0.34em;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      var(--location-opacity)
-    );
-
-  text-transform: uppercase;
-}
-
-/* =========================================================
-   MENU
-========================================================= */
-
-.menuButton {
-  transform:
-    translate(
-      var(--menu-x),
-      var(--menu-y)
-    );
-
-  background: transparent;
-
-  border: none;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.7vh;
-
-  padding: 0;
-}
-
-.menuButton span {
-  width: var(--menu-width);
-
-  height: 1px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      var(--menu-opacity)
-    );
-}
-
-/* =========================================================
+/* =========================
    CONTENT
-========================================================= */
+========================= */
 
 .content {
   position: relative;
-
   z-index: 5;
 
   width: 100%;
   height: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
 }
 
-/* =========================================================
-   TITLE
-========================================================= */
+/* =========================
+   ARTE / DE / HABITAR
+========================= */
 
 .titleWrapper {
-  position: relative;
+  position: absolute;
 
-  transform:
-    translate(
-      var(--title-block-x),
-      var(--title-block-y)
-    );
+  top: 26.5vh;
+  left: 0;
+
+  width: 100%;
+  height: 26vh;
 }
 
-/* =========================================================
-   DE
-========================================================= */
+/* ARTE */
+.script {
+  position: absolute;
 
+  top: -5.4vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-westwood);
+  font-size: clamp(7.8rem, 34vw, 10rem);
+
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.94);
+
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* DE */
 .de {
   position: absolute;
 
-  left: var(--de-x);
+  top: 7.6vh;
+  left: 15.5vw;
 
-  top: var(--de-y);
+  font-family: var(--font-classy-vogue);
+  font-size: clamp(2.8rem, 11vw, 4rem);
 
-  font-family:
-    var(--font-classy-vogue);
+  line-height: 0.8;
+  color: rgba(246, 238, 224, 0.92);
 
-  font-size:
-    var(--de-size);
+  z-index: 4;
+}
 
-  color:
-    rgba(
-      246,
-      238,
-      224,
-      var(--de-opacity)
-    );
+/* HABITAR */
+.title {
+  position: absolute;
+
+  top: 10.6vh;
+  left: 7.5vw;
+
+  margin: 0;
+
+  font-family: var(--font-classy-vogue);
+  font-size: clamp(4.6rem, 18.4vw, 6.8rem);
+
+  line-height: 0.82;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+  color: rgba(246, 238, 224, 0.94);
 
   z-index: 2;
 }
 
-/* =========================================================
-   HABITAR
-========================================================= */
-
-.title {
-  font-family:
-    var(--font-classy-vogue);
-
-  font-size:
-    var(--habitar-size);
-
-  line-height: 0.9;
-
-  font-weight: 400;
-
-  letter-spacing:
-    var(--habitar-tracking);
-
-  color:
-    rgba(
-      246,
-      238,
-      224,
-      var(--habitar-opacity)
-    );
-
-  margin: 0;
-}
-
-/* =========================================================
-   ARTE
-========================================================= */
-
-.script {
-  position: absolute;
-
-  top: var(--script-y);
-
-  left: 50%;
-
-  transform:
-    translateX(var(--script-x));
-
-  font-family:
-    var(--font-westwood);
-
-  font-size:
-    var(--script-size);
-
-  line-height: 1;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      var(--script-opacity)
-    );
-
-  white-space: nowrap;
-}
-
-/* =========================================================
+/* =========================
    SUBTITLE
-========================================================= */
+========================= */
 
 .subtitle {
-  transform:
-    translate(
-      var(--subtitle-x),
-      var(--subtitle-y)
-    );
+  position: absolute;
+
+  top: 54.5vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  margin: 0;
 
   text-align: center;
 
-  font-family:
-    var(--font-classy-vogue);
-
-  font-size:
-    var(--subtitle-size);
+  font-family: var(--font-classy-vogue);
+  font-size: 0.68rem;
 
   letter-spacing: 0.42em;
+  line-height: 2.2;
 
-  line-height: 2.1;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      var(--subtitle-opacity)
-    );
-
-  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
 }
 
-/* =========================================================
+/* =========================
    VIDEO
-========================================================= */
+========================= */
 
 .videoFrame {
-  position: relative;
+  position: absolute;
 
-  transform:
-    translate(
-      var(--video-x),
-      var(--video-y)
-    );
+  top: 65.8vh;
+  left: 50%;
 
-  width: var(--video-width);
+  transform: translateX(-50%);
 
-  height: var(--video-height);
+  width: 82vw;
+  height: 17vh;
 
   overflow: hidden;
+  border-radius: 2rem;
 
-  border-radius:
-    var(--video-radius);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.18);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
 
   z-index: 5;
 }
@@ -550,30 +133,23 @@
   height: 100%;
 
   object-fit: cover;
-
-  object-position:
-    var(--video-inner-x)
-    var(--video-inner-y);
-
-  transform:
-    scale(var(--video-inner-scale));
+  object-position: center;
 }
 
-/* =========================================================
+/* =========================
    EXPLORAR
-========================================================= */
+========================= */
 
 .exploreWrapper {
-  transform:
-    translate(
-      var(--explore-x),
-      var(--explore-y)
-    );
+  position: absolute;
+
+  top: 86vh;
+  left: 50%;
+
+  transform: translateX(-50%);
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   gap: 2vh;
@@ -581,27 +157,16 @@
 
 .line {
   width: 1px;
+  height: 5.4vh;
 
-  height: 6vh;
-
-  background:
-    rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.42);
 }
 
 .explore {
-  font-family:
-    var(--font-classy-vogue);
+  font-family: var(--font-classy-vogue);
+  font-size: 0.76rem;
 
-  font-size:
-    var(--explore-size);
+  letter-spacing: 0.48em;
 
-  letter-spacing: 0.45em;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      var(--explore-opacity)
-    );
+  color: rgba(255, 255, 255, 0.76);
 }
