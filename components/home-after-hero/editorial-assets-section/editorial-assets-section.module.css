@@ -108,14 +108,14 @@
 .copyBlock {
   position: absolute;
 
-  top: 28vh;
+  top: 26vh;
   right: 4vw;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 20vw;
+  max-width: 22vw;
 
   color: rgba(92, 70, 48, 0.89);
 }
@@ -128,7 +128,7 @@
   font-size: clamp(0.74rem, 1.38vw, 1.18rem);
   font-weight: 300;
 
-  line-height: 1.72;
+  line-height: 1.68;
   letter-spacing: -0.02em;
   text-shadow: 0 0 10px rgba(255, 245, 230, 0.04);
 }
@@ -166,8 +166,8 @@
 .lima {
   position: absolute;
 
-  right: 6.2vw;
-  bottom: 18.5vh;
+  right: 6.0vw;
+  bottom: 18.6vh;
 
   margin: 0;
 
