@@ -97,7 +97,7 @@
   --script-x: -50%;
 
   /* cima/baixo */
-  --script-y: -10vh;
+  --script-y: -12vh;
 
   /* tamanho */
   --script-size: clamp(4rem, 16vw, 9rem);
@@ -113,10 +113,10 @@
   --de-x: -7vw;
 
   /* cima/baixo */
-  --de-y: 6vh;
+  --de-y: -14vh;
 
   /* tamanho */
-  --de-size: clamp(2rem, 7vw, 4rem);
+  --de-size: clamp(1rem, 3vw, 2rem);
 
   /* opacidade */
   --de-opacity: 1;
@@ -126,7 +126,7 @@
   ========================================================= */
 
   /* tamanho */
-  --habitar-size: clamp(5rem, 17vw, 10rem);
+  --habitar-size: clamp(2.5rem, 9vw, 5rem);
 
   /* opacidade */
   --habitar-opacity: 1;
