@@ -16,7 +16,7 @@ export default function HeroHome() {
         </div>
 
         <img
-          src="/logo.png"
+          src="/logo/logo.png"
           alt="Amato Lima Ativos Imobiliários"
           className={styles.logo}
         />
