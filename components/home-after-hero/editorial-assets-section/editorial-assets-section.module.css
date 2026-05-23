@@ -108,8 +108,8 @@
 .copyBlock {
   position: absolute;
 
-  top: 30vh;
-  right: 2vw;
+  top: 36vh;
+  right: -1vw;
 
   display: flex;
   flex-direction: column;
