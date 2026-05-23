@@ -165,20 +165,20 @@
 .lima {
   position: absolute;
 
-  right: 1.4vw;
-  bottom: 8vh;
+  right: 1.6vw;
+  bottom: 10vh;
 
   margin: 0;
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(7rem, 18vw, 17rem);
+  font-size: clamp(3rem, 9vw, 8rem);
   font-weight: 300;
 
   line-height: 0.8;
   letter-spacing: -0.01em;
 
-  color: rgba(244, 226, 198, 0.8);
+  color: rgba(244, 226, 198, 0.78);
 
 
   transform: scaleY(1.52);
