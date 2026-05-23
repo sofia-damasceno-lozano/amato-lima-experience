@@ -14,19 +14,17 @@ export function EditorialAssetsSection() {
 
         <div className={styles.copyBlock}>
           <p>
+  transforma
+  <br />
   engenharia,
   <br />
-  território
-  <br />
-  e visão
-  <br />
-  transformados
+  território e visão
   <br />
   em ativos
   <br />
-  imobiliários
+  imobiliários de
   <br />
-  duradouros.
+  valor duradouro.
 </p>
 
           <span className={styles.line} />
