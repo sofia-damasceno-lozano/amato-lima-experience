@@ -44,17 +44,35 @@ HEADER
 .header {
   position: absolute;
 
-  top: 3.5vh;
+  top: 2.2vh;
   left: 0;
   width: 100%;
 
-  padding: 0 8vw;
+  padding: 0 7vw;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   z-index: 10;
+}
+
+.logo {
+  width: 118px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.location {
+  font-family: var(--font-classy-vogue);
+
+  font-size: 0.64rem;
+  letter-spacing: 0.34em;
+
+  color: rgba(255,255,255,0.45);
+
+  text-transform: uppercase;
 }
 
 .menuButton {
@@ -64,37 +82,16 @@ HEADER
   display: flex;
   flex-direction: column;
 
-  gap: 0.8vh;
+  gap: 0.7vh;
+
+  padding: 0;
 }
 
 .menuButton span {
-  width: 32px;
+  width: 30px;
   height: 1px;
 
-  background: rgba(255,255,255,0.6);
-}
-
-.logoWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-}
-
-.contact {
-  font-family: var(--font-classy-vogue);
-
-  font-size: 0.72rem;
-
-  letter-spacing: 0.35em;
-
-  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.62);
 }
 
 /* =========================
