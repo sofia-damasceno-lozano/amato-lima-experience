@@ -1,57 +1,90 @@
+"use client";
+
+import Image from "next/image";
+
 import styles from "./hero-home.module.css";
 
 export default function HeroHome() {
   return (
     <section className={styles.hero}>
-      <img
-        src="/hero-home/wood.jpg"
-        alt=""
+      {/* background */}
+      <Image
+        src="/amato-lima-experience/hero-home/wood.jpg"
+        alt="Background"
+        fill
+        priority
         className={styles.background}
       />
 
+      {/* overlay */}
+      <div className={styles.overlay} />
+
+      {/* topo */}
       <header className={styles.header}>
-        <div className={styles.menu}>
+        <button className={styles.menuButton}>
           <span />
           <span />
+        </button>
+
+        <div className={styles.logoWrapper}>
+          <Image
+            src="/amato-lima-experience/logo/logo.png"
+            alt="Amato Lima"
+            width={160}
+            height={50}
+            className={styles.logo}
+          />
         </div>
 
-        <img
-          src="/logo/logo.png"
-          alt="Amato Lima Ativos Imobiliários"
-          className={styles.logo}
-        />
-
-        <span className={styles.contact}>CONTATO</span>
+        <span className={styles.contact}>
+          CONTATO
+        </span>
       </header>
 
+      {/* conteúdo */}
       <div className={styles.content}>
-        <h1 className={styles.title}>
-          <span className={styles.cursive}>Arte</span>
+        <div className={styles.titleWrapper}>
+          <span className={styles.de}>
+            DE
+          </span>
 
-          <span className={styles.de}>DE</span>
+          <h1 className={styles.title}>
+            HABITAR
+          </h1>
 
-          <span className={styles.habitar}>HABITAR</span>
-        </h1>
-
-        <div className={styles.microText}>
-          <span>ATIVOS EXCLUSIVOS.</span>
-          <span>LEGADO QUE PERMANECE.</span>
+          <span className={styles.script}>
+            Arte
+          </span>
         </div>
 
+        <p className={styles.subtitle}>
+          ATIVOS EXCLUSIVOS.
+          <br />
+          LEGADO QUE PERMANECE.
+        </p>
+
+        {/* moldura */}
         <div className={styles.videoFrame}>
           <video
-            src="/hero-home/video.mp4"
+            className={styles.video}
             autoPlay
             muted
             loop
             playsInline
-            className={styles.video}
-          />
+          >
+            <source
+              src="/amato-lima-experience/hero-home/video.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
 
-        <div className={styles.explore}>
-          <span />
-          <p>EXPLORAR</p>
+        <div className={styles.exploreWrapper}>
+          <div className={styles.line} />
+
+          <span className={styles.explore}>
+            EXPLORAR
+          </span>
         </div>
       </div>
     </section>
