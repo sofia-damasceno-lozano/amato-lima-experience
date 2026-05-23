@@ -108,14 +108,14 @@
 .copyBlock {
   position: absolute;
 
-  top: 36vh;
-  right: -1vw;
+  top: 38vh;
+  right: 7vw;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 22vw;
+  max-width: 34vw;
 
   color: rgba(92, 70, 48, 0.74);
 }
@@ -125,10 +125,10 @@
 
   font-family: var(--font-mirage);
 
-  font-size: clamp(0.54rem, 1.0vw, 1.0rem);
-  font-weight: 600;
+  font-size: clamp(0.95rem, 1.75vw, 1.55rem);
+  font-weight: 300;
 
-  line-height: 1.72;
+  line-height: 1.42;
   letter-spacing: 0.01em;
   text-shadow: 0 0 10px rgba(255, 245, 230, 0.04);
 }
@@ -136,10 +136,10 @@
 .line {
   display: block;
 
-  width: 2.4rem;
+  width: 2.3rem;
   height: 1px;
 
-  margin: 3.8vh 0 4.8vh;
+  margin: 2.4vh 0 2.2vh;
 
   background: rgba(92, 70, 48, 0.55);
 }
@@ -151,10 +151,10 @@
 
   font-family: var(--font-vogue);
 
-  font-size: clamp(0.62rem, 1.05vw, 1.0rem);
+  font-size: clamp(0.75rem, 1.05vw, 1.0rem);
   font-weight: 300;
 
-  letter-spacing: 0.38em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
 
   color: rgba(92, 70, 48, 0.78);
@@ -165,8 +165,8 @@
 .lima {
   position: absolute;
 
-  right: 1.4vw;
-  bottom: 16vh;
+  right: -3.5vw;
+  bottom: 7pvh;
 
   margin: 0;
 
