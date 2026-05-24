@@ -218,26 +218,28 @@
   transform: scaleX(1) scaleY(1);
 
   z-index: 5;
-
+   
 background:
     linear-gradient(
-      110deg,
-      rgba(255, 255, 255, 0.52) 0%,
-      rgba(255, 255, 255, 1) 45%,
-      rgba(244, 226, 198, 0.82) 58%,
-      rgba(255, 255, 255, 0.52) 100%
+      90deg,
+      rgba(255,255,255,0.18) 0%,
+      rgba(255,255,255,0.18) 35%,
+      rgba(255,255,255,1) 48%,
+      rgba(244,226,198,0.98) 52%,
+      rgba(255,255,255,0.18) 65%,
+      rgba(255,255,255,0.18) 100%
     );
 
-  background-size: 220% 100%;
-  background-position: -120% 0;
+  background-size: 300% 100%;
 
   -webkit-background-clip: text;
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
 
-  animation: titleLightPass 20s ease-in-out infinite;
+  animation: titleFlow 5s linear infinite;
 }
+
 
 /* ================================
    HABITAR
@@ -267,22 +269,23 @@ background:
 
    background:
     linear-gradient(
-      110deg,
-      rgba(255, 255, 255, 0.52) 0%,
-      rgba(255, 255, 255, 1) 45%,
-      rgba(244, 226, 198, 0.82) 58%,
-      rgba(255, 255, 255, 0.52) 100%
+      90deg,
+      rgba(255,255,255,0.18) 0%,
+      rgba(255,255,255,0.18) 35%,
+      rgba(255,255,255,1) 48%,
+      rgba(244,226,198,0.98) 52%,
+      rgba(255,255,255,0.18) 65%,
+      rgba(255,255,255,0.18) 100%
     );
 
-  background-size: 200% 100%;
-  background-position: -100% 0;
+  background-size: 300% 100%;
 
   -webkit-background-clip: text;
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
 
-  animation: titleLightPass 20s ease-in-out infinite;
+  animation: titleFlow 5s linear infinite;
 }
 
 /* ================================
@@ -404,16 +407,12 @@ background:
   text-transform: uppercase;
    }
 
-@keyframes titleLightPass {
+@keyframes titleFlow {
   0% {
-    background-position: -100% 0;
-  }
-
-  45% {
-    background-position: 100% 0;
+    background-position: 200% 0;
   }
 
   100% {
-    background-position: 100% 0;
+    background-position: -200% 0;
   }
 }
