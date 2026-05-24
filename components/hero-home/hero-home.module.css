@@ -218,6 +218,25 @@
   transform: scaleX(1) scaleY(1);
 
   z-index: 5;
+
+background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.52) 0%,
+      rgba(255, 255, 255, 1) 45%,
+      rgba(244, 226, 198, 0.82) 58%,
+      rgba(255, 255, 255, 0.52) 100%
+    );
+
+  background-size: 220% 100%;
+  background-position: -120% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleLightPass 11s ease-in-out infinite;
 }
 
 /* ================================
@@ -245,6 +264,25 @@
   transform: scaleX(1) scaleY(1);
 
   z-index: 3;
+
+   background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.52) 0%,
+      rgba(255, 255, 255, 1) 45%,
+      rgba(244, 226, 198, 0.82) 58%,
+      rgba(255, 255, 255, 0.52) 100%
+    );
+
+  background-size: 220% 100%;
+  background-position: -120% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleLightPass 11s ease-in-out infinite;
 }
 
 /* ================================
@@ -366,4 +404,16 @@
   text-transform: uppercase;
    }
 
+@keyframes titleLightPass {
+  0% {
+    background-position: -120% 0;
+  }
 
+  45% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: 120% 0;
+  }
+}
