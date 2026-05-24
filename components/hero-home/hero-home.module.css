@@ -462,7 +462,7 @@ filter:
 .explore {
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(0.78rem, 1.9vw, 1rem);
+  font-size: clamp(0.58rem, 1.4vw, 1rem);
   font-weight: 300;
 
   letter-spacing: 0.32em;
