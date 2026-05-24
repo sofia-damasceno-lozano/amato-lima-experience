@@ -364,22 +364,22 @@ filter:
 .videoFrame {
   position: absolute;
 
-  top: 62.8vh;
+  top: 60.2vh;
   left: 50%;
 
-  width: 82vw;
-  height: 17vh;
+  width: 86vw;
+  height: 22vh;
 
   overflow: hidden;
 
-  border-radius: 2rem;
+  border-radius: 2.4rem;
 
   transform: translateX(-50%);
 
   border: 1px solid rgba(255, 244, 225, 0.18);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.18);
+    0 30px 70px rgba(0, 0, 0, 0.22);
 
   isolation: isolate;
 
@@ -398,11 +398,11 @@ filter:
 
   background: linear-gradient(
     135deg,
-    rgba(255,250,242,0.95) 0%,
-    rgba(255,239,207,0.85) 18%,
+    rgba(255,250,242,0.96) 0%,
+    rgba(255,239,207,0.88) 18%,
     rgba(215,187,147,0.72) 42%,
-    rgba(131,107,81,0.42) 68%,
-    rgba(255,250,242,0.88) 100%
+    rgba(131,107,81,0.38) 68%,
+    rgba(255,250,242,0.92) 100%
   );
 
   -webkit-mask:
