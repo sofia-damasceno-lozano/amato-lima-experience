@@ -363,3 +363,24 @@
 
   text-transform: uppercase;
    }
+
+/* ================================
+   EFEITOS
+================================ */
+
+.script {
+  animation:
+    scriptLightPass 7s ease-in-out infinite,
+    scriptBreath 5s ease-in-out infinite;
+}
+
+@keyframes scriptBreath {
+  0%,
+  100% {
+    opacity: 0.88;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
