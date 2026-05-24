@@ -19,12 +19,6 @@ export default function HeroHome() {
       {/* overlay */}
       <div className={styles.overlay} />
 
-      {/* topo */}
-      <header className={styles.header}>
-  <span className={styles.location}>
-    SÃO PAULO
-  </span>
-
   <div className={styles.logoWrapper}>
     <Image
       src="/amato-lima-experience/logo/logo.png"
