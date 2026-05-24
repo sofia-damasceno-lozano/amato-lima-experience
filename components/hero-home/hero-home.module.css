@@ -203,14 +203,18 @@
 
   font-family: var(--font-westwood);
   font-size: clamp(7.2rem, 34vw, 10rem);
-  font-weight: 300;
+  font-weight: 100;
 
   line-height: 0.8;
   letter-spacing: -0.035em;
 
   transform: translateX(-50%) scaleX(1.02);
 
+  padding-inline: 0.18em;
+  padding-block: 0.08em;
+
   white-space: nowrap;
+  overflow: visible;
 
   z-index: 4;
 
