@@ -358,36 +358,6 @@ filter:
 }
 
 /* ================================
-   SUBTÍTULO
-   Ativos exclusivos / legado
-================================ */
-
-.subtitle {
-  position: absolute;
-
-  top: 53.5vh;
-  left: 50%;
-
-  margin: 0;
-
-  transform: translateX(-50%);
-
-  text-align: center;
-
-  font-family: var(--font-classy-vogue);
-
-  font-size: clamp(0.58rem, 1.5vw, 0.76rem);
-  font-weight: 300;
-
-  letter-spacing: 0.44em;
-  line-height: 2.25;
-
-  color: rgba(255, 255, 255, 0.72);
-
-  white-space: nowrap;
-}
-
-/* ================================
    MOLDURA DO VÍDEO
 ================================ */
 
