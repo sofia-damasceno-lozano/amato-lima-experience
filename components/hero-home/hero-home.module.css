@@ -90,49 +90,6 @@
 }
 
 /* ================================
-   SÃO PAULO
-================================ */
-
-.location {
-  position: absolute;
-
-  top: 1.2vh;
-  left: 5.2vw;
-
-  font-family: var(--font-classy-vogue);
-
-  font-size: clamp(0.44rem, 1.2vw, 0.7rem);
-  font-weight: 300;
-
-  letter-spacing: 0.42em;
-
-  text-transform: uppercase;
-
-  background: linear-gradient(
-    90deg,
-    #3d2704 0%,
-    #836b51 22%,
-    #ffedcf 50%,
-    #836b51 78%,
-    #3d2704 100%
-  );
-
-  background-size: 220% 100%;
-  background-position: 120% 0;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 1px rgba(255, 237, 207, 0.20),
-    0 2px 6px rgba(61, 39, 4, 0.16);
-
-  animation: locationGlow 5s linear infinite;
-}
-
-/* ================================
    LOGO
 ================================ */
 
@@ -158,29 +115,27 @@
    MENU
 ================================ */
 
-.menuButton {
-  position: absolute;
-
-  top: 1.2vh;
-  right: 6vw;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 0.7vh;
-
-  padding: 0;
-
-  background: transparent;
-
-  border: none;
-}
-
 .menuButton span {
   width: 30px;
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    90deg,
+    #3d2704 0%,
+    #836b51 38%,
+    #ffedcf 52%,
+    #836b51 68%,
+    #3d2704 100%
+  );
+
+  background-size: 220% 100%;
+  background-position: 120% 0;
+
+  box-shadow:
+    0 0 2px rgba(255, 237, 207, 0.18),
+    0 1px 4px rgba(61, 39, 4, 0.16);
+
+  animation: menuGlow 5s linear infinite;
 }
 
 /* ================================
@@ -492,7 +447,7 @@
     background-position: -200% 0;
   }
 }
-@keyframes locationGlow {
+@keyframes menuGlow {
   0% {
     background-position: 120% 0;
   }
