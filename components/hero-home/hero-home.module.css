@@ -200,7 +200,7 @@
 .de {
   position: absolute;
 
-  top: 8vh;
+  top: 12vh;
   left: 10vw;
 
   font-family: var(--font-classy-vogue);
