@@ -232,7 +232,7 @@
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(5.6rem, 19.6vw, 8rem);
+  font-size: clamp(5.2rem, 19.2vw, 7.8rem);
   font-weight: 400;
 
   line-height: 0.82;
