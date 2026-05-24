@@ -40,11 +40,6 @@ export default function HeroHome() {
           <span className={styles.script}>Arte</span>
         </div>
 
-        <p className={styles.subtitle}>
-          ATIVOS EXCLUSIVOS
-          <br />
-          LEGADO QUE PERMANECE
-        </p>
 
         <div className={styles.videoFrame}>
           <video className={styles.video} autoPlay muted loop playsInline>
