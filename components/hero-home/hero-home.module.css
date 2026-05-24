@@ -274,8 +274,8 @@ background:
       rgba(255, 255, 255, 0.52) 100%
     );
 
-  background-size: 220% 100%;
-  background-position: -120% 0;
+  background-size: 200% 100%;
+  background-position: -100% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -406,14 +406,14 @@ background:
 
 @keyframes titleLightPass {
   0% {
-    background-position: -120% 0;
+    background-position: -100% 0;
   }
 
   45% {
-    background-position: 120% 0;
+    background-position: 100% 0;
   }
 
   100% {
-    background-position: 120% 0;
+    background-position: 100% 0;
   }
 }
