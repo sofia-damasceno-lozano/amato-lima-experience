@@ -184,14 +184,7 @@
   line-height: 0.8;
   letter-spacing: -0.035em;
 
-  background:
-  linear-gradient(
-    110deg,
-    rgba(214, 198, 176, 0.72) 0%,
-    rgba(255, 248, 238, 0.98) 42%,
-    rgba(248, 233, 210, 0.88) 58%,
-    rgba(214, 198, 176, 0.72) 100%
-  );
+  color: rgba(247, 236, 220, 0.92);
 
   transform: translateX(-50%) scaleX(1.02) scaleY(1);
 
