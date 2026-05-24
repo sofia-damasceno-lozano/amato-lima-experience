@@ -19,36 +19,32 @@ export default function HeroHome() {
       {/* overlay */}
       <div className={styles.overlay} />
 
-  <div className={styles.logoWrapper}>
-    <Image
-      src="/amato-lima-experience/logo/logo.png"
-      alt="Amato Lima"
-      width={130}
-      height={42}
-      className={styles.logo}
-    />
-  </div>
+      {/* topo */}
+      <header className={styles.header}>
+        <div className={styles.logoWrapper}>
+          <Image
+            src="/amato-lima-experience/logo/logo.png"
+            alt="Amato Lima"
+            width={130}
+            height={42}
+            className={styles.logo}
+          />
+        </div>
 
-  <button className={styles.menuButton}>
-    <span />
-    <span />
-  </button>
-</header>
+        <button className={styles.menuButton} aria-label="Abrir menu">
+          <span />
+          <span />
+        </button>
+      </header>
 
       {/* conteúdo */}
       <div className={styles.content}>
         <div className={styles.titleWrapper}>
-          <span className={styles.de}>
-            DE
-          </span>
+          <span className={styles.de}>DE</span>
 
-          <h1 className={styles.title}>
-            HABITAR
-          </h1>
+          <h1 className={styles.title}>HABITAR</h1>
 
-          <span className={styles.script}>
-            Arte
-          </span>
+          <span className={styles.script}>Arte</span>
         </div>
 
         <p className={styles.subtitle}>
@@ -76,9 +72,7 @@ export default function HeroHome() {
         <div className={styles.exploreWrapper}>
           <div className={styles.line} />
 
-          <span className={styles.explore}>
-            EXPLORAR
-          </span>
+          <span className={styles.explore}>EXPLORAR</span>
         </div>
       </div>
     </section>
