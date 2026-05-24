@@ -207,7 +207,7 @@
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(2.0rem, 9vw, 3.0rem);
+  font-size: clamp(2rem, 9vw, 3rem);
   font-weight: 300;
 
   line-height: 0.8;
@@ -218,39 +218,34 @@
   transform: scaleX(1) scaleY(1);
 
   z-index: 5;
-   
-.title::after {
-  content: "de";
+}
+
+.de::after {
+  content: "DE";
 
   position: absolute;
-
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0) 35%,
-      rgba(255,255,255,1) 48%,
-      rgba(244,226,198,0.95) 52%,
-      rgba(255,255,255,0) 65%,
-      rgba(255,255,255,0) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 35%,
+    rgba(255,255,255,1) 48%,
+    rgba(244,226,198,0.95) 52%,
+    rgba(255,255,255,0) 65%,
+    rgba(255,255,255,0) 100%
+  );
 
   background-size: 300% 100%;
 
-  color: transparent;
-
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 5s linear infinite;
+  animation: titleFlow 11s linear infinite;
 
   pointer-events: none;
 }
-
 
 /* ================================
    HABITAR
@@ -260,7 +255,7 @@
   position: absolute;
 
   top: 8.8vh;
-  left: 10.0vw;
+  left: 10vw;
 
   margin: 0;
 
@@ -277,38 +272,34 @@
   transform: scaleX(1) scaleY(1);
 
   z-index: 3;
+}
 
-   .title::after {
+.title::after {
   content: "HABITAR";
 
   position: absolute;
-
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0) 35%,
-      rgba(255,255,255,1) 48%,
-      rgba(244,226,198,0.95) 52%,
-      rgba(255,255,255,0) 65%,
-      rgba(255,255,255,0) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 35%,
+    rgba(255,255,255,1) 48%,
+    rgba(244,226,198,0.95) 52%,
+    rgba(255,255,255,0) 65%,
+    rgba(255,255,255,0) 100%
+  );
 
   background-size: 300% 100%;
 
-  color: transparent;
-
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 5s linear infinite;
+  animation: titleFlow 11s linear infinite;
 
   pointer-events: none;
-   }
+}
 
 /* ================================
    SUBTÍTULO
