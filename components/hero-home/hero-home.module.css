@@ -99,7 +99,7 @@
   top: 1.2vh;
   left: 5.2vw;
 
-  font-family: var(--font-classy-vogue);
+  font-family: var(--font);
 
   font-size: clamp(0.44rem, 1.2vw, 0.7rem);
   font-weight: 300;
