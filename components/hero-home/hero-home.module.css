@@ -242,7 +242,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 11s linear infinite;
+  animation: titleFlow 5s linear infinite;
 
   pointer-events: none;
 }
@@ -296,7 +296,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 11s linear infinite;
+  animation: titleFlow 5s linear infinite;
 
   pointer-events: none;
 }
