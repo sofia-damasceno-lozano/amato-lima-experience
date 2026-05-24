@@ -205,7 +205,7 @@
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(2.4rem, 10vw, 3.8rem);
+  font-size: clamp(2.0rem, 9vw, 3.0rem);
   font-weight: 300;
 
   line-height: 0.8;
