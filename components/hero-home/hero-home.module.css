@@ -152,14 +152,11 @@
     #3d2704 100%
   );
 
-  background-size: 220% 100%;
-  background-position: 120% 0;
-
   box-shadow:
-    0 0 2px rgba(255, 237, 207, 0.22),
-    0 1px 4px rgba(61, 39, 4, 0.18);
+    0 0 2px rgba(255, 237, 207, 0.18),
+    0 1px 4px rgba(61, 39, 4, 0.16);
 
-  animation: menuGlow 5s linear infinite;
+  opacity: 0.92;
 }
 /* ================================
    CONTENT
@@ -468,14 +465,5 @@
 
   100% {
     background-position: -200% 0;
-  }
-}
-@keyframes menuGlow {
-  0% {
-    background-position: 120% 0;
-  }
-
-  100% {
-    background-position: -120% 0;
   }
 }
