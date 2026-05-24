@@ -248,7 +248,7 @@
   font-family: var(--font-classy-vogue);
 
   font-size: clamp(2rem, 9vw, 3rem);
-  font-weight: 300;
+  font-weight: 100;
 
   line-height: 0.8;
   letter-spacing: 0.02em;
@@ -283,7 +283,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 8s linear infinite;
+  animation: titleFlow 10s linear infinite;
 
   pointer-events: none;
 }
@@ -303,7 +303,7 @@
   font-family: var(--font-classy-vogue);
 
   font-size: clamp(4.8rem, 18.8vw, 7.4rem);
-  font-weight: 400;
+  font-weight: 100;
 
   line-height: 0.82;
   letter-spacing: 0.045em;
@@ -338,7 +338,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: titleFlow 8s linear infinite;
+  animation: titleFlow 10s linear infinite;
 
   pointer-events: none;
 }
