@@ -177,25 +177,52 @@
   left: 50%;
 
   font-family: var(--font-westwood);
-
   font-size: clamp(7.2rem, 34vw, 10rem);
   font-weight: 300;
 
   line-height: 0.8;
   letter-spacing: -0.035em;
 
-  color: rgba(247, 236, 220, 0.92);
+  color: rgba(255, 255, 255, 0.78);
 
-  transform: translateX(-50%) scaleX(1.02) scaleY(1);
+  transform: translateX(-50%) scaleX(1.02);
 
   white-space: nowrap;
 
   z-index: 4;
 
- animation:
-  scriptLightPass 7s ease-in-out infinite,
-  scriptBreath 5s ease-in-out infinite;
-   
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 1) 45%,
+      rgba(244, 226, 198, 0.75) 60%,
+      rgba(255, 255, 255, 0.55) 100%
+    );
+
+  background-size: 220% 100%;
+  background-position: -120% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: scriptLightPass 7s ease-in-out infinite;
+}
+
+@keyframes scriptLightPass {
+  0% {
+    background-position: -120% 0;
+  }
+
+  45% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: 120% 0;
+  }
 }
 
 /* ================================
@@ -369,17 +396,4 @@
   text-transform: uppercase;
    }
 
-/* ================================
-   EFEITOS
-================================ */
 
-@keyframes scriptBreath {
-  0%,
-  100% {
-    opacity: 0.88;
-  }
-
-  50% {
-    opacity: 0.96;
-  }
-}
