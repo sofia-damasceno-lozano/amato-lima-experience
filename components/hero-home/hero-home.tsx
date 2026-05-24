@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-
 import styles from "./hero-home.module.css";
 
 export default function HeroHome() {
   return (
     <section className={styles.hero}>
-      {/* background */}
       <Image
         src="/amato-lima-experience/hero-home/wood.jpg"
         alt="Background"
@@ -16,10 +14,8 @@ export default function HeroHome() {
         className={styles.background}
       />
 
-      {/* overlay */}
       <div className={styles.overlay} />
 
-      {/* topo */}
       <header className={styles.header}>
         <div className={styles.logoWrapper}>
           <Image
@@ -37,31 +33,21 @@ export default function HeroHome() {
         </button>
       </header>
 
-      {/* conteúdo */}
       <div className={styles.content}>
         <div className={styles.titleWrapper}>
           <span className={styles.de}>DE</span>
-
           <h1 className={styles.title}>HABITAR</h1>
-
           <span className={styles.script}>Arte</span>
         </div>
 
         <p className={styles.subtitle}>
-          ATIVOS EXCLUSIVOS.
+          ATIVOS EXCLUSIVOS
           <br />
-          LEGADO QUE PERMANECE.
+          LEGADO QUE PERMANECE
         </p>
 
-        {/* moldura */}
         <div className={styles.videoFrame}>
-          <video
-            className={styles.video}
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
+          <video className={styles.video} autoPlay muted loop playsInline>
             <source
               src="/amato-lima-experience/hero-home/video.mp4"
               type="video/mp4"
@@ -71,7 +57,6 @@ export default function HeroHome() {
 
         <div className={styles.exploreWrapper}>
           <div className={styles.line} />
-
           <span className={styles.explore}>EXPLORAR</span>
         </div>
       </div>
