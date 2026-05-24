@@ -184,13 +184,25 @@
   line-height: 0.8;
   letter-spacing: -0.035em;
 
-  color: rgba(255, 255, 255, 0.94);
+  background:
+  linear-gradient(
+    110deg,
+    rgba(214, 198, 176, 0.72) 0%,
+    rgba(255, 248, 238, 0.98) 42%,
+    rgba(248, 233, 210, 0.88) 58%,
+    rgba(214, 198, 176, 0.72) 100%
+  );
 
   transform: translateX(-50%) scaleX(1.02) scaleY(1);
 
   white-space: nowrap;
 
   z-index: 4;
+
+ animation:
+  scriptLightPass 7s ease-in-out infinite,
+  scriptBreath 5s ease-in-out infinite;
+   
 }
 
 /* ================================
@@ -368,12 +380,6 @@
    EFEITOS
 ================================ */
 
-.script {
-  animation:
-    scriptLightPass 7s ease-in-out infinite,
-    scriptBreath 5s ease-in-out infinite;
-}
-
 @keyframes scriptBreath {
   0%,
   100% {
@@ -381,6 +387,6 @@
   }
 
   50% {
-    opacity: 1;
+    opacity: 0.96;
   }
 }
