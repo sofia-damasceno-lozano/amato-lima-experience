@@ -106,9 +106,14 @@
 
   letter-spacing: 0.42em;
 
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(124, 92, 58, 0.72);
 
   text-transform: uppercase;
+
+  text-shadow:
+    0 0 1px rgba(255, 244, 224, 0.32),
+    0 0 8px rgba(186, 146, 96, 0.16),
+    0 2px 6px rgba(60, 35, 15, 0.14);
 }
 
 /* ================================
