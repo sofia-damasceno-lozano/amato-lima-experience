@@ -198,11 +198,11 @@
 .script {
   position: absolute;
 
-  top: -7.2vh;
+  top: -7.8vh;
   left: 50%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(7.2rem, 34vw, 10rem);
+  font-size: clamp(7.6rem, 34.6vw, 10.6rem);
   font-weight: 100;
 
   line-height: 0.8;
