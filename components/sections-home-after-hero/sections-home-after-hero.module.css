@@ -1,254 +1,167 @@
 .section {
   position: relative;
-
   width: 100%;
-  height: 100svh;
-
+  min-height: 100svh;
   overflow: hidden;
-
-  background: #d8c8b4;
+  background: #b79d80;
 }
 
-/* ================================
-   FUNDO ORGÂNICO
-================================ */
-
-.background {
+.bg {
   position: absolute;
   inset: 0;
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(255,248,236,0.9),
-      transparent 42%
-    ),
-
-    radial-gradient(
-      circle at bottom right,
-      rgba(110,78,48,0.12),
-      transparent 38%
-    ),
-
-    linear-gradient(
-      135deg,
-      #ece2d4 0%,
-      #d7c2ab 40%,
-      #b18d68 100%
-    );
-
-  filter:
-    contrast(102%)
-    saturate(92%);
+    radial-gradient(circle at 50% 8%, rgba(255,250,236,0.55), transparent 34%),
+    radial-gradient(circle at 18% 18%, rgba(255,237,207,0.22), transparent 36%),
+    radial-gradient(circle at 78% 72%, rgba(61,39,4,0.18), transparent 42%),
+    linear-gradient(180deg, #d8c2a6 0%, #b39675 54%, #8d6f55 100%);
 
   z-index: 1;
 }
 
-/* ================================
-   OVERLAY
-================================ */
-
-.overlay {
+.planWrap {
   position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.12),
-      rgba(0,0,0,0.08)
-    );
-
-  z-index: 2;
-}
-
-/* ================================
-   PLANTA
-================================ */
-
-.floorplan {
-  position: absolute;
-
-  top: 50%;
+  top: 4vh;
   left: 50%;
 
-  width: 72vw;
-  height: 72vw;
-
-  max-width: 420px;
-  max-height: 420px;
+  width: 96vw;
+  max-width: 760px;
 
   transform:
-    translate(-50%, -50%)
-    rotate(-8deg);
+    translateX(-50%)
+    perspective(1100px)
+    rotateX(52deg)
+    rotateZ(-4deg);
 
-  opacity: 0.28;
+  transform-style: preserve-3d;
 
   z-index: 3;
 }
 
-.floorplan div {
+.plan {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+
+  filter:
+    drop-shadow(0 22px 34px rgba(61,39,4,0.22))
+    drop-shadow(0 0 18px rgba(255,237,207,0.26));
+}
+
+.wall,
+.thin {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+
+  animation: drawPlan 4.8s ease forwards;
+}
+
+.wall {
+  stroke: rgba(255,250,236,0.94);
+  stroke-width: 6;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,237,207,0.95))
+    drop-shadow(0 0 20px rgba(255,237,207,0.34));
+}
+
+.thin {
+  stroke: rgba(255,250,236,0.58);
+  stroke-width: 2;
+  animation-delay: 1.1s;
+}
+
+.dot {
+  fill: rgba(255,237,207,0.95);
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(255,237,207,0.9));
+  animation: dotIn 0.8s ease forwards;
+  animation-delay: 4.2s;
+}
+
+.copy {
   position: absolute;
+  left: 50%;
+  bottom: 7vh;
+  width: 92vw;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,245,228,0.9),
-      rgba(120,85,52,0.8)
-    );
+  transform: translateX(-50%);
 
-  box-shadow:
-    0 0 12px rgba(255,240,220,0.2);
-
-  animation:
-    drawLine 4s ease forwards;
-}
-
-/* linhas */
-
-.line1 {
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  animation-delay: 0.2s;
-}
-
-.line2 {
-  top: 0;
-  right: 0;
-
-  width: 1px;
-  height: 100%;
-
-  animation-delay: 0.6s;
-}
-
-.line3 {
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  animation-delay: 1s;
-}
-
-.line4 {
-  top: 0;
-  left: 0;
-
-  width: 1px;
-  height: 100%;
-
-  animation-delay: 1.4s;
-}
-
-.line5 {
-  top: 28%;
-  left: 18%;
-
-  width: 54%;
-  height: 1px;
-
-  animation-delay: 1.8s;
-}
-
-.line6 {
-  top: 28%;
-  left: 18%;
-
-  width: 1px;
-  height: 42%;
-
-  animation-delay: 2.2s;
-}
-
-.line7 {
-  top: 52%;
-  left: 18%;
-
-  width: 52%;
-  height: 1px;
-
-  animation-delay: 2.6s;
-}
-
-.line8 {
-  top: 28%;
-  left: 70%;
-
-  width: 1px;
-  height: 24%;
-
-  animation-delay: 3s;
-}
-
-/* ================================
-   TEXTO
-================================ */
-
-.content {
-  position: relative;
+  text-align: center;
 
   z-index: 5;
 
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
+  opacity: 0;
+  animation: copyIn 1.6s ease forwards;
+  animation-delay: 4.3s;
 }
 
-.label {
-  font-family: var(--font-classy-vogue);
-
-  font-size: 0.7rem;
-
-  letter-spacing: 0.45em;
-
-  color: rgba(70, 42, 18, 0.72);
+.copy span {
+  display: block;
 
   margin-bottom: 2.4vh;
+
+  font-family: var(--font-classy-vogue);
+  font-size: clamp(0.58rem, 1.4vw, 0.82rem);
+  font-weight: 300;
+
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+
+  color: rgba(255,250,236,0.78);
 }
 
-.title {
+.copy h2 {
   margin: 0;
 
   font-family: var(--font-classy-vogue);
+  font-size: clamp(2.9rem, 11.5vw, 6.5rem);
+  font-weight: 300;
 
-  font-size: clamp(2.6rem, 8vw, 5rem);
-  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 
-  line-height: 0.95;
-  letter-spacing: 0.02em;
-
-  color: rgba(255,248,236,0.95);
+  color: rgba(255,250,236,0.93);
 
   text-shadow:
-    0 6px 24px rgba(60,35,12,0.16);
+    0 8px 24px rgba(61,39,4,0.22);
 }
 
-/* ================================
-   ANIMAÇÃO
-================================ */
+.copy i {
+  display: block;
 
-@keyframes drawLine {
+  width: 3.8rem;
+  height: 1px;
+
+  margin: 4.4vh auto 0;
+
+  background: rgba(255,237,207,0.52);
+}
+
+@keyframes drawPlan {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dotIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes copyIn {
   from {
     opacity: 0;
-    transform: scaleX(0);
-    transform-origin: left;
+    transform: translateX(-50%) translateY(3vh);
   }
 
   to {
     opacity: 1;
-    transform: scaleX(1);
-    transform-origin: left;
+    transform: translateX(-50%) translateY(0);
   }
 }
