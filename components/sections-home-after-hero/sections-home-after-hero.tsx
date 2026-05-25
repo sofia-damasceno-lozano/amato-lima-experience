@@ -15,128 +15,115 @@ export default function SectionsHomeAfterHero() {
         >
           {/* GRID */}
           <g className={styles.grid}>
-            <path d="M150 120 H810" />
-            <path d="M150 170 H810" />
-            <path d="M150 220 H810" />
-            <path d="M150 270 H810" />
-            <path d="M150 320 H810" />
-            <path d="M150 370 H810" />
-            <path d="M150 420 H810" />
-            <path d="M150 470 H810" />
-            <path d="M150 520 H810" />
-            <path d="M150 570 H810" />
-            <path d="M150 620 H810" />
-            <path d="M150 670 H810" />
-            <path d="M150 720 H810" />
-
-            <path d="M170 100 V780" />
-            <path d="M220 100 V780" />
-            <path d="M270 100 V780" />
-            <path d="M320 100 V780" />
-            <path d="M370 100 V780" />
-            <path d="M420 100 V780" />
-            <path d="M470 100 V780" />
-            <path d="M520 100 V780" />
-            <path d="M570 100 V780" />
-            <path d="M620 100 V780" />
-            <path d="M670 100 V780" />
-            <path d="M720 100 V780" />
-            <path d="M770 100 V780" />
+            {/* Linhas horizontais */}
+            {Array.from({ length: 13 }).map((_, i) => (
+              <path key={`h-${i}`} d={`M150 ${120 + i * 50} H810`} />
+            ))}
+            {/* Linhas verticais */}
+            {Array.from({ length: 13 }).map((_, i) => (
+              <path key={`v-${i}`} d={`M${170 + i * 50} 100 V780`} />
+            ))}
           </g>
 
-          {/* PAREDES */}
-          <path className={styles.wall} d="M120 90 H640 V210 H825 V715 H575 V785 H120 Z" />
-          <path className={styles.wall} d="M120 405 H575 V785" />
-          <path className={styles.wall} d="M575 210 V715" />
+          {/* PAREDES (Simulando espessura com linhas paralelas) */}
+          <g className={styles.wallGroup}>
+            {/* Parede Externa */}
+            <path className={styles.wall} d="M120 90 H640 V210 H825 V715 H575 V785 H120 Z" />
+            <path className={styles.wall} d="M120 405 H575 V785" />
+            <path className={styles.wall} d="M575 210 V715" />
+            {/* Paredes Internas */}
+            <path className={styles.wall} d="M120 555 H575" />
+            <path className={styles.wall} d="M345 90 V405" />
+            <path className={styles.wall} d="M345 250 H640" />
+            <path className={styles.wall} d="M575 415 H825" />
+            <path className={styles.wall} d="M710 415 V715" />
+            <path className={styles.wall} d="M575 590 H825" />
+          </g>
 
-          <path className={styles.wall} d="M120 555 H575" />
-          <path className={styles.wall} d="M345 90 V405" />
-          <path className={styles.wall} d="M345 250 H640" />
-          <path className={styles.wall} d="M575 415 H825" />
-          <path className={styles.wall} d="M710 415 V715" />
-          <path className={styles.wall} d="M575 590 H825" />
-
-          {/* LINHAS INTERNAS */}
+          {/* LINHAS INTERNAS E GUIAS */}
           <path className={styles.thin} d="M145 115 H615 V190" />
           <path className={styles.thin} d="M150 430 H545" />
           <path className={styles.thin} d="M150 580 H545" />
-
           <path className={styles.thin} d="M600 235 H800 V390 H600 Z" />
           <path className={styles.thin} d="M735 435 H805 V565 H735 Z" />
           <path className={styles.thin} d="M735 610 H805 V695 H735 Z" />
 
-          {/* MÓVEIS */}
-          <rect className={styles.furniture} x="395" y="130" width="185" height="82" rx="8" />
+          {/* MÓVEIS DETALHADOS */}
+          <g className={styles.furniture}>
+            {/* Cama Casal + Travesseiros */}
+            <rect x="395" y="130" width="185" height="140" rx="4" />
+            <rect x="410" y="145" width="60" height="35" rx="3" />
+            <rect x="500" y="145" width="60" height="35" rx="3" />
+            <path d="M395 195 H580" /> {/* Linha do edredom */}
 
-          <rect className={styles.furniture} x="165" y="445" width="165" height="92" rx="8" />
+            {/* Sofá L com almofadas */}
+            <path d="M165 445 H380 V580 H320 V495 H165 Z" strokeLinejoin="round" />
+            <rect x="230" y="520" width="60" height="35" rx="2" /> {/* Mesa de centro */}
 
-          <rect className={styles.furniture} x="745" y="455" width="72" height="92" rx="7" />
+            {/* Mesa de Jantar (Ilha) + Cadeiras */}
+            <rect x="610" y="270" width="58" height="270" rx="4" />
+            {/* Cadeiras Esquerda */}
+            <rect x="590" y="300" width="15" height="35" rx="2" />
+            <rect x="590" y="370" width="15" height="35" rx="2" />
+            <rect x="590" y="440" width="15" height="35" rx="2" />
+            {/* Cadeiras Direita */}
+            <rect x="673" y="300" width="15" height="35" rx="2" />
+            <rect x="673" y="370" width="15" height="35" rx="2" />
+            <rect x="673" y="440" width="15" height="35" rx="2" />
 
-          <rect className={styles.furniture} x="180" y="655" width="245" height="52" rx="8" />
+            {/* Balcão TV */}
+            <rect x="180" y="655" width="245" height="52" rx="4" />
 
-          <rect className={styles.furniture} x="275" y="610" width="92" height="42" rx="5" />
-
-          <circle className={styles.furniture} cx="170" cy="610" r="28" />
-          <circle className={styles.furniture} cx="170" cy="675" r="22" />
-
-          <rect className={styles.furniture} x="610" y="270" width="58" height="270" rx="4" />
-
-          <rect className={styles.furniture} x="680" y="470" width="92" height="170" rx="5" />
+            {/* Planta detalhada (Sobreposição de formas) */}
+            <g transform="translate(170, 610)">
+              <circle cx="0" cy="0" r="18" />
+              <path d="M0 -22 L4 -10 L16 -16 L8 -4 L22 0 L8 4 L16 16 L4 10 L0 22 L-4 10 L-16 16 L-8 4 L-22 0 L-8 -4 L-16 -16 L-4 -10 Z" />
+            </g>
+          </g>
 
           {/* COOKTOP */}
-          <circle className={styles.detail} cx="640" cy="320" r="10" />
-          <circle className={styles.detail} cx="640" cy="350" r="10" />
-          <circle className={styles.detail} cx="640" cy="380" r="10" />
-          <circle className={styles.detail} cx="640" cy="410" r="10" />
+          <g className={styles.detail}>
+            <circle cx="640" cy="320" r="8" />
+            <circle cx="640" cy="350" r="8" />
+            <circle cx="640" cy="380" r="8" />
+            <circle cx="640" cy="410" r="8" />
+          </g>
 
-          {/* BANHEIRO */}
-          <rect className={styles.furniture} x="155" y="135" width="74" height="96" rx="4" />
-
-          <circle className={styles.detail} cx="192" cy="190" r="17" />
-
-          <rect className={styles.detail} x="245" y="135" width="58" height="42" rx="4" />
-
-          {/* LAVABO */}
-          <rect className={styles.furniture} x="735" y="615" width="78" height="78" rx="4" />
-
-          <circle className={styles.detail} cx="774" cy="655" r="16" />
+          {/* BANHEIROS */}
+          <g className={styles.furniture}>
+            {/* Box e Pia */}
+            <rect x="155" y="135" width="74" height="96" rx="4" />
+            <circle cx="192" cy="190" r="14" />
+            <rect x="245" y="135" width="58" height="42" rx="4" />
+            {/* Lavabo */}
+            <rect x="735" y="615" width="78" height="78" rx="4" />
+            <circle cx="774" cy="655" r="14" />
+          </g>
 
           {/* PORTAS */}
-          <path className={styles.door} d="M575 365 Q650 365 650 440" />
-          <path className={styles.door} d="M345 360 Q420 360 420 405" />
-          <path className={styles.door} d="M575 715 Q640 715 640 780" />
-          <path className={styles.door} d="M710 590 Q770 590 770 650" />
-          <path className={styles.door} d="M120 555 Q185 555 185 620" />
+          <g className={styles.door}>
+            <path d="M575 365 Q650 365 650 440" />
+            <path d="M345 360 Q420 360 420 405" />
+            <path d="M575 715 Q640 715 640 780" />
+            <path d="M710 590 Q770 590 770 650" />
+            <path d="M120 555 Q185 555 185 620" />
+          </g>
 
-          {/* LINHAS AUXILIARES */}
-          <path className={styles.dashed} d="M120 725 H575" />
-          <path className={styles.dashed} d="M575 210 H825" />
-          <path className={styles.dashed} d="M100 90 H860" />
-          <path className={styles.dashed} d="M90 785 H610" />
-
-          {/* PONTOS */}
-          <circle className={styles.dot} cx="120" cy="90" r="4" />
-          <circle className={styles.dot} cx="640" cy="90" r="4" />
-          <circle className={styles.dot} cx="825" cy="715" r="4" />
-          <circle className={styles.dot} cx="120" cy="785" r="4" />
-          <circle className={styles.dot} cx="575" cy="415" r="3.5" />
-          <circle className={styles.dot} cx="575" cy="715" r="3.5" />
+          {/* PONTOS DE DESTAQUE */}
+          <circle className={styles.dot} cx="120" cy="90" r="5" />
+          <circle className={styles.dot} cx="640" cy="90" r="5" />
+          <circle className={styles.dot} cx="825" cy="715" r="5" />
+          <circle className={styles.dot} cx="120" cy="785" r="5" />
         </svg>
       </div>
 
       <div className={styles.copy}>
         <span>SELEÇÃO E ENGENHARIA</span>
-
         <h2>
-          Projetos que
-          <br />
-          transformam espaços
-          <br />
-          em experiências.
+          Projetos que<br />transformam espaços<br />em experiências
         </h2>
-
         <i />
       </div>
     </section>
   );
-            }
+}
