@@ -1,205 +1,254 @@
-.wrapper {
-  width: 100%;
-}
-
-/* ================================
-   SEÇÃO 01 - BLUEPRINT
-================================ */
-
-.blueprintSection {
+.section {
   position: relative;
 
   width: 100%;
-  min-height: 100svh;
+  height: 100svh;
 
   overflow: hidden;
 
-  background: #e8ddd0;
+  background: #d8c8b4;
 }
 
-/* fundo inspirado em madeira, sem textura literal */
-.organicBackground {
+/* ================================
+   FUNDO ORGÂNICO
+================================ */
+
+.background {
   position: absolute;
   inset: 0;
 
   background:
     radial-gradient(
-      circle at 15% 18%,
-      rgba(255,250,242,0.58),
-      transparent 28%
+      circle at top left,
+      rgba(255,248,236,0.9),
+      transparent 42%
     ),
 
     radial-gradient(
-      circle at 82% 70%,
-      rgba(131,107,81,0.22),
+      circle at bottom right,
+      rgba(110,78,48,0.12),
       transparent 38%
-    ),
-
-    radial-gradient(
-      circle at 30% 92%,
-      rgba(214,177,125,0.20),
-      transparent 34%
     ),
 
     linear-gradient(
       135deg,
-      #f7f0e7 0%,
-      #e8ddd0 24%,
-      #d6c2ad 52%,
-      #b99874 76%,
-      #765946 100%
+      #ece2d4 0%,
+      #d7c2ab 40%,
+      #b18d68 100%
     );
+
+  filter:
+    contrast(102%)
+    saturate(92%);
 
   z-index: 1;
 }
 
-/* camada cinematográfica */
-.cinematicOverlay {
+/* ================================
+   OVERLAY
+================================ */
+
+.overlay {
   position: absolute;
   inset: 0;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(255,255,255,0.12) 0%,
-      rgba(0,0,0,0.02) 36%,
-      rgba(0,0,0,0.16) 100%
+      rgba(255,255,255,0.12),
+      rgba(0,0,0,0.08)
     );
 
   z-index: 2;
 }
 
-/* bloco de texto */
-.copyBlock {
+/* ================================
+   PLANTA
+================================ */
+
+.floorplan {
   position: absolute;
 
-  top: 12vh;
-  left: 7vw;
+  top: 50%;
+  left: 50%;
 
-  max-width: 72vw;
+  width: 72vw;
+  height: 72vw;
+
+  max-width: 420px;
+  max-height: 420px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-8deg);
+
+  opacity: 0.28;
+
+  z-index: 3;
+}
+
+.floorplan div {
+  position: absolute;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,245,228,0.9),
+      rgba(120,85,52,0.8)
+    );
+
+  box-shadow:
+    0 0 12px rgba(255,240,220,0.2);
+
+  animation:
+    drawLine 4s ease forwards;
+}
+
+/* linhas */
+
+.line1 {
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  animation-delay: 0.2s;
+}
+
+.line2 {
+  top: 0;
+  right: 0;
+
+  width: 1px;
+  height: 100%;
+
+  animation-delay: 0.6s;
+}
+
+.line3 {
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  animation-delay: 1s;
+}
+
+.line4 {
+  top: 0;
+  left: 0;
+
+  width: 1px;
+  height: 100%;
+
+  animation-delay: 1.4s;
+}
+
+.line5 {
+  top: 28%;
+  left: 18%;
+
+  width: 54%;
+  height: 1px;
+
+  animation-delay: 1.8s;
+}
+
+.line6 {
+  top: 28%;
+  left: 18%;
+
+  width: 1px;
+  height: 42%;
+
+  animation-delay: 2.2s;
+}
+
+.line7 {
+  top: 52%;
+  left: 18%;
+
+  width: 52%;
+  height: 1px;
+
+  animation-delay: 2.6s;
+}
+
+.line8 {
+  top: 28%;
+  left: 70%;
+
+  width: 1px;
+  height: 24%;
+
+  animation-delay: 3s;
+}
+
+/* ================================
+   TEXTO
+================================ */
+
+.content {
+  position: relative;
 
   z-index: 5;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
-.copyBlock span {
-  display: block;
+.label {
+  font-family: var(--font-classy-vogue);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.45em;
+
+  color: rgba(70, 42, 18, 0.72);
 
   margin-bottom: 2.4vh;
-
-  font-family: var(--font-classy-vogue);
-  font-size: 0.58rem;
-  font-weight: 300;
-
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-
-  color: rgba(61,39,4,0.52);
 }
 
-.copyBlock h2 {
+.title {
   margin: 0;
 
   font-family: var(--font-classy-vogue);
-  font-size: clamp(3.2rem, 13vw, 7rem);
-  font-weight: 300;
 
-  line-height: 0.88;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  font-weight: 200;
 
-  color: rgba(255,250,236,0.88);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+
+  color: rgba(255,248,236,0.95);
 
   text-shadow:
-    0 2px 10px rgba(61,39,4,0.18);
+    0 6px 24px rgba(60,35,12,0.16);
 }
 
-.copyBlock p {
-  max-width: 420px;
+/* ================================
+   ANIMAÇÃO
+================================ */
 
-  margin: 3vh 0 0;
+@keyframes drawLine {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
 
-  font-family: var(--font-classy-vogue);
-  font-size: clamp(0.9rem, 2.6vw, 1.14rem);
-  font-weight: 300;
-
-  line-height: 1.55;
-
-  color: rgba(61,39,4,0.64);
-}
-
-/* palco 3D */
-.blueprintStage {
-  position: absolute;
-
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform:
-    perspective(1200px)
-    rotateX(58deg)
-    rotateZ(-8deg)
-    translateY(10vh);
-
-  transform-style: preserve-3d;
-
-  z-index: 4;
-}
-
-/* brilho sob a planta */
-.planGlow {
-  position: absolute;
-
-  width: 78vw;
-  height: 44vh;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(255,237,207,0.26) 0%,
-      rgba(214,177,125,0.12) 32%,
-      rgba(61,39,4,0) 72%
-    );
-
-  filter: blur(10px);
-
-  opacity: 0;
-
-  z-index: 1;
-}
-
-.blueprintSvg {
-  position: relative;
-
-  width: min(92vw, 760px);
-  height: auto;
-
-  overflow: visible;
-
-  z-index: 2;
-}
-
-.planLine,
-.planLineThin {
-  fill: none;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  filter:
-    drop-shadow(0 0 8px rgba(255,237,207,0.20))
-    drop-shadow(0 6px 16px rgba(61,39,4,0.12));
-}
-
-.planLine {
-  stroke: rgba(255,237,207,0.84);
-  stroke-width: 4;
-}
-
-.planLineThin {
-  stroke: rgba(255,250,236,0.58);
-  stroke-width: 2;
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
