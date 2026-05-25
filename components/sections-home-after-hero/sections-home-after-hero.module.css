@@ -1,228 +1,159 @@
 .section {
   position: relative;
-
   width: 100%;
   min-height: 100svh;
-
   overflow: hidden;
-
-  background: #b79d80;
+  /* 1. MUDANÇA CRUCIAL: Fundo escuro para destacar o brilho das linhas */
+  background: #0a0705; 
 }
 
 .bg {
   position: absolute;
   inset: 0;
-
-  background:
-    radial-gradient(circle at 50% 8%, rgba(255,250,236,0.55), transparent 34%),
-    radial-gradient(circle at 18% 18%, rgba(255,237,207,0.22), transparent 36%),
-    radial-gradient(circle at 78% 72%, rgba(61,39,4,0.18), transparent 42%),
-    linear-gradient(180deg, #d8c2a6 0%, #b39675 54%, #8d6f55 100%);
-
+  /* Um brilho muito sutil no centro para não deixar o fundo 100% plano */
+  background: radial-gradient(circle at 50% 50%, rgba(255, 160, 80, 0.08), transparent 70%);
   z-index: 1;
 }
 
 .planWrap {
   position: absolute;
-
-  top: -1vh;
+  top: -5vh;
   left: 50%;
-
   width: 118vw;
-  max-width: 860px;
-
-  transform:
-    translateX(-50%)
-    perspective(1200px)
-    rotateX(54deg)
-    rotateZ(-5deg);
-
+  max-width: 960px;
+  /* 2. MUDANÇA CRUCIAL: Ajuste da rotação para imitar a perspectiva da foto */
+  transform: translateX(-50%) perspective(1200px) rotateX(58deg) rotateZ(-32deg) scale(1.1);
   transform-style: preserve-3d;
-
   z-index: 3;
 }
 
 .plan {
   width: 100%;
   height: auto;
-
   overflow: visible;
-
-  filter:
-    drop-shadow(0 22px 34px rgba(61,39,4,0.22))
-    drop-shadow(0 0 18px rgba(255,237,207,0.26));
+  /* Brilho geral do container (Opcional, mas ajuda no efeito global) */
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
 }
 
 /* GRID */
-
 .grid path {
   fill: none;
-
-  stroke: rgba(255,250,236,0.13);
-  stroke-width: 0.8;
-
+  stroke: rgba(255, 230, 180, 0.08); /* Linhas bem sutis */
+  stroke-width: 1;
   stroke-dasharray: 900;
   stroke-dashoffset: 900;
-
   animation: drawPlan 4.8s ease forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
-/* ELEMENTOS */
-
-.wall,
-.thin,
-.furniture,
-.detail,
-.door,
-.dashed {
+/* ELEMENTOS GERAIS */
+.wall, .thin, .furniture rect, .furniture circle, .furniture path, .detail circle, .door {
   fill: none;
-
   stroke-linecap: round;
   stroke-linejoin: round;
-
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
-
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
   animation: drawPlan 4.8s ease forwards;
 }
 
+/* PAREDES: Efeito de Neon Intenso */
 .wall {
-  stroke: rgba(255,250,236,0.88);
-  stroke-width: 4.2;
-
-  filter:
-    drop-shadow(0 0 5px rgba(255,237,207,0.7))
-    drop-shadow(0 0 14px rgba(255,237,207,0.24));
+  /* Cor sólida bem clara para o núcleo da linha */
+  stroke: #ffecd2; 
+  stroke-width: 2.5; 
+  /* 3. MUDANÇA CRUCIAL: Múltiplos drop-shadows para criar o efeito Neon/Bloom */
+  filter: 
+    drop-shadow(0 0 4px rgba(255, 170, 80, 0.9))
+    drop-shadow(0 0 12px rgba(255, 120, 40, 0.6))
+    drop-shadow(0 0 25px rgba(255, 100, 0, 0.3));
 }
 
 .thin {
-  stroke: rgba(255,250,236,0.5);
-  stroke-width: 1.4;
-
-  animation-delay: 0.8s;
-}
-
-.furniture {
-  stroke: rgba(255,250,236,0.46);
-  stroke-width: 1.5;
-
-  animation-delay: 1.4s;
-}
-
-.detail {
-  stroke: rgba(255,250,236,0.48);
+  stroke: rgba(255, 220, 160, 0.4);
   stroke-width: 1.2;
+  animation-delay: 0.6s;
+}
 
-  animation-delay: 1.8s;
+.furniture rect, .furniture circle, .furniture path {
+  stroke: rgba(255, 210, 150, 0.6);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 5px rgba(255, 150, 50, 0.4));
+  animation-delay: 1.2s;
+}
+
+.detail circle {
+  stroke: rgba(255, 200, 120, 0.8);
+  stroke-width: 1;
+  animation-delay: 1.6s;
 }
 
 .door {
-  stroke: rgba(255,250,236,0.58);
-  stroke-width: 1.3;
-
+  stroke: rgba(255, 200, 120, 0.5);
+  stroke-width: 1.5;
   stroke-dasharray: 10 8;
-
-  animation-delay: 2s;
-}
-
-.dashed {
-  stroke: rgba(255,250,236,0.26);
-  stroke-width: 1;
-
-  stroke-dasharray: 8 10;
-
-  animation-delay: 2.4s;
+  animation-delay: 1.8s;
 }
 
 .dot {
-  fill: rgba(255,237,207,0.95);
-
+  fill: #fff3d4;
   opacity: 0;
-
-  filter:
-    drop-shadow(0 0 10px rgba(255,237,207,0.9));
-
+  filter: 
+    drop-shadow(0 0 8px #ffaa40)
+    drop-shadow(0 0 15px rgba(255, 150, 50, 0.8));
   animation: dotIn 0.8s ease forwards;
-  animation-delay: 4.2s;
+  animation-delay: 3.5s;
 }
 
-/* TEXTO */
-
+/* TEXTO FICA IGUAL, SÓ AJUSTEI O SHADOW PARA O FUNDO ESCURO */
 .copy {
   position: absolute;
-
   left: 50%;
   bottom: 7vh;
-
   width: 92vw;
-
   transform: translateX(-50%);
-
   text-align: center;
-
   z-index: 5;
-
   opacity: 0;
-
   animation: copyIn 1.6s ease forwards;
-  animation-delay: 4.3s;
+  animation-delay: 3.8s;
 }
 
 .copy span {
   display: block;
-
   margin-bottom: 2.4vh;
-
   font-family: var(--font-classy-vogue);
   font-size: clamp(0.58rem, 1.4vw, 0.82rem);
   font-weight: 300;
-
   letter-spacing: 0.48em;
   text-transform: uppercase;
-
-  color: rgba(255,250,236,0.78);
+  color: rgba(255, 220, 180, 0.7);
 }
 
 .copy h2 {
   margin: 0;
-
   font-family: var(--font-classy-vogue);
   font-size: clamp(2.9rem, 11.5vw, 6.5rem);
   font-weight: 300;
-
   line-height: 0.96;
   letter-spacing: -0.025em;
-
-  color: rgba(255,250,236,0.93);
-
-  text-shadow:
-    0 8px 24px rgba(61,39,4,0.22);
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .copy i {
   display: block;
-
   width: 3.8rem;
   height: 1px;
-
   margin: 4.4vh auto 0;
-
-  background: rgba(255,237,207,0.52);
+  background: rgba(255, 200, 120, 0.5);
 }
 
-/* ANIMAÇÕES */
-
 @keyframes drawPlan {
-  to {
-    stroke-dashoffset: 0;
-  }
+  to { stroke-dashoffset: 0; }
 }
 
 @keyframes dotIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 @keyframes copyIn {
@@ -230,7 +161,6 @@
     opacity: 0;
     transform: translateX(-50%) translateY(3vh);
   }
-
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
