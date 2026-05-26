@@ -194,17 +194,17 @@
 .script {
   position: absolute;
 
-  top: -7.8vh;
+  top: 1vh;
   left: 50%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(8rem, 35vw, 11rem);
+  font-size: clamp(9rem, 36vw, 12rem);
   font-weight: 100;
 
   line-height: 0.8;
   letter-spacing: -0.035em;
 
-  transform: translateX(-50%) scaleX(1.02);
+  transform: translateX(-50%) scaleX(1.02) translateY(12vh);
 
   padding-inline: 0.18em;
   padding-block: 0.08em;
