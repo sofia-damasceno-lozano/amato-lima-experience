@@ -40,16 +40,6 @@ export default function HeroHome() {
           <span className={styles.script}>Arte</span>
         </div>
 
-
-        <div className={styles.videoFrame}>
-          <video className={styles.video} autoPlay muted loop playsInline>
-            <source
-              src="/amato-lima-experience/hero-home/video.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-
         <div className={styles.exploreWrapper}>
           <div className={styles.line} />
           <span className={styles.explore}>EXPLORAR</span>
