@@ -34,56 +34,72 @@
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
   pointer-events: none;
-
+  overflow: hidden;
   z-index: 30;
-  transition: opacity 0.35s ease;
 }
 
-.monogram {
-  width: min(92vw, 780px);
-  height: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: scale(4.8) translateY(-1vh);
-  transform-origin: center;
-}
-
-.monogramSvg {
-  width: 100%;
+.blueprint {
+  width: min(94vw, 820px);
   height: auto;
   overflow: visible;
+  transform: translateY(-1vh);
 }
 
-.monogram :global(svg) {
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.monogram :global(svg *) {
-  fill: none !important;
-
-  stroke: rgba(18, 18, 16, 0.72) !important;
-  stroke-width: 0.9 !important;
-
-  stroke-linecap: butt !important;
-  stroke-linejoin: miter !important;
-
+.blueprint :global(.draw) {
+  fill: none;
+  stroke: rgba(18, 18, 16, 0.66);
+  stroke-width: 0.7;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
   vector-effect: non-scaling-stroke;
+  opacity: 0;
+}
+
+.blueprint :global(.main) {
+  stroke: rgba(18, 18, 16, 0.88);
+  stroke-width: 1.35;
+}
+
+.blueprint :global(.frame),
+.blueprint :global(.measure) {
+  stroke: rgba(18, 18, 16, 0.55);
+  stroke-width: 0.65;
+}
+
+.blueprint :global(.construction),
+.blueprint :global(.bevel),
+.blueprint :global(.arrow) {
+  stroke: rgba(18, 18, 16, 0.45);
+  stroke-width: 0.55;
+}
+
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.62));
+}
+
+.smallText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.5));
 }
 
 @media (max-width: 768px) {
-  .monogram {
-    width: min(92vw, 620px);
-    transform: scale(4.6) translateY(-1vh);
+  .blueprint {
+    width: 118vw;
   }
 
-  .monogram :global(svg *) {
-    stroke-width: 0.85 !important;
+  .blueprint :global(.main) {
+    stroke-width: 1.25;
+  }
+
+  .blueprint :global(.draw) {
+    stroke-width: 0.62;
   }
 }
