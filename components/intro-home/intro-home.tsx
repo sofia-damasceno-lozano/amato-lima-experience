@@ -6,24 +6,21 @@ import styles from "./intro-home.module.css";
 export default function IntroHome() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const revealRef = useRef<SVGRectElement | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const svg = svgRef.current;
-    const reveal = revealRef.current;
 
-    if (!section || !svg || !reveal) return;
+    if (!section || !svg) return;
 
-    const drawItems =
-      svg.querySelectorAll<SVGGeometryElement>(".draw");
+    const paths =
+      svg.querySelectorAll<SVGPathElement>("path");
 
-    drawItems.forEach((item) => {
-      const length = item.getTotalLength();
+    paths.forEach((path) => {
+      const length = path.getTotalLength();
 
-      item.style.strokeDasharray = `${length}`;
-      item.style.strokeDashoffset = `${length}`;
-      item.style.opacity = "0";
+      path.style.strokeDasharray = `${length}`;
+      path.style.strokeDashoffset = `${length}`;
     });
 
     function updateDrawing() {
@@ -31,24 +28,19 @@ export default function IntroHome() {
 
       const progress = Math.min(
         Math.max(
-          -rect.top / (window.innerHeight * 2.4),
+          -rect.top / (window.innerHeight * 1.8),
           0
         ),
         1
       );
 
-      svg.style.setProperty(
-        "--progress",
-        `${progress}`
-      );
+      paths.forEach((path, index) => {
+        const length = path.getTotalLength();
 
-      drawItems.forEach((item, index) => {
-        const length = item.getTotalLength();
+        const start = index * 0.08;
+        const end = start + 0.35;
 
-        const start = index * 0.03;
-        const end = start + 0.45;
-
-        const itemProgress = Math.min(
+        const localProgress = Math.min(
           Math.max(
             (progress - start) / (end - start),
             0
@@ -56,23 +48,10 @@ export default function IntroHome() {
           1
         );
 
-        item.style.strokeDashoffset = `${
-          length * (1 - itemProgress)
+        path.style.strokeDashoffset = `${
+          length * (1 - localProgress)
         }`;
-
-        item.style.opacity =
-          itemProgress > 0 ? "1" : "0";
       });
-
-      const letterProgress = Math.min(
-        Math.max((progress - 0.2) / 0.55, 0),
-        1
-      );
-
-      reveal.setAttribute(
-        "width",
-        `${letterProgress * 170}`
-      );
     }
 
     updateDrawing();
@@ -109,165 +88,64 @@ export default function IntroHome() {
       <div className={styles.fixedLayer}>
         <svg
           ref={svgRef}
-          className={styles.blueprint}
+          className={styles.monogramSvg}
           viewBox="0 0 240 240"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
-            <clipPath id="letterReveal">
-              <rect
-                ref={revealRef}
-                x="30"
-                y="52"
-                width="0"
-                height="120"
-              />
-            </clipPath>
-          </defs>
-
-          {/* moldura */}
-          <rect
-            className="draw guide"
-            x="42"
-            y="48"
-            width="156"
-            height="144"
+          {/* haste esquerda */}
+          <path
+            d="M78 69 
+               L68 151 
+               C65 178 82 194 107 195"
+            className={styles.logoStroke}
           />
 
-          {/* linhas técnicas */}
-          <line
-            className="draw guide"
-            x1="42"
-            y1="36"
-            x2="198"
-            y2="36"
+          {/* curva externa */}
+          <path
+            d="M105 91 
+               C137 85 165 109 166 142 
+               C167 176 143 198 108 195"
+            className={styles.logoStroke}
           />
 
-          <line
-            className="draw guide"
-            x1="42"
-            y1="206"
-            x2="198"
-            y2="206"
+          {/* curva interna */}
+          <path
+            d="M113 106 
+               C134 106 149 121 149 142 
+               C149 163 135 178 114 179"
+            className={styles.logoStroke}
           />
 
-          <line
-            className="draw guide"
-            x1="28"
-            y1="48"
-            x2="28"
-            y2="192"
+          {/* ligação superior */}
+          <path
+            d="M126 92 
+               C137 78 153 70 174 70"
+            className={styles.logoStroke}
           />
 
-          {/* detalhes */}
-          <line
-            className="draw tech"
-            x1="62"
-            y1="64"
-            x2="78"
-            y2="80"
+          {/* estrutura direita */}
+          <path
+            d="M154 70 
+               H184 
+               C196 70 203 78 203 91 
+               V177"
+            className={styles.logoStroke}
           />
 
-          <line
-            className="draw tech"
-            x1="176"
-            y1="64"
-            x2="160"
-            y2="80"
+          {/* haste interna direita */}
+          <path
+            d="M171 92 
+               V177"
+            className={styles.logoStroke}
           />
 
-          <line
-            className="draw tech"
-            x1="162"
-            y1="176"
-            x2="178"
-            y2="192"
+          {/* base direita */}
+          <path
+            d="M171 177 
+               H203"
+            className={styles.logoStroke}
           />
-
-          {/* letras aramaicas */}
-          <g clipPath="url(#letterReveal)">
-            <text
-              className={`${styles.aramaicLetter} ${styles.letterT}`}
-              x="112"
-              y="128"
-            >
-              𐡕
-            </text>
-
-            <text
-              className={`${styles.aramaicLetter} ${styles.letterR}`}
-              x="130"
-              y="112"
-            >
-              𐡓
-            </text>
-
-            <text
-              className={`${styles.aramaicLetter} ${styles.letterM}`}
-              x="116"
-              y="126"
-            >
-              𐡌
-            </text>
-          </g>
-
-          {/* textos */}
-          <text
-            className={styles.text}
-            x="86"
-            y="30"
-          >
-            Overall: 200 x 200
-          </text>
-
-          <text
-            className={styles.text}
-            x="-156"
-            y="18"
-            transform="rotate(-90)"
-          >
-            Overall: 200 x 200
-          </text>
-
-          <text
-            className={styles.text}
-            x="96"
-            y="220"
-          >
-            Depth: 15.0
-          </text>
-
-          <text
-            className={styles.smallText}
-            x="58"
-            y="58"
-          >
-            R 25.4
-          </text>
-
-          <text
-            className={styles.smallText}
-            x="154"
-            y="58"
-          >
-            R 3
-          </text>
-
-          <text
-            className={styles.smallText}
-            x="126"
-            y="186"
-          >
-            AS-IS PROFILE
-          </text>
-
-          <text
-            className={styles.smallText}
-            x="126"
-            y="194"
-          >
-            SURFACE ROUGHNESS N7
-          </text>
         </svg>
       </div>
     </section>
