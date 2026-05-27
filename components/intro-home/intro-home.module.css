@@ -1,4 +1,4 @@
-.hero {
+.intro {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -13,14 +13,14 @@
     ),
     radial-gradient(
       circle at 78% 18%,
-      rgba(255, 250, 241, 0.7) 0%,
-      rgba(255, 255, 255, 0.55) 28%,
+      rgba(255, 250, 241, 0.55) 0%,
+      rgba(255, 255, 255, 0.5) 28%,
       transparent 55%
     ),
     linear-gradient(
       180deg,
-      #fffdf9 0%,
-      #fbfaf7 45%,
+      #fffefa 0%,
+      #fbfaf7 48%,
       #f8f7f3 100%
     );
 }
