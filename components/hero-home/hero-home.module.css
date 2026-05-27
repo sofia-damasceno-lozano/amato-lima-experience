@@ -445,3 +445,22 @@ filter:
     background-position: -200% 0;
   }
 }
+
+.script {
+  opacity: var(--hero-script-reveal, 0);
+
+  filter:
+    blur(calc((1 - var(--hero-script-reveal, 0)) * 12px))
+    drop-shadow(0 1px 1px rgba(120, 92, 58, 0.10))
+    drop-shadow(0 6px 14px rgba(80, 52, 26, 0.10));
+}
+
+.de {
+  opacity: var(--hero-de-reveal, 0);
+  filter: blur(calc((1 - var(--hero-de-reveal, 0)) * 8px));
+}
+
+.title {
+  opacity: var(--hero-title-reveal, 0);
+  filter: blur(calc((1 - var(--hero-title-reveal, 0)) * 8px));
+}
