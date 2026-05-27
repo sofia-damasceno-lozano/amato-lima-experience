@@ -4,6 +4,10 @@
   min-height: 100vh;
   overflow: hidden;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background:
     radial-gradient(
       circle at top left,
@@ -11,13 +15,11 @@
       rgba(255, 255, 255, 0.72) 18%,
       transparent 42%
     ),
-
     radial-gradient(
       circle at 85% 20%,
       rgba(255, 255, 255, 0.55) 0%,
       transparent 48%
     ),
-
     linear-gradient(
       180deg,
       #f6f6f4 0%,
@@ -25,84 +27,78 @@
       #f1f1ef 100%
     );
 }
-.monogramWrap {
-  position: relative;
-  width: clamp(92px, 24vw, 150px);
-  aspect-ratio: 1 / 1;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.monogram {
-  width: 100%;
-  height: 100%;
+.blueprint {
+  width: min(86vw, 720px);
+  height: auto;
   overflow: visible;
 }
 
-/* linha-guia quase invisível, só dá sensação arquitetônica */
-.guide {
-  stroke: rgba(35, 32, 28, 0.08);
-  stroke-width: 1;
-  stroke-dasharray: 520;
-  stroke-dashoffset: 520;
-  animation: drawGuide 1.6s ease forwards;
+.gridLine {
+  stroke: rgba(33, 34, 31, 0.12);
+  stroke-width: 0.35;
+  opacity: 0;
 }
 
-/* desenho real do monograma */
+.measureLine {
+  stroke: rgba(24, 24, 22, 0.64);
+  stroke-width: 0.55;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  opacity: 0;
+}
+
 .logoLine {
-  stroke: rgba(25, 23, 20, 0.92);
-  stroke-width: 9;
+  stroke: rgba(18, 18, 16, 0.92);
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
-
-  stroke-dasharray: 420;
-  stroke-dashoffset: 420;
-
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
-
-  animation: drawLogo 2.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  opacity: 0;
 }
 
-.logoLine:nth-of-type(2) {
-  animation-delay: 0.25s;
+.detailLine {
+  stroke: rgba(24, 24, 22, 0.5);
+  stroke-width: 0.65;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  opacity: 0;
 }
 
-.logoLine:nth-of-type(3) {
-  animation-delay: 0.45s;
+.technicalText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  fill: rgba(20, 20, 18, 0.58);
 }
 
-.logoLine:nth-of-type(4) {
-  animation-delay: 0.7s;
+.technicalTextSmall {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4.2px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  fill: rgba(20, 20, 18, 0.48);
 }
 
-.logoLine:nth-of-type(5) {
-  animation-delay: 0.95s;
-}
-
-.logoLine:nth-of-type(6) {
-  animation-delay: 1.15s;
-}
-
-@keyframes drawGuide {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes drawLogo {
-  0% {
-    stroke-dashoffset: 420;
-    opacity: 0;
+@media (max-width: 768px) {
+  .blueprint {
+    width: 112vw;
   }
 
-  12% {
-    opacity: 1;
+  .logoLine {
+    stroke-width: 3.6;
   }
 
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
+  .measureLine,
+  .detailLine {
+    stroke-width: 0.75;
+  }
+
+  .technicalText {
+    font-size: 5.6px;
+  }
+
+  .technicalTextSmall {
+    font-size: 4.8px;
   }
 }
