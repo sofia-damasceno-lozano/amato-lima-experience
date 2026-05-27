@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "./hero-home.module.css";
+import styles from "./intro-home.module.css";
 
-export default function HeroHome() {
-  return <section className={styles.hero} />;
+export default function IntroHome() {
+  return <section className={styles.intro} />;
 }
