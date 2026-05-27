@@ -3,6 +3,8 @@
   width: 100%;
   height: 360vh;
 
+  overflow: hidden;
+
   background:
     radial-gradient(
       circle at top left,
@@ -10,11 +12,13 @@
       rgba(255, 255, 255, 0.72) 18%,
       transparent 42%
     ),
+
     radial-gradient(
       circle at 85% 20%,
       rgba(255, 255, 255, 0.55) 0%,
       transparent 48%
     ),
+
     linear-gradient(
       180deg,
       #f6f6f4 0%,
@@ -26,6 +30,7 @@
 .fixedLayer {
   position: fixed;
   inset: 0;
+
   width: 100vw;
   height: 100vh;
 
@@ -34,72 +39,107 @@
   justify-content: center;
 
   pointer-events: none;
+
   overflow: hidden;
-  z-index: 30;
+
+  z-index: 20;
 }
 
 .blueprint {
-  width: min(96vw, 720px);
+  width: min(94vw, 760px);
+
   height: auto;
+
   overflow: visible;
+
   transform: translateY(-1vh);
 }
 
+/* elementos desenhados */
 .blueprint :global(.draw) {
   fill: none;
-  opacity: 0;
-  vector-effect: non-scaling-stroke;
-}
 
-.blueprint :global(.logo) {
-  stroke: rgba(18, 18, 16, 0.92);
-  stroke-linecap: square;
+  stroke-linecap: round;
   stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+
+  opacity: 0;
 }
 
-.blueprint :global(.thick) {
-  stroke-width: 13;
-}
-
-.blueprint :global(.medium) {
-  stroke-width: 7;
-}
-
+/* linhas técnicas */
 .blueprint :global(.guide) {
-  stroke: rgba(18, 18, 16, 0.24);
-  stroke-width: 0.65;
-}
+  stroke: rgba(18, 18, 16, 0.22);
 
-.blueprint :global(.tech) {
-  stroke: rgba(18, 18, 16, 0.35);
   stroke-width: 0.7;
 }
 
+/* detalhes */
+.blueprint :global(.tech) {
+  stroke: rgba(18, 18, 16, 0.35);
+
+  stroke-width: 0.8;
+}
+
+/* letras aramaicas */
+.letter {
+  fill: rgba(18, 18, 16, 0.92);
+
+  font-family:
+    "Noto Sans Imperial Aramaic",
+    "Segoe UI Symbol",
+    serif;
+
+  font-size: 42px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.02em;
+
+  dominant-baseline: middle;
+}
+
+/* textos */
 .text {
   font-family: Arial, Helvetica, sans-serif;
+
   font-size: 5px;
+
   font-weight: 500;
+
   letter-spacing: 0.04em;
-  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.55));
+
+  fill: rgba(
+    18,
+    18,
+    16,
+    calc(var(--progress, 0) * 0.55)
+  );
 }
 
 .smallText {
   font-family: Arial, Helvetica, sans-serif;
+
   font-size: 4px;
+
   font-weight: 500;
-  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.45));
+
+  letter-spacing: 0.03em;
+
+  fill: rgba(
+    18,
+    18,
+    16,
+    calc(var(--progress, 0) * 0.42)
+  );
 }
 
 @media (max-width: 768px) {
   .blueprint {
-    width: 106vw;
+    width: 108vw;
   }
 
-  .blueprint :global(.thick) {
-    stroke-width: 12;
-  }
-
-  .blueprint :global(.medium) {
-    stroke-width: 6;
+  .letter {
+    font-size: 36px;
   }
 }
