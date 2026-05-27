@@ -6,14 +6,17 @@ import styles from "./intro-home.module.css";
 export default function IntroHome() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const revealRef = useRef<SVGRectElement | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const svg = svgRef.current;
+    const reveal = revealRef.current;
 
-    if (!section || !svg) return;
+    if (!section || !svg || !reveal) return;
 
-    const drawItems = svg.querySelectorAll<SVGGeometryElement>(".draw");
+    const drawItems =
+      svg.querySelectorAll<SVGGeometryElement>(".draw");
 
     drawItems.forEach((item) => {
       const length = item.getTotalLength();
@@ -27,44 +30,82 @@ export default function IntroHome() {
       const rect = section.getBoundingClientRect();
 
       const progress = Math.min(
-        Math.max(-rect.top / (window.innerHeight * 2.5), 0),
+        Math.max(
+          -rect.top / (window.innerHeight * 2.4),
+          0
+        ),
         1
       );
 
-      svg.style.setProperty("--progress", `${progress}`);
+      svg.style.setProperty(
+        "--progress",
+        `${progress}`
+      );
 
       drawItems.forEach((item, index) => {
         const length = item.getTotalLength();
 
-        const start = index * 0.015;
-        const end = start + 0.42;
+        const start = index * 0.03;
+        const end = start + 0.45;
 
         const itemProgress = Math.min(
-          Math.max((progress - start) / (end - start), 0),
+          Math.max(
+            (progress - start) / (end - start),
+            0
+          ),
           1
         );
 
-        item.style.strokeDashoffset = `${length * (1 - itemProgress)}`;
-        item.style.opacity = itemProgress > 0 ? "1" : "0";
+        item.style.strokeDashoffset = `${
+          length * (1 - itemProgress)
+        }`;
+
+        item.style.opacity =
+          itemProgress > 0 ? "1" : "0";
       });
+
+      const letterProgress = Math.min(
+        Math.max((progress - 0.2) / 0.55, 0),
+        1
+      );
+
+      reveal.setAttribute(
+        "width",
+        `${letterProgress * 170}`
+      );
     }
 
     updateDrawing();
 
-    window.addEventListener("scroll", updateDrawing, {
-      passive: true,
-    });
+    window.addEventListener(
+      "scroll",
+      updateDrawing,
+      { passive: true }
+    );
 
-    window.addEventListener("resize", updateDrawing);
+    window.addEventListener(
+      "resize",
+      updateDrawing
+    );
 
     return () => {
-      window.removeEventListener("scroll", updateDrawing);
-      window.removeEventListener("resize", updateDrawing);
+      window.removeEventListener(
+        "scroll",
+        updateDrawing
+      );
+
+      window.removeEventListener(
+        "resize",
+        updateDrawing
+      );
     };
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.intro}>
+    <section
+      ref={sectionRef}
+      className={styles.intro}
+    >
       <div className={styles.fixedLayer}>
         <svg
           ref={svgRef}
@@ -72,7 +113,19 @@ export default function IntroHome() {
           viewBox="0 0 240 240"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* moldura técnica */}
+          <defs>
+            <clipPath id="letterReveal">
+              <rect
+                ref={revealRef}
+                x="30"
+                y="52"
+                width="0"
+                height="120"
+              />
+            </clipPath>
+          </defs>
+
+          {/* moldura */}
           <rect
             className="draw guide"
             x="42"
@@ -106,39 +159,64 @@ export default function IntroHome() {
             y2="192"
           />
 
-          {/* setas */}
-          <line className="draw tech" x1="62" y1="64" x2="78" y2="80" />
-          <line className="draw tech" x1="176" y1="64" x2="160" y2="80" />
+          {/* detalhes */}
+          <line
+            className="draw tech"
+            x1="62"
+            y1="64"
+            x2="78"
+            y2="80"
+          />
 
-          <line className="draw tech" x1="162" y1="176" x2="178" y2="192" />
+          <line
+            className="draw tech"
+            x1="176"
+            y1="64"
+            x2="160"
+            y2="80"
+          />
 
-          {/* aramaico */}
+          <line
+            className="draw tech"
+            x1="162"
+            y1="176"
+            x2="178"
+            y2="192"
+          />
+
+          {/* letras aramaicas */}
+          <g clipPath="url(#letterReveal)">
+            <text
+              className={`${styles.aramaicLetter} ${styles.letterT}`}
+              x="88"
+              y="126"
+            >
+              𐡕
+            </text>
+
+            <text
+              className={`${styles.aramaicLetter} ${styles.letterR}`}
+              x="122"
+              y="126"
+            >
+              𐡓
+            </text>
+
+            <text
+              className={`${styles.aramaicLetter} ${styles.letterM}`}
+              x="152"
+              y="126"
+            >
+              𐡌
+            </text>
+          </g>
+
+          {/* textos */}
           <text
-            className={`${styles.letter} draw`}
-            x="78"
-            y="128"
+            className={styles.text}
+            x="86"
+            y="30"
           >
-            𐡌
-          </text>
-
-          <text
-            className={`${styles.letter} draw`}
-            x="118"
-            y="128"
-          >
-            𐡓
-          </text>
-
-          <text
-            className={`${styles.letter} draw`}
-            x="154"
-            y="128"
-          >
-            𐡕
-          </text>
-
-          {/* textos técnicos */}
-          <text className={styles.text} x="86" y="30">
             Overall: 200 x 200
           </text>
 
@@ -151,23 +229,43 @@ export default function IntroHome() {
             Overall: 200 x 200
           </text>
 
-          <text className={styles.text} x="96" y="220">
+          <text
+            className={styles.text}
+            x="96"
+            y="220"
+          >
             Depth: 15.0
           </text>
 
-          <text className={styles.smallText} x="58" y="58">
+          <text
+            className={styles.smallText}
+            x="58"
+            y="58"
+          >
             R 25.4
           </text>
 
-          <text className={styles.smallText} x="154" y="58">
+          <text
+            className={styles.smallText}
+            x="154"
+            y="58"
+          >
             R 3
           </text>
 
-          <text className={styles.smallText} x="126" y="186">
+          <text
+            className={styles.smallText}
+            x="126"
+            y="186"
+          >
             AS-IS PROFILE
           </text>
 
-          <text className={styles.smallText} x="126" y="194">
+          <text
+            className={styles.smallText}
+            x="126"
+            y="194"
+          >
             SURFACE ROUGHNESS N7
           </text>
         </svg>
