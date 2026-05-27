@@ -25,3 +25,84 @@
       #f1f1ef 100%
     );
 }
+.monogramWrap {
+  position: relative;
+  width: clamp(92px, 24vw, 150px);
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monogram {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* linha-guia quase invisível, só dá sensação arquitetônica */
+.guide {
+  stroke: rgba(35, 32, 28, 0.08);
+  stroke-width: 1;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: drawGuide 1.6s ease forwards;
+}
+
+/* desenho real do monograma */
+.logoLine {
+  stroke: rgba(25, 23, 20, 0.92);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+
+  animation: drawLogo 2.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.logoLine:nth-of-type(2) {
+  animation-delay: 0.25s;
+}
+
+.logoLine:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+
+.logoLine:nth-of-type(4) {
+  animation-delay: 0.7s;
+}
+
+.logoLine:nth-of-type(5) {
+  animation-delay: 0.95s;
+}
+
+.logoLine:nth-of-type(6) {
+  animation-delay: 1.15s;
+}
+
+@keyframes drawGuide {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLogo {
+  0% {
+    stroke-dashoffset: 420;
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
