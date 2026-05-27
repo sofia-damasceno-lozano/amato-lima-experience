@@ -464,10 +464,14 @@ filter:
 
 .de {
   opacity: var(--hero-de-reveal, 0);
-  filter: blur(calc((1 - var(--hero-de-reveal, 0)) * 8px));
+
+  filter:
+    blur(calc((1 - var(--hero-de-reveal, 0)) * 8px));
 }
 
 .title {
   opacity: var(--hero-title-reveal, 0);
-  filter: blur(calc((1 - var(--hero-title-reveal, 0)) * 8px));
+
+  filter:
+    blur(calc((1 - var(--hero-title-reveal, 0)) * 8px));
 }
