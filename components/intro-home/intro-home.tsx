@@ -19,9 +19,13 @@ export default function IntroHome() {
       setProgress(next);
 
       root.style.setProperty("--intro-progress", String(next));
-      root.style.setProperty("--hero-script-reveal", String(Math.max(0, (next - 0.34) / 0.22)));
-      root.style.setProperty("--hero-de-reveal", String(Math.max(0, (next - 0.52) / 0.2)));
-      root.style.setProperty("--hero-title-reveal", String(Math.max(0, (next - 0.62) / 0.22)));
+
+      root.style.setProperty("--home-header-reveal", String(Math.max(0, (next - 0.88) / 0.12)));
+      root.style.setProperty("--home-explore-reveal", String(Math.max(0, (next - 0.92) / 0.08)));
+
+      root.style.setProperty("--hero-script-reveal", String(Math.max(0, (next - 0.58) / 0.18)));
+      root.style.setProperty("--hero-de-reveal", String(Math.max(0, (next - 0.72) / 0.14)));
+      root.style.setProperty("--hero-title-reveal", String(Math.max(0, (next - 0.82) / 0.16)));
     };
 
     update(0);
@@ -30,9 +34,7 @@ export default function IntroHome() {
       if (progressRef.current >= 1 && event.deltaY > 0) return;
 
       event.preventDefault();
-
-      const delta = event.deltaY / 900;
-      update(progressRef.current + delta);
+      update(progressRef.current + event.deltaY / 1000);
     };
 
     const handleTouchStart = (event: TouchEvent) => {
@@ -46,7 +48,7 @@ export default function IntroHome() {
       event.preventDefault();
 
       const currentY = event.touches[0].clientY;
-      const delta = (touchStartY.current - currentY) / 520;
+      const delta = (touchStartY.current - currentY) / 620;
 
       update(progressRef.current + delta);
       touchStartY.current = currentY;
@@ -72,13 +74,13 @@ export default function IntroHome() {
 
       <div className={styles.monogramStage}>
         <svg className={styles.monogram} viewBox="0 0 320 320" aria-hidden="true">
-          <path className={styles.frameLine} d="M78 72 H244 V244 H78 Z" />
+          <path className={styles.frameLine} d="M78 70 H248 V248 H78 Z" />
 
-          <path className={styles.carveLine} d="M92 248 C112 210 125 165 130 120 C134 82 150 58 176 52" />
-          <path className={styles.carveLine} d="M176 52 C222 54 248 88 248 132 C248 184 213 224 166 236" />
-          <path className={styles.carveLine} d="M166 236 C202 202 210 145 184 108 C166 82 136 84 116 112" />
-          <path className={styles.carveLine} d="M72 258 L94 68" />
-          <path className={styles.carveLine} d="M248 132 L268 108 V244 H218" />
+          <path className={styles.logoLine} d="M91 250 C112 213 126 166 131 119 C136 78 153 55 181 50" />
+          <path className={styles.logoLine} d="M181 50 C226 55 250 88 250 132 C250 185 215 225 166 237" />
+          <path className={styles.logoLine} d="M166 237 C199 207 211 150 184 109 C166 82 136 84 116 112" />
+          <path className={styles.logoLine} d="M70 260 L92 68" />
+          <path className={styles.logoLine} d="M250 132 L270 110 V248 H218" />
         </svg>
       </div>
 
