@@ -24,14 +24,18 @@ export default function IntroHome() {
 
     function updateDrawing() {
       const rect = section.getBoundingClientRect();
-      const progress = Math.min(Math.max(-rect.top / (window.innerHeight * 2.8), 0), 1);
+      const progress = Math.min(
+        Math.max(-rect.top / (window.innerHeight * 2.8), 0),
+        1
+      );
 
       svg.style.setProperty("--progress", `${progress}`);
 
       drawItems.forEach((item, index) => {
         const length = item.getTotalLength();
-        const start = index * 0.012;
-        const end = start + 0.45;
+
+        const start = index * 0.01;
+        const end = start + 0.48;
 
         const itemProgress = Math.min(
           Math.max((progress - start) / (end - start), 0),
@@ -65,122 +69,148 @@ export default function IntroHome() {
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Moldura técnica */}
-          <rect className="draw frame" x="32" y="30" width="176" height="178" />
+          <rect className="draw frame" x="34" y="34" width="172" height="172" />
 
-          {/* Cotas principais */}
-          <line className="draw measure" x1="32" y1="18" x2="208" y2="18" />
-          <line className="draw measure" x1="32" y1="14" x2="32" y2="24" />
-          <line className="draw measure" x1="208" y1="14" x2="208" y2="24" />
+          {/* Cotas */}
+          <line className="draw measure" x1="34" y1="22" x2="206" y2="22" />
+          <line className="draw measure" x1="34" y1="18" x2="34" y2="26" />
+          <line className="draw measure" x1="206" y1="18" x2="206" y2="26" />
 
-          <line className="draw measure" x1="20" y1="30" x2="20" y2="208" />
-          <line className="draw measure" x1="16" y1="30" x2="26" y2="30" />
-          <line className="draw measure" x1="16" y1="208" x2="26" y2="208" />
+          <line className="draw measure" x1="22" y1="34" x2="22" y2="206" />
+          <line className="draw measure" x1="18" y1="34" x2="26" y2="34" />
+          <line className="draw measure" x1="18" y1="206" x2="26" y2="206" />
 
-          <line className="draw measure" x1="70" y1="222" x2="208" y2="222" />
-          <line className="draw measure" x1="70" y1="217" x2="70" y2="227" />
-          <line className="draw measure" x1="208" y1="217" x2="208" y2="227" />
+          <line className="draw measure" x1="70" y1="218" x2="206" y2="218" />
+          <line className="draw measure" x1="70" y1="214" x2="70" y2="222" />
+          <line className="draw measure" x1="206" y1="214" x2="206" y2="222" />
 
-          {/* Monograma técnico: U / D / L */}
+          {/* =======================
+              MONOGRAMA REAL APROXIMADO
+              U + D + L
+          ======================= */}
+
+          {/* U externo */}
           <path
-            className="draw main"
-            d="M70 48
-               L70 151
-               C70 177 88 192 113 192
-               C138 192 154 176 154 151
-               L154 84
-               C154 63 141 48 122 48"
+            className="draw logo"
+            d="M72 54
+               L64 145
+               C61 178 80 197 111 198
+               C141 199 162 178 164 148
+               L166 74"
           />
 
+          {/* U interno */}
           <path
-            className="draw main"
-            d="M84 56
-               L84 150
-               C84 165 95 176 111 176
-               C127 176 140 164 140 148
-               L140 86
-               C140 72 133 62 122 58"
+            className="draw logo"
+            d="M91 60
+               L84 143
+               C82 163 94 176 112 176
+               C130 176 144 162 145 143
+               L147 83"
           />
 
+          {/* Corte lateral esquerdo do U */}
           <path
-            className="draw main"
-            d="M104 52
-               C137 52 164 79 164 120
-               C164 162 137 190 103 190"
+            className="draw construction"
+            d="M72 54 L91 60"
           />
 
+          {/* D externo */}
           <path
-            className="draw main"
-            d="M116 66
-               C138 74 151 95 151 121
-               C151 149 135 169 112 176"
+            className="draw logo"
+            d="M105 72
+               C136 71 166 95 167 133
+               C168 171 141 197 107 198"
           />
 
+          {/* D interno */}
           <path
-            className="draw main"
-            d="M148 50
-               H188
-               V176
-               H164"
+            className="draw logo"
+            d="M119 88
+               C141 92 153 110 153 134
+               C153 157 140 172 120 176"
           />
 
+          {/* Curva interna diagonal do D */}
           <path
-            className="draw main"
-            d="M162 64
-               H176
+            className="draw logo"
+            d="M92 74
+               C119 82 141 103 148 130"
+          />
+
+          {/* L externo */}
+          <path
+            className="draw logo"
+            d="M151 55
+               H187
+               C196 55 201 61 201 70
+               V179
+               H169"
+          />
+
+          {/* L interno */}
+          <path
+            className="draw logo"
+            d="M166 70
+               H184
                V164
-               H164"
+               H169"
           />
 
-          {/* Chanfros / profundidade */}
-          <line className="draw bevel" x1="70" y1="48" x2="52" y2="34" />
-          <line className="draw bevel" x1="84" y1="56" x2="70" y2="48" />
-          <line className="draw bevel" x1="148" y1="50" x2="162" y2="64" />
-          <line className="draw bevel" x1="188" y1="50" x2="202" y2="64" />
-          <line className="draw bevel" x1="188" y1="176" x2="202" y2="190" />
-          <line className="draw bevel" x1="164" y1="176" x2="176" y2="164" />
+          {/* Base inferior do L */}
+          <path
+            className="draw logo"
+            d="M169 179
+               L201 179"
+          />
 
-          {/* Linhas de cálculo */}
-          <path className="draw construction" d="M122 48 H176" />
-          <path className="draw construction" d="M113 192 H188" />
-          <path className="draw construction" d="M164 120 H204" />
-          <path className="draw construction" d="M154 84 L190 48" />
-          <path className="draw construction" d="M151 121 L186 88" />
-          <path className="draw construction" d="M140 148 L104 188" />
+          {/* Chanfros do L */}
+          <line className="draw bevel" x1="151" y1="55" x2="166" y2="70" />
+          <line className="draw bevel" x1="187" y1="55" x2="201" y2="70" />
+          <line className="draw bevel" x1="184" y1="164" x2="201" y2="179" />
 
-          {/* Setas simples */}
-          <path className="draw arrow" d="M200 120 L194 116 M200 120 L194 124" />
-          <path className="draw arrow" d="M186 88 L180 86 M186 88 L184 94" />
+          {/* Linhas técnicas de cálculo */}
+          <line className="draw construction" x1="72" y1="54" x2="52" y2="38" />
+          <line className="draw construction" x1="105" y1="72" x2="137" y2="48" />
+          <line className="draw construction" x1="166" y1="74" x2="198" y2="44" />
+          <line className="draw construction" x1="164" y1="148" x2="198" y2="148" />
+          <line className="draw construction" x1="107" y1="198" x2="190" y2="198" />
+          <line className="draw construction" x1="148" y1="130" x2="190" y2="92" />
 
-          {/* Textos técnicos */}
-          <text className={styles.text} x="88" y="14">
+          {/* Setas técnicas */}
+          <path className="draw construction" d="M198 148 L191 144 M198 148 L191 152" />
+          <path className="draw construction" d="M190 92 L184 90 M190 92 L188 98" />
+
+          {/* Textos */}
+          <text className={styles.text} x="88" y="18">
             Overall: 200 x 200
           </text>
 
-          <text className={styles.text} x="-165" y="14" transform="rotate(-90)">
+          <text className={styles.text} x="-166" y="16" transform="rotate(-90)">
             Overall: 200 x 200
           </text>
 
-          <text className={styles.text} x="90" y="232">
+          <text className={styles.text} x="92" y="228">
             Depth: 15.0
           </text>
 
-          <text className={styles.smallText} x="76" y="44">
+          <text className={styles.smallText} x="76" y="48">
             R 25.4
           </text>
 
-          <text className={styles.smallText} x="162" y="82">
+          <text className={styles.smallText} x="165" y="90">
             R 25.4
           </text>
 
-          <text className={styles.smallText} x="188" y="116">
+          <text className={styles.smallText} x="200" y="144">
             8.0
           </text>
 
-          <text className={styles.smallText} x="136" y="198">
+          <text className={styles.smallText} x="130" y="190">
             AS-IS PROFILE
           </text>
 
-          <text className={styles.smallText} x="136" y="206">
+          <text className={styles.smallText} x="130" y="198">
             SURFACE ROUGHNESS N7
           </text>
         </svg>
