@@ -105,4 +105,32 @@ export default function IntroHome() {
     );
 
     return () => {
-      window.remove
+      window.removeEventListener(
+        "scroll",
+        updateDrawing
+      );
+
+      window.removeEventListener(
+        "resize",
+        updateDrawing
+      );
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className={styles.intro}
+    >
+      <div
+        ref={fixedRef}
+        className={styles.fixedLayer}
+      >
+        <div
+          ref={monogramRef}
+          className={styles.monogram}
+        />
+      </div>
+    </section>
+  );
+}
