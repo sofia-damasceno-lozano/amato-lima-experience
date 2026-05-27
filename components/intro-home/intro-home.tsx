@@ -16,7 +16,6 @@ export default function IntroHome() {
     if (!section || !fixedLayer || !monogramContainer) return;
 
     let drawItems: SVGGeometryElement[] = [];
-    let svgElement: SVGSVGElement | null = null;
 
     async function loadMonogram() {
       const response = await fetch("/intro-home/monograma.svg");
@@ -24,17 +23,14 @@ export default function IntroHome() {
 
       monogramContainer.innerHTML = svgText;
 
-      svgElement = monogramContainer.querySelector("svg");
+      const svg = monogramContainer.querySelector("svg");
+      if (!svg) return;
 
-      if (!svgElement) return;
-
-      svgElement.classList.add(styles.monogramSvg);
-      svgElement.setAttribute("fill", "none");
+      svg.classList.add(styles.monogramSvg);
+      svg.setAttribute("fill", "none");
 
       drawItems = Array.from(
-        svgElement.querySelectorAll(
-          "path, line, polyline, polygon, rect, circle, ellipse"
-        )
+        svg.querySelectorAll("path, line, polyline, polygon, rect, circle, ellipse")
       ) as SVGGeometryElement[];
 
       drawItems.forEach((item) => {
@@ -43,7 +39,6 @@ export default function IntroHome() {
         item.style.strokeDasharray = `${length}`;
         item.style.strokeDashoffset = `${length}`;
         item.style.opacity = "0";
-        item.style.fill = "none";
       });
 
       updateDrawing();
@@ -52,20 +47,15 @@ export default function IntroHome() {
     function updateDrawing() {
       const rect = section.getBoundingClientRect();
       const scrollTotal = window.innerHeight * 2.7;
-
       const progress = Math.min(Math.max(-rect.top / scrollTotal, 0), 1);
-
-      if (svgElement) {
-        svgElement.style.setProperty("--progress", `${progress}`);
-      }
 
       fixedLayer.style.opacity = progress >= 0.98 ? "0" : "1";
 
       drawItems.forEach((item, index) => {
         const length = item.getTotalLength();
 
-        const start = index * 0.015;
-        const end = start + 0.72;
+        const start = index * 0.018;
+        const end = start + 0.55;
 
         const itemProgress = Math.min(
           Math.max((progress - start) / (end - start), 0),
@@ -90,7 +80,7 @@ export default function IntroHome() {
 
   return (
     <section ref={sectionRef} className={styles.intro}>
-      <div ref={fixedRef} className={styles.sticky}>
+      <div ref={fixedRef} className={styles.fixedLayer}>
         <div ref={monogramRef} className={styles.monogram} />
       </div>
     </section>
