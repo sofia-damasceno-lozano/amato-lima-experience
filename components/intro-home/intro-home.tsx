@@ -1,74 +1,84 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-
 import styles from "./intro-home.module.css";
 
 export default function IntroHome() {
   const [progress, setProgress] = useState(0);
+  const progressRef = useRef(0);
+  const touchStartY = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const maxScroll = window.innerHeight * 0.75;
-      const value = Math.min(window.scrollY / maxScroll, 1);
+    const root = document.documentElement;
 
-      setProgress(value);
+    const update = (value: number) => {
+      const next = Math.max(0, Math.min(value, 1));
+
+      progressRef.current = next;
+      setProgress(next);
+
+      root.style.setProperty("--intro-progress", String(next));
+      root.style.setProperty("--hero-script-reveal", String(Math.max(0, (next - 0.34) / 0.22)));
+      root.style.setProperty("--hero-de-reveal", String(Math.max(0, (next - 0.52) / 0.2)));
+      root.style.setProperty("--hero-title-reveal", String(Math.max(0, (next - 0.62) / 0.22)));
     };
 
-    handleScroll();
+    update(0);
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const handleWheel = (event: WheelEvent) => {
+      if (progressRef.current >= 1 && event.deltaY > 0) return;
 
-    return () => window.removeEventListener("scroll", handleScroll);
+      event.preventDefault();
+
+      const delta = event.deltaY / 900;
+      update(progressRef.current + delta);
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (touchStartY.current === null) return;
+      if (progressRef.current >= 1) return;
+
+      event.preventDefault();
+
+      const currentY = event.touches[0].clientY;
+      const delta = (touchStartY.current - currentY) / 520;
+
+      update(progressRef.current + delta);
+      touchStartY.current = currentY;
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   return (
     <section
       className={styles.intro}
-      style={
-        {
-          "--progress": progress,
-        } as React.CSSProperties
-      }
+      style={{ "--progress": progress } as React.CSSProperties}
     >
       <div className={styles.background} />
 
       <div className={styles.monogramStage}>
-        <svg
-          className={styles.monogram}
-          viewBox="0 0 320 320"
-          aria-hidden="true"
-        >
-          <path
-            className={styles.line}
-            d="M78 252 C92 218 104 178 110 132 C116 84 137 55 165 48"
-          />
+        <svg className={styles.monogram} viewBox="0 0 320 320" aria-hidden="true">
+          <path className={styles.frameLine} d="M78 72 H244 V244 H78 Z" />
 
-          <path
-            className={styles.line}
-            d="M165 48 C215 48 250 84 250 132 C250 185 215 224 166 236"
-          />
-
-          <path
-            className={styles.line}
-            d="M166 236 C198 212 216 176 212 136 C208 100 185 76 154 78 C132 80 116 96 106 122"
-          />
-
-          <path
-            className={styles.line}
-            d="M83 254 C116 246 143 230 166 206"
-          />
-
-          <path
-            className={styles.line}
-            d="M250 132 L270 108 L270 244 H218"
-          />
-
-          <path
-            className={styles.line}
-            d="M62 264 L84 70"
-          />
+          <path className={styles.carveLine} d="M92 248 C112 210 125 165 130 120 C134 82 150 58 176 52" />
+          <path className={styles.carveLine} d="M176 52 C222 54 248 88 248 132 C248 184 213 224 166 236" />
+          <path className={styles.carveLine} d="M166 236 C202 202 210 145 184 108 C166 82 136 84 116 112" />
+          <path className={styles.carveLine} d="M72 258 L94 68" />
+          <path className={styles.carveLine} d="M248 132 L268 108 V244 H218" />
         </svg>
       </div>
 
