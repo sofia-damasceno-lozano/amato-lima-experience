@@ -17,26 +17,21 @@ export default function IntroHome() {
 
     let drawItems: SVGGeometryElement[] = [];
 
+    const basePath =
+      process.env.NODE_ENV === "production"
+        ? "/amato-lima-experience"
+        : "";
+
     async function loadMonogram() {
-      const basePath =
-        process.env.NODE_ENV === "production"
-          ? "/amato-lima-experience"
-          : "";
-
-      const response = await fetch(
-        `${basePath}/intro-home/monograma.svg`
-      );
-
+      const response = await fetch(`${basePath}/intro-home/monograma.svg`);
       const svgText = await response.text();
 
       monogramContainer.innerHTML = svgText;
 
       const svg = monogramContainer.querySelector("svg");
-
       if (!svg) return;
 
       svg.classList.add(styles.monogramSvg);
-
       svg.setAttribute("fill", "none");
 
       drawItems = Array.from(
@@ -58,78 +53,43 @@ export default function IntroHome() {
 
     function updateDrawing() {
       const rect = section.getBoundingClientRect();
+      const scrollTotal = window.innerHeight * 2.8;
 
-      const scrollTotal = window.innerHeight * 2.7;
+      const progress = Math.min(Math.max(-rect.top / scrollTotal, 0), 1);
 
-      const progress = Math.min(
-        Math.max(-rect.top / scrollTotal, 0),
-        1
-      );
-
-      fixedLayer.style.opacity =
-        progress >= 0.985 ? "0" : "1";
+      fixedLayer.style.opacity = progress >= 0.99 ? "0" : "1";
 
       drawItems.forEach((item, index) => {
         const length = item.getTotalLength();
 
-        const start = index * 0.018;
-        const end = start + 0.55;
+        const start = index * 0.01;
+        const end = start + 0.5;
 
         const itemProgress = Math.min(
-          Math.max(
-            (progress - start) / (end - start),
-            0
-          ),
+          Math.max((progress - start) / (end - start), 0),
           1
         );
 
-        item.style.strokeDashoffset =
-          `${length * (1 - itemProgress)}`;
-
-        item.style.opacity =
-          itemProgress > 0 ? "1" : "0";
+        item.style.strokeDashoffset = `${length * (1 - itemProgress)}`;
+        item.style.opacity = itemProgress > 0 ? "1" : "0";
       });
     }
 
     loadMonogram();
 
-    window.addEventListener(
-      "scroll",
-      updateDrawing,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      "resize",
-      updateDrawing
-    );
+    window.addEventListener("scroll", updateDrawing, { passive: true });
+    window.addEventListener("resize", updateDrawing);
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        updateDrawing
-      );
-
-      window.removeEventListener(
-        "resize",
-        updateDrawing
-      );
+      window.removeEventListener("scroll", updateDrawing);
+      window.removeEventListener("resize", updateDrawing);
     };
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={styles.intro}
-    >
-      <div
-        ref={fixedRef}
-        className={styles.fixedLayer}
-      >
-        <div
-          ref={monogramRef}
-          className={styles.monogram}
-        />
+    <section ref={sectionRef} className={styles.intro}>
+      <div ref={fixedRef} className={styles.fixedLayer}>
+        <div ref={monogramRef} className={styles.monogram} />
       </div>
     </section>
   );
