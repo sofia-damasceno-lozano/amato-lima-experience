@@ -188,8 +188,8 @@ export default function IntroHome() {
           <g clipPath="url(#letterReveal)">
             <text
               className={`${styles.aramaicLetter} ${styles.letterT}`}
-              x="88"
-              y="126"
+              x="112"
+              y="128"
             >
               𐡕
             </text>
