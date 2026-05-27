@@ -26,7 +26,6 @@
 .fixedLayer {
   position: fixed;
   inset: 0;
-
   width: 100vw;
   height: 100vh;
 
@@ -40,7 +39,7 @@
 }
 
 .blueprint {
-  width: min(96vw, 860px);
+  width: min(96vw, 720px);
   height: auto;
   overflow: visible;
   transform: translateY(-1vh);
@@ -48,31 +47,32 @@
 
 .blueprint :global(.draw) {
   fill: none;
-  stroke: rgba(18, 18, 16, 0.56);
-  stroke-width: 0.7;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  vector-effect: non-scaling-stroke;
   opacity: 0;
+  vector-effect: non-scaling-stroke;
 }
 
 .blueprint :global(.logo) {
-  stroke: rgba(18, 18, 16, 0.9);
-  stroke-width: 1.45;
-  stroke-linecap: round;
+  stroke: rgba(18, 18, 16, 0.92);
+  stroke-linecap: square;
   stroke-linejoin: round;
 }
 
-.blueprint :global(.frame),
-.blueprint :global(.measure) {
-  stroke: rgba(18, 18, 16, 0.42);
-  stroke-width: 0.62;
+.blueprint :global(.thick) {
+  stroke-width: 13;
 }
 
-.blueprint :global(.construction),
-.blueprint :global(.bevel) {
-  stroke: rgba(18, 18, 16, 0.38);
-  stroke-width: 0.55;
+.blueprint :global(.medium) {
+  stroke-width: 7;
+}
+
+.blueprint :global(.guide) {
+  stroke: rgba(18, 18, 16, 0.24);
+  stroke-width: 0.65;
+}
+
+.blueprint :global(.tech) {
+  stroke: rgba(18, 18, 16, 0.35);
+  stroke-width: 0.7;
 }
 
 .text {
@@ -80,27 +80,26 @@
   font-size: 5px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.58));
+  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.55));
 }
 
 .smallText {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4px;
   font-weight: 500;
-  letter-spacing: 0.03em;
-  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.48));
+  fill: rgba(18, 18, 16, calc(var(--progress, 0) * 0.45));
 }
 
 @media (max-width: 768px) {
   .blueprint {
-    width: 118vw;
+    width: 106vw;
   }
 
-  .blueprint :global(.logo) {
-    stroke-width: 1.3;
+  .blueprint :global(.thick) {
+    stroke-width: 12;
   }
 
-  .blueprint :global(.draw) {
-    stroke-width: 0.58;
+  .blueprint :global(.medium) {
+    stroke-width: 6;
   }
 }
