@@ -445,6 +445,13 @@ filter:
     background-position: -200% 0;
   }
 }
+.header {
+  opacity: var(--home-header-reveal, 0);
+}
+
+.exploreWrapper {
+  opacity: var(--home-explore-reveal, 0);
+}
 
 .script {
   opacity: var(--hero-script-reveal, 0);
