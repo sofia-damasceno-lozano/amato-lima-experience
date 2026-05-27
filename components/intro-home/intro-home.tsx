@@ -196,7 +196,7 @@ export default function IntroHome() {
 
             <text
               className={`${styles.aramaicLetter} ${styles.letterR}`}
-              x="152"
+              x="126"
               y="120"
             >
               𐡓
