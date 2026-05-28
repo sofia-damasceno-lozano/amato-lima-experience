@@ -141,18 +141,18 @@ export default function IntroHome() {
   root,
   {
     "--home-real-logo-reveal": 1,
-    duration: 0.12,
+    duration: 0.08,
   },
-  "-=0.02"
+  "-=0.04"
 );
 
-      tl.to(
+tl.to(
   logoRef.current,
   {
     opacity: 0,
-    duration: 0.08,
+    duration: 0.18,
   },
-  "-=0.01"
+  "+=0.02"
 );
     }, introRef);
 
