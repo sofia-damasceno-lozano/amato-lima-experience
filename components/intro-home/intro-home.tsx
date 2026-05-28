@@ -10,15 +10,14 @@ export default function IntroHome() {
   const veilRef = useRef<HTMLDivElement>(null);
   const traceRef = useRef<SVGSVGElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const transitionGlowRef = useRef<HTMLDivElement>(null);
-
+  
   useEffect(() => {
     const root = document.documentElement;
 
     const ctx = gsap.context(() => {
       const paths = traceRef.current?.querySelectorAll("path");
 
-      root.style.setProperty("--home-bg-reveal", "0.09");
+      root.style.setProperty("--home-bg-reveal", "0.04");
       root.style.setProperty("--home-title-reveal", "0");
       root.style.setProperty("--home-explore-reveal", "0");
       root.style.setProperty("--home-menu-reveal", "0");
@@ -129,17 +128,6 @@ tl.to(
     "-=0.45"  
   );  
 
- tl.to(
-  transitionGlowRef.current,
-  {
-    opacity: 1,
-    x: "110%",
-    duration: 2.4,
-    ease: "power1.inOut",
-  },
-  "-=0.35"
-);
-
 tl.to(
   veilRef.current,
   {
@@ -176,15 +164,24 @@ tl.to(
   },
   "<"
 );
-
-tl.to(
-  transitionGlowRef.current,
+      tl.to(
+  veilRef.current,
   {
     opacity: 0,
-    duration: 0.5,
-    ease: "power1.out",
+    duration: 0.65,
+    ease: "power1.inOut",
   },
-  "-=0.2"
+  "-=0.35"
+);
+
+tl.to(
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 0.75,
+    ease: "power1.inOut",
+  },
+  "<"
 );
 }, introRef);
 
@@ -194,7 +191,6 @@ return () => ctx.revert();
 return (
 <div ref={introRef} className={styles.intro}>
 <div ref={veilRef} className={styles.veil} />
-<div ref={transitionGlowRef} className={styles.transitionGlow} />
 
 <svg  
     ref={traceRef}  
