@@ -459,8 +459,6 @@ filter:
 }
 
 .titleWrapper {
-  z-index: 9002;
-
   opacity: var(--home-title-reveal, 1);
 
   transform:
@@ -468,9 +466,7 @@ filter:
     scale(calc(0.99 + (var(--home-title-reveal, 1) * 0.01)));
 
   filter:
-    blur(calc((1 - var(--home-title-reveal, 1)) * 3px))
-    contrast(1.08)
-    saturate(1.08);
+    blur(calc((1 - var(--home-title-reveal, 1)) * 3px));
 
   transition:
     transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
@@ -515,20 +511,4 @@ filter:
     opacity,
     filter,
     transform;
-}
-
-.content {
-  z-index: 9001;
-}
-
-.titleWrapper {
-  z-index: 9002;
-}
-
-.header {
-  z-index: 5;
-}
-
-.exploreWrapper {
-  z-index: 5;
 }
