@@ -444,6 +444,7 @@ filter:
   100% {
     background-position: -200% 0;
   }
+}
    
 .background {
   opacity: var(--home-bg-reveal, 1);
