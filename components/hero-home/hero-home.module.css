@@ -453,10 +453,14 @@ filter:
 
   filter: none;
 
-  transition:
-    opacity 0.85s ease;
+  transition: none;
 }
 
+.overlay {
+  opacity: var(--home-bg-reveal, 1);
+
+  transition: none;
+}
 .overlay {
   opacity: var(--home-bg-reveal, 1);
 
