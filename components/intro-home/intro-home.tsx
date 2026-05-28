@@ -153,7 +153,7 @@ tl.to(
 logoRef.current,
 {
 opacity: 0,
-filter: "blur(1.2px)",
+filter: "blur(0.8px)",
 duration: 0.14,
 ease: "power1.out",
 },
