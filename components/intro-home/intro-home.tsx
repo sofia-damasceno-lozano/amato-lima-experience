@@ -132,20 +132,21 @@ export default function IntroHome() {
       <svg
   ref={traceRef}
   className={styles.trace}
-  viewBox="0 0 320 260"
+  viewBox="0 0 420 320"
   fill="none"
   aria-hidden="true"
 >
-  <path
-    className={styles.framePath}
-    d="M82 58 L206 58 Q232 58 232 84 L232 194 L92 194 Q74 194 74 176 L74 88 Q74 58 82 58"
-  />
+  {/* moldura */}
 
-  <path d="M205 62 C238 62 258 82 258 114 L258 188 L222 188 L222 118 C222 101 211 94 194 94 L170 94" />
+  <path d="M105 52 H315 Q340 52 340 77 V243 Q340 268 315 268 H105 Q80 268 80 243 V77 Q80 52 105 52" />
 
-  <path d="M170 94 C123 94 92 123 92 168 C92 204 115 222 145 222 C181 222 205 194 205 156 C205 126 188 108 160 108" />
+  {/* símbolo */}
 
-  <path d="M132 70 L112 178 C107 205 121 222 145 222" />
+  <path d="M238 88 C276 88 300 112 300 146 L300 214 L258 214 L258 150 C258 129 244 120 224 120 L194 120" />
+
+  <path d="M194 120 C140 120 106 154 106 206 C106 248 132 272 168 272 C210 272 238 240 238 196 C238 160 218 138 184 138" />
+
+  <path d="M154 92 L130 216 C124 248 142 272 168 272" />
 </svg>
       <div ref={logoRef} className={styles.logoWrap}>
         <Image
