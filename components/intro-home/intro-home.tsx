@@ -156,12 +156,12 @@ tl.to(
   },
   "+=0.01"
 );
-});
-    }, introRef);
 
-    return () => ctx.revert();
-  }, []);
+}, introRef);
 
+return () => ctx.revert();
+}, []);
+  
   return (
     <div ref={introRef} className={styles.intro}>
       <div ref={veilRef} className={styles.veil} />
