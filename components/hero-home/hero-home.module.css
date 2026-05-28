@@ -459,7 +459,7 @@ filter:
 }
 
 .titleWrapper {
-  z-index: 10001;
+  z-index: 9002;
 
   opacity: var(--home-title-reveal, 1);
 
