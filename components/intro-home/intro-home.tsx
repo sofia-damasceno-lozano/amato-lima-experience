@@ -10,7 +10,7 @@ export default function IntroHome() {
   const veilRef = useRef<HTMLDivElement>(null);
   const traceRef = useRef<SVGSVGElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-
+  const shineRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const root = document.documentElement;
 
@@ -56,6 +56,20 @@ export default function IntroHome() {
         duration: 1.8,
         stagger: 0.08,
       });
+
+      tl.fromTo(
+  shineRef.current,
+  {
+    opacity: 0,
+    x: "-140%",
+  },
+  {
+    opacity: 1,
+    x: "140%",
+    duration: 0.9,
+    ease: "power2.inOut",
+  }
+);
 
       tl.fromTo(
         logoRef.current,
@@ -183,6 +197,7 @@ return () => ctx.revert();
       </svg>
 
       <div ref={logoRef} className={styles.logoWrap}>
+  <div ref={shineRef} className={styles.logoShine} />
         <Image
           src="/amato-lima-experience/logo/logo.png"
           alt="Amato Lima"
