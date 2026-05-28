@@ -505,4 +505,16 @@ filter:
 
 .logoWrapper {
   opacity: var(--home-real-logo-reveal, 0);
+
+  filter:
+    blur(calc((1 - var(--home-real-logo-reveal, 0)) * 1.5px));
+
+  transform:
+    translateX(-50%)
+    scale(calc(0.992 + (var(--home-real-logo-reveal, 0) * 0.008)));
+
+  will-change:
+    opacity,
+    filter,
+    transform;
 }
