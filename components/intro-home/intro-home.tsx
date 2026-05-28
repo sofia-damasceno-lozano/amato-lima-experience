@@ -101,7 +101,7 @@ tl.fromTo(
     duration: 1.1,
     ease: "none",
   },
-  "-=1.05"
+  "-=1.25"
 );
   
 tl.to(  
@@ -131,10 +131,10 @@ tl.to(
   root,
   {
     "--home-bg-reveal": 1,
-    duration: 1.15,
+    duration: 0.95,
     ease: "none",
   },
-  "-=0.35"
+  "-=0.75"
 );
 
 tl.to(
