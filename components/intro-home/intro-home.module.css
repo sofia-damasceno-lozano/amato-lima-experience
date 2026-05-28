@@ -92,28 +92,30 @@ object-fit: contain;
 
 .transitionGlow {
   position: absolute;
-  inset: -20%;
+  inset: -35%;
 
-  z-index: 8;
+  z-index: 999;
 
   opacity: 0;
 
   pointer-events: none;
 
   transform:
-    translateX(-145%)
-    skewX(-18deg);
+    translateX(-110%)
+    skewX(-10deg);
 
   background:
     linear-gradient(
       105deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0) 34%,
-      rgba(255, 255, 255, 0.74) 48%,
-      rgba(246, 240, 230, 0.42) 54%,
-      rgba(255, 255, 255, 0) 68%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.18) 28%,
+      rgba(255,255,255,0.55) 46%,
+      rgba(246,240,230,0.36) 58%,
+      rgba(255,255,255,0.16) 74%,
+      rgba(255,255,255,0) 100%
     );
+
+  filter: blur(24px);
 
   mix-blend-mode: screen;
 }
