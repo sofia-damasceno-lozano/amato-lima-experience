@@ -133,11 +133,11 @@ tl.to(
   transitionGlowRef.current,
   {
     opacity: 1,
-    x: "145%",
-    duration: 1.15,
-    ease: "power2.inOut",
+    x: "110%",
+    duration: 2.4,
+    ease: "power1.inOut",
   },
-  "-=0.25"
+  "-=0.35"
 );
 
 tl.to(
@@ -147,7 +147,7 @@ tl.to(
     duration: 0.55,
     ease: "power1.inOut",
   },
-  "<+=0.45"
+  "<+=0.95"
 );
 
 tl.set(
