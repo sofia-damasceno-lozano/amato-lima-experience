@@ -502,7 +502,6 @@ filter:
 .menuButton {
   opacity: var(--home-menu-reveal, 1);
 }
-
 .logoWrapper {
   opacity: var(--home-real-logo-reveal, 0);
 
