@@ -448,18 +448,14 @@ filter:
    
 .background {
   opacity: var(--home-bg-reveal, 1);
-
   transform: scale(1);
-
   filter: none;
-
-  transition: none;
+  transition: opacity 0.55s ease;
 }
 
 .overlay {
   opacity: var(--home-bg-reveal, 1);
-
-  transition: none;
+  transition: opacity 0.55s ease;
 }
 
 .titleWrapper {
