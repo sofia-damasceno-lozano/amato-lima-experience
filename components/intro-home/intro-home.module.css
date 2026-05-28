@@ -29,7 +29,7 @@ pointer-events: none;
       rgba(231,223,214,0.94) 100%
     );
 
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(0px);
 
   z-index: 1;
 }
@@ -115,7 +115,7 @@ object-fit: contain;
       rgba(255,255,255,0) 100%
     );
 
-  filter: blur(20px);
+  filter: blur(6px);
 
   mix-blend-mode: screen;
 }
