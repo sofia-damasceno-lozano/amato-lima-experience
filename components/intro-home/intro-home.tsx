@@ -8,18 +8,16 @@ import styles from "./intro-home.module.css";
 export default function IntroHome() {
   const introRef = useRef<HTMLDivElement>(null);
   const veilRef = useRef<HTMLDivElement>(null);
-  const flashRef = useRef<HTMLDivElement>(null);
   const traceRef = useRef<SVGSVGElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const introPhraseRef = useRef<HTMLDivElement>(null);
-
+  const shineRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const root = document.documentElement;
 
     const ctx = gsap.context(() => {
       const paths = traceRef.current?.querySelectorAll("path");
 
-      root.style.setProperty("--home-bg-reveal", "0.01");
+      root.style.setProperty("--home-bg-reveal", "0");
       root.style.setProperty("--home-title-reveal", "0");
       root.style.setProperty("--home-explore-reveal", "0");
       root.style.setProperty("--home-menu-reveal", "0");
@@ -60,12 +58,26 @@ export default function IntroHome() {
       });
 
       tl.fromTo(
+  shineRef.current,
+  {
+    opacity: 0,
+    x: "-140%",
+  },
+  {
+    opacity: 1,
+    x: "140%",
+    duration: 0.9,
+    ease: "power2.inOut",
+  }
+);
+
+      tl.fromTo(
         logoRef.current,
         {
           opacity: 0,
           scale: 0.96,
           y: 12,
-          filter: "blur(1px)",
+          filter: "blur(8px)",
         },
         {
           opacity: 1,
@@ -89,111 +101,84 @@ export default function IntroHome() {
 
       tl.to(logoRef.current, {
         y: "-31.6vh",
-        scale: 0.49,
-        duration: 1.5,
+        scale: 0.48,
+        duration: 1.35,
         delay: 0.15,
       });
 
-      tl.fromTo(
-        introPhraseRef.current,
-        {
-          opacity: 0,
-          y: 10,
-          filter: "blur(4px)",
-          "--intro-phrase-shine": "-120%",
-        },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1.05,
-          ease: "power2.out",
-        },
-        "-=0.25"
-      );
-
       tl.to(
-        introPhraseRef.current,
-        {
-          "--intro-phrase-shine": "140%",
-          duration: 0.9,
-          ease: "power2.inOut",
-        },
-        "-=0.08"
-      );
-
-      tl.to(
-        flashRef.current,
-        {
-          opacity: 1,
-          duration: 0.1,
-          ease: "power1.out",
-        },
-        "-=0.08"
-      );
+  veilRef.current,
+  {
+    opacity: 0,
+    scale: 1.04,
+    filter: "blur(4px)",
+    duration: 1.25,
+    ease: "power2.inOut",
+  },
+  "-=0.55"
+);
 
       tl.to(
         root,
         {
-          "--home-bg-reveal": 1,
           "--home-title-reveal": 1,
+          duration: 1.1,
+        },
+        "-=0.45"
+      );
+
+      tl.to(root, {
+        "--home-explore-reveal": 1,
+        duration: 0.85,
+      });
+
+      tl.to(
+        root,
+        {
           "--home-menu-reveal": 1,
-          "--home-explore-reveal": 1,
-          "--home-real-logo-reveal": 1,
-          duration: 0.28,
-          ease: "power1.inOut",
+          duration: 0.75,
         },
-        "<+=0.05"
+        "-=0.45"
       );
 
       tl.to(
-        veilRef.current,
-        {
-          opacity: 0,
-          duration: 0.28,
-          ease: "power1.inOut",
-        },
-        "<"
-      );
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 1.7,
+    ease: "power2.out",
+  },
+  "-=0.55"
+);
 
       tl.to(
-        logoRef.current,
-        {
-          opacity: 0,
-          duration: 0.28,
-          ease: "power1.out",
-        },
-        "<+=0.03"
-      );
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.01,
+  },
+  "+=0.18"
+);
 
-      tl.to(
-        introPhraseRef.current,
-        {
-          opacity: 0,
-          duration: 0.24,
-          ease: "power1.out",
-        },
-        "<"
-      );
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    filter: "blur(1.2px)",
+    duration: 0.14,
+    ease: "power1.out",
+  },
+  "+=0.01"
+);
 
-      tl.to(
-        flashRef.current,
-        {
-          opacity: 0,
-          duration: 0.38,
-          ease: "power2.out",
-        },
-        "-=0.16"
-      );
-    }, introRef);
+}, introRef);
 
-    return () => ctx.revert();
-  }, []);
-
+return () => ctx.revert();
+}, []);
+  
   return (
     <div ref={introRef} className={styles.intro}>
       <div ref={veilRef} className={styles.veil} />
-      <div ref={flashRef} className={styles.transitionFlash} />
 
       <svg
         ref={traceRef}
@@ -212,6 +197,7 @@ export default function IntroHome() {
       </svg>
 
       <div ref={logoRef} className={styles.logoWrap}>
+  <div ref={shineRef} className={styles.logoShine} />
         <Image
           src="/amato-lima-experience/logo/logo.png"
           alt="Amato Lima"
@@ -220,12 +206,6 @@ export default function IntroHome() {
           priority
           className={styles.logo}
         />
-      </div>
-
-      <div ref={introPhraseRef} className={styles.introPhrase}>
-        <span className={styles.introScript}>Arte</span>
-        <span className={styles.introDe}>DE</span>
-        <span className={styles.introTitle}>HABITAR</span>
       </div>
     </div>
   );
