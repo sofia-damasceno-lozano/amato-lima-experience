@@ -97,10 +97,10 @@ tl.fromTo(
 veilRef.current,
 {
 opacity: 0,
-scale: 1.04,
-filter: "blur(4px)",
-duration: 1.25,
-ease: "power2.inOut",
+scale: 1.025,
+filter: "blur(2px)",
+duration: 1.65,
+ease: "power1.inOut",
 },
 "-=0.55"
 );
@@ -133,10 +133,10 @@ tl.to(
 root,
 {
 "--home-bg-reveal": 1,
-duration: 1.7,
-ease: "power2.out",
+duration: 2.4,
+ease: "power1.out",
 },
-"-=0.55"
+"-=1.15"
 );
 
 tl.to(
