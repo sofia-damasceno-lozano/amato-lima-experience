@@ -444,15 +444,15 @@ filter:
   100% {
     background-position: -200% 0;
   }
-}
+   
 .background {
   opacity: var(--home-bg-reveal, 1);
 
   transform:
-  scale(calc(1.008 - (var(--home-bg-reveal, 1) * 0.008)));
+    scale(calc(1.008 - (var(--home-bg-reveal, 1) * 0.008)));
 
   filter:
-  blur(calc((1 - var(--home-bg-reveal, 1)) * 2px));
+    blur(calc((1 - var(--home-bg-reveal, 1)) * 2px));
 
   transition:
     transform 2.2s cubic-bezier(0.22, 1, 0.36, 1),
