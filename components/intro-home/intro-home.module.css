@@ -13,7 +13,13 @@
   position: absolute;
   inset: 0;
 
-  background: #f3eee7;
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(255,255,255,0.96) 0%,
+      rgba(248,243,236,0.94) 38%,
+      rgba(238,231,221,0.92) 100%
+    );
 
   z-index: 1;
 }
