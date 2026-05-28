@@ -514,3 +514,19 @@ filter:
     filter,
     transform;
 }
+
+.content {
+  z-index: 9001;
+}
+
+.titleWrapper {
+  z-index: 9002;
+}
+
+.header {
+  z-index: 5;
+}
+
+.exploreWrapper {
+  z-index: 5;
+}
