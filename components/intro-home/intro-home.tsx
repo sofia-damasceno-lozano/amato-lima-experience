@@ -129,14 +129,24 @@ tl.to(
   );  
 
 tl.to(
+  root,
+  {
+    "--home-element-shine": 1,
+    duration: 1.45,
+    ease: "power2.inOut",
+  },
+  "-=0.1"
+);
+
+tl.to(
   transitionGlowRef.current,
   {
     opacity: 1,
     x: "145%",
-    duration: 0.72,
+    duration: 1.45,
     ease: "power2.inOut",
   },
-  "-=0.15"
+  "<"
 );
 
 tl.set(root, {
@@ -151,7 +161,7 @@ tl.to(
   transitionGlowRef.current,
   {
     opacity: 0,
-    duration: 0.28,
+    duration: 0.45,
     ease: "power1.out",
   }
 );
