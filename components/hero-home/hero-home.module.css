@@ -505,6 +505,4 @@ filter:
 
 .logoWrapper {
   opacity: var(--home-real-logo-reveal, 0);
-
-  transition: opacity 0.08s linear;
 }
