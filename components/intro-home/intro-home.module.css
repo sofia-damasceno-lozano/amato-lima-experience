@@ -12,22 +12,22 @@
 .trace {
   position: absolute;
 
-  top: 35vh;
+  top: 34vh;
   left: 50%;
 
-  width: min(76vw, 360px);
+  width: min(48vw, 190px);
   height: auto;
 
   transform: translateX(-50%);
 
-  opacity: 0.88;
+  opacity: 0.75;
 
   z-index: 1;
 }
 
 .trace path {
-  stroke: rgba(131, 107, 81, 0.42);
-  stroke-width: 1;
+  stroke: rgba(131, 107, 81, 0.34);
+  stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
 
