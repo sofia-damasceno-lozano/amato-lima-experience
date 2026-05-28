@@ -35,15 +35,18 @@
 }
 
 .trace path {
-  stroke: rgba(131, 107, 81, 0.42);
-  stroke-width: 1.4;
+  stroke: rgba(131, 107, 81, 0.28);
+  stroke-width: 1.15;
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 
+  filter:
+    drop-shadow(0 0 3px rgba(244, 223, 191, 0.28))
+    drop-shadow(0 0 9px rgba(131, 107, 81, 0.10));
+
   opacity: 0;
 }
-
 .logoWrap {
   position: absolute;
 
@@ -66,4 +69,29 @@
   height: auto;
 
   object-fit: contain;
+}
+
+.trace {
+  overflow: visible;
+}
+
+.trace path {
+  animation: traceGlow 4.8s ease-in-out infinite;
+}
+
+@keyframes traceGlow {
+  0%,
+  100% {
+    stroke: rgba(131, 107, 81, 0.24);
+    filter:
+      drop-shadow(0 0 2px rgba(244, 223, 191, 0.18))
+      drop-shadow(0 0 7px rgba(131, 107, 81, 0.08));
+  }
+
+  50% {
+    stroke: rgba(183, 154, 116, 0.42);
+    filter:
+      drop-shadow(0 0 4px rgba(244, 223, 191, 0.36))
+      drop-shadow(0 0 12px rgba(131, 107, 81, 0.14));
+  }
 }
