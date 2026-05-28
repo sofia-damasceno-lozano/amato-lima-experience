@@ -198,7 +198,7 @@
   left: 50%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(9rem, 36vw, 12rem);
+  font-size: clamp(7rem, 34vw, 10rem);
   font-weight: 100;
 
   line-height: 0.8;
@@ -247,7 +247,7 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1.2rem, 8.2vw, 2.2rem);
+  font-size: clamp(1.0rem, 8.0vw, 2.0rem);
   font-weight: 100;
 
   line-height: 0.8;
@@ -309,7 +309,7 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(5rem, 19vw, 7.6rem);
+  font-size: clamp(3rem, 17vw, 7.2rem);
   font-weight: 100;
 
   line-height: 0.82;
