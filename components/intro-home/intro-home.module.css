@@ -1,12 +1,12 @@
 .intro {
-position: fixed;
-inset: 0;
+  position: fixed;
+  inset: 0;
 
-z-index: 8000;
+  z-index: 9999;
 
-overflow: hidden;
+  overflow: hidden;
 
-pointer-events: none;
+  pointer-events: none;
 }
 
 .veil {
@@ -29,72 +29,163 @@ pointer-events: none;
       rgba(231,223,214,0.94) 100%
     );
 
-  backdrop-filter: blur(0px);
-
   z-index: 1;
 }
 
 .trace {
-position: absolute;
+  position: absolute;
 
-top: 25vh;
-left: 50%;
+  top: 25vh;
+  left: 50%;
 
-width: min(62vw, 260px);
-height: auto;
+  width: min(62vw, 260px);
+  height: auto;
 
-transform: translateX(-50%);
+  transform: translateX(-50%);
 
-opacity: 0.78;
+  opacity: 0.78;
 
-z-index: 2;
+  z-index: 2;
 }
 
 .trace path {
-stroke: rgba(131, 107, 81, 0.28);
-stroke-width: 1.15;
-stroke-linecap: round;
-stroke-linejoin: round;
-vector-effect: non-scaling-stroke;
+  stroke: rgba(131, 107, 81, 0.28);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 
-filter:
-drop-shadow(0 0 3px rgba(244, 223, 191, 0.28))
-drop-shadow(0 0 9px rgba(131, 107, 81, 0.10));
+  filter:
+    drop-shadow(0 0 3px rgba(244, 223, 191, 0.28))
+    drop-shadow(0 0 9px rgba(131, 107, 81, 0.10));
 
-opacity: 0;
+  opacity: 0;
 }
 
 .logoWrap {
-position: absolute;
+  position: absolute;
 
-top: 26vh;
-left: 50%;
+  top: 26vh;
+  left: 50%;
 
-width: 240px;
+  width: 240px;
 
-transform: translateX(-50%);
+  transform: translateX(-50%);
 
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-overflow: hidden;
+  overflow: hidden;
 
-z-index: 3;
+  z-index: 3;
 }
 
 .logo {
-width: 240px;
-height: auto;
+  width: 240px;
+  height: auto;
 
-object-fit: contain;
+  object-fit: contain;
+}
+
+.introPhrase {
+  position: absolute;
+
+  top: 44vh;
+  left: 50%;
+
+  width: min(92vw, 760px);
+  height: 30vh;
+
+  transform: translateX(-50%);
+
+  --intro-phrase-shine: -120%;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+.introScript {
+  position: absolute;
+
+  top: -2.8vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-westwood);
+
+  font-size: clamp(8rem, 32vw, 14rem);
+  font-weight: 100;
+
+  line-height: 0.8;
+  letter-spacing: -0.035em;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5f442b 0%,
+      #7a5c3b 26%,
+      #f8efe1 var(--intro-phrase-shine),
+      #8a6845 70%,
+      #4e3825 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(0 1px 1px rgba(70, 48, 29, 0.10))
+    drop-shadow(0 6px 14px rgba(70, 48, 29, 0.08));
+}
+
+.introDe {
+  position: absolute;
+
+  top: 11vh;
+  left: 8vw;
+
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(1.2rem, 8vw, 2.2rem);
+  font-weight: 100;
+
+  color: #6b4f35;
+
+  text-shadow:
+    0 1px 2px rgba(70, 48, 29, 0.10);
+}
+
+.introTitle {
+  position: absolute;
+
+  top: 15vh;
+  left: 7vw;
+
+  font-family: var(--font-classy-vogue);
+
+  font-size: clamp(4.8rem, 18vw, 8rem);
+  font-weight: 100;
+
+  line-height: 0.82;
+  letter-spacing: 0.045em;
+
+  color: #6b4f35;
+
+  text-shadow:
+    0 1px 2px rgba(70, 48, 29, 0.10);
 }
 
 .transitionFlash {
   position: absolute;
   inset: 0;
 
-  z-index: 999;
+  z-index: 10;
 
   opacity: 0;
 
