@@ -449,7 +449,7 @@ filter:
   opacity: var(--home-bg-reveal, 1);
 
   transform:
-    scale(calc(1.02 - (var(--home-bg-reveal, 1) * 0.02)));
+  scale(calc(1.008 - (var(--home-bg-reveal, 1) * 0.008)));
 
   filter:
   blur(calc((1 - var(--home-bg-reveal, 1)) * 2px));
