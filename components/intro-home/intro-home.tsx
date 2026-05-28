@@ -93,16 +93,25 @@ tl.fromTo(
   });  
 
   tl.to(
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 1.35,
+    ease: "power2.out",
+  },
+  "-=0.95"
+);
 
-veilRef.current,
-{
-opacity: 0,
-scale: 1.025,
-filter: "blur(2px)",
-duration: 1.65,
-ease: "power1.inOut",
-},
-"-=0.55"
+  tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    scale: 1.015,
+    filter: "blur(1px)",
+    duration: 0.95,
+    ease: "power2.out",
+  },
+  "-=1.05"
 );
 
 tl.to(  
@@ -127,17 +136,6 @@ tl.to(
     },  
     "-=0.45"  
   );  
-
-  tl.to(
-
-root,
-{
-"--home-bg-reveal": 1,
-duration: 2.4,
-ease: "power1.out",
-},
-"-=1.15"
-);
 
 tl.to(
 
