@@ -138,22 +138,22 @@ export default function IntroHome() {
 );
 
       tl.to(
-        root,
-        {
-          "--home-real-logo-reveal": 1,
-          duration: 0.35,
-        },
-        "-=0.2"
-      );
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.12,
+  },
+  "-=0.02"
+);
 
       tl.to(
-        logoRef.current,
-        {
-          opacity: 0,
-          duration: 0.25,
-        },
-        "-=0.25"
-      );
+  logoRef.current,
+  {
+    opacity: 0,
+    duration: 0.08,
+  },
+  "-=0.01"
+);
     }, introRef);
 
     return () => ctx.revert();
