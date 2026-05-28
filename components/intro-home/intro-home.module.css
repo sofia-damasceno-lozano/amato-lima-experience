@@ -34,6 +34,11 @@
   opacity: 0;
 }
 
+.framePath {
+  stroke-width: 1.4;
+  opacity: 0;
+}
+
 .logoWrap {
   position: absolute;
 
