@@ -91,17 +91,7 @@ tl.fromTo(
     duration: 1.5,  
     delay: 0.15,  
   });  
-
-  tl.to(
-  root,
-  {
-    "--home-bg-reveal": 1,
-    duration: 1.35,
-    ease: "power2.out",
-  },
-  "-=0.95"
-);
-
+  
   tl.to(
   veilRef.current,
   {
@@ -138,13 +128,13 @@ tl.to(
   );  
 
 tl.to(
-
-root,
-{
-"--home-real-logo-reveal": 1,
-duration: 0.01,
-},
-"+=0.18"
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 0.95,
+    ease: "power3.out",
+  },
+  "-=0.15"
 );
 
 tl.to(
