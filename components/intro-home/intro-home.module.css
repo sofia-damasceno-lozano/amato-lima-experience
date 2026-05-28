@@ -4,45 +4,50 @@
 
   z-index: 9999;
 
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+
   background: #f3eee7;
 
-  overflow: hidden;
+  z-index: 1;
 }
 
 .trace {
   position: absolute;
 
-  top: 33vh;
+  top: 25vh;
   left: 50%;
 
-  width: min(58vw, 230px);
+  width: min(62vw, 260px);
   height: auto;
 
   transform: translateX(-50%);
 
-  opacity: 0.72;
+  opacity: 0.78;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 .trace path {
-  stroke: rgba(131, 107, 81, 0.34);
+  stroke: rgba(131, 107, 81, 0.42);
   stroke-width: 2.0;
   stroke-linecap: round;
   stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 
-  opacity: 0;
-}
-
-.framePath {
-  stroke-width: 1.8;
   opacity: 0;
 }
 
 .logoWrap {
   position: absolute;
 
-  top: 32vh;
+  top: 35vh;
   left: 50%;
 
   width: 240px;
@@ -53,7 +58,7 @@
   align-items: center;
   justify-content: center;
 
-  z-index: 2;
+  z-index: 3;
 }
 
 .logo {
@@ -61,93 +66,4 @@
   height: auto;
 
   object-fit: contain;
-}
-
-.phrase {
-  position: absolute;
-
-  top: 46vh;
-  left: 50%;
-
-  width: min(92vw, 760px);
-  height: 30vh;
-
-  transform: translateX(-50%);
-
-  pointer-events: none;
-
-  z-index: 3;
-}
-
-.script {
-  position: absolute;
-
-  top: -2.8vh;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  font-family: var(--font-westwood);
-
-  font-size: clamp(8rem, 32vw, 14rem);
-  font-weight: 100;
-
-  line-height: 0.8;
-  letter-spacing: -0.035em;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #fffaf2 0%,
-      #fdf2df 26%,
-      #f3dec0 58%,
-      #d7bb93 82%,
-      #b79a74 100%
-    );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  filter:
-    drop-shadow(0 1px 1px rgba(120, 92, 58, 0.10))
-    drop-shadow(0 6px 14px rgba(80, 52, 26, 0.10));
-}
-
-.de {
-  position: absolute;
-
-  top: 11vh;
-  left: 8vw;
-
-  font-family: var(--font-classy-vogue);
-
-  font-size: clamp(1.2rem, 8vw, 2.2rem);
-  font-weight: 100;
-
-  color: #f4dfbf;
-
-  text-shadow:
-    0 1px 2px rgba(120, 92, 58, 0.08);
-}
-
-.title {
-  position: absolute;
-
-  top: 15vh;
-  left: 7vw;
-
-  font-family: var(--font-classy-vogue);
-
-  font-size: clamp(4.8rem, 18vw, 8rem);
-  font-weight: 100;
-
-  line-height: 0.82;
-  letter-spacing: 0.045em;
-
-  color: #f4dfbf;
-
-  text-shadow:
-    0 1px 2px rgba(120, 92, 58, 0.08);
 }
