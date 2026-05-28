@@ -445,6 +445,34 @@ filter:
     background-position: -200% 0;
   }
 }
-.header {
-  opacity: var(--home-header-reveal, 1);
+.background,
+.overlay {
+  opacity: var(--home-bg-reveal, 1);
+  transition: opacity 0.4s ease;
+}
+
+.titleWrapper {
+  opacity: var(--home-title-reveal, 1);
+
+  filter: blur(calc((1 - var(--home-title-reveal, 1)) * 10px));
+
+  transform: translateY(calc((1 - var(--home-title-reveal, 1)) * 18px));
+}
+
+.exploreWrapper {
+  opacity: var(--home-explore-reveal, 1);
+
+  filter: blur(calc((1 - var(--home-explore-reveal, 1)) * 8px));
+
+  transform:
+    translateX(-50%)
+    translateY(calc((1 - var(--home-explore-reveal, 1)) * 14px));
+}
+
+.menuButton {
+  opacity: var(--home-menu-reveal, 1);
+}
+
+.logoWrapper {
+  opacity: var(--home-real-logo-reveal, 1);
 }
