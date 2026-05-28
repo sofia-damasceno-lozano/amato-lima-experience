@@ -134,35 +134,35 @@ tl.to(
   {
     opacity: 1,
     x: "145%",
-    duration: 1.6,
+    duration: 1.15,
     ease: "power2.inOut",
   },
   "-=0.25"
 );
 
-/* HOME MUDA DURANTE O BRILHO */
+tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    duration: 0.55,
+    ease: "power1.inOut",
+  },
+  "<+=0.45"
+);
 
 tl.set(
   root,
   {
     "--home-bg-reveal": 1,
   },
-  "<+=0.65"
-);
-
-tl.set(
-  veilRef.current,
-  {
-    opacity: 0,
-  },
-  "<"
+  "<+=0.08"
 );
 
 tl.to(
   root,
   {
     "--home-real-logo-reveal": 1,
-    duration: 0.01,
+    duration: 0.08,
   },
   "<+=0.08"
 );
@@ -181,11 +181,11 @@ tl.to(
   transitionGlowRef.current,
   {
     opacity: 0,
-    duration: 0.35,
+    duration: 0.5,
     ease: "power1.out",
   },
-  "-=0.25"
-);    
+  "-=0.2"
+);
 }, introRef);
 
 return () => ctx.revert();
