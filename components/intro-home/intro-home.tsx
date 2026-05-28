@@ -10,7 +10,6 @@ export default function IntroHome() {
   const veilRef = useRef<HTMLDivElement>(null);
   const traceRef = useRef<SVGSVGElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const shineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -36,7 +35,10 @@ export default function IntroHome() {
       }
 
       const tl = gsap.timeline({
-        defaults: { ease: "power3.inOut" },
+        defaults: {
+          ease: "power3.inOut",
+        },
+
         onComplete: () => {
           root.style.setProperty("--home-bg-reveal", "1");
           root.style.setProperty("--home-title-reveal", "1");
@@ -44,12 +46,19 @@ export default function IntroHome() {
           root.style.setProperty("--home-menu-reveal", "1");
           root.style.setProperty("--home-real-logo-reveal", "1");
 
-          gsap.set(introRef.current, { display: "none" });
-          gsap.set(document.body, { overflow: "auto" });
+          gsap.set(introRef.current, {
+            display: "none",
+          });
+
+          gsap.set(document.body, {
+            overflow: "auto",
+          });
         },
       });
 
-      tl.set(document.body, { overflow: "hidden" });
+      tl.set(document.body, {
+        overflow: "hidden",
+      });
 
       tl.to(paths, {
         strokeDashoffset: 0,
@@ -87,45 +96,11 @@ export default function IntroHome() {
       );
 
       tl.to(logoRef.current, {
-        y: "-31.6vh",
+        y: "-31vh",
         scale: 0.48,
         duration: 1.35,
         delay: 0.15,
       });
-
-      tl.fromTo(
-        shineRef.current,
-        {
-          opacity: 0,
-          x: "-140%",
-        },
-        {
-          opacity: 1,
-          x: "140%",
-          duration: 0.9,
-          ease: "power2.inOut",
-        }
-      );
-
-      tl.to(
-        root,
-        {
-          "--home-real-logo-reveal": 1,
-          duration: 0.01,
-        },
-        "-=0.35"
-      );
-
-      tl.to(
-        logoRef.current,
-        {
-          opacity: 0,
-          filter: "blur(1.2px)",
-          duration: 0.14,
-          ease: "power1.out",
-        },
-        "-=0.2"
-      );
 
       tl.to(
         veilRef.current,
@@ -136,7 +111,7 @@ export default function IntroHome() {
           duration: 1.25,
           ease: "power2.inOut",
         },
-        "-=0.35"
+        "-=0.55"
       );
 
       tl.to(
@@ -171,6 +146,26 @@ export default function IntroHome() {
         },
         "-=0.55"
       );
+
+      tl.to(
+        root,
+        {
+          "--home-real-logo-reveal": 1,
+          duration: 0.01,
+        },
+        "+=0.18"
+      );
+
+      tl.to(
+        logoRef.current,
+        {
+          opacity: 0,
+          filter: "blur(1.2px)",
+          duration: 0.14,
+          ease: "power1.out",
+        },
+        "+=0.01"
+      );
     }, introRef);
 
     return () => ctx.revert();
@@ -197,8 +192,6 @@ export default function IntroHome() {
       </svg>
 
       <div ref={logoRef} className={styles.logoWrap}>
-        <div ref={shineRef} className={styles.logoShine} />
-
         <Image
           src="/amato-lima-experience/logo/logo.png"
           alt="Amato Lima"
