@@ -133,10 +133,10 @@ tl.to(
   root,
   {
     "--home-element-shine": 1,
-    duration: 1.45,
+    duration: 2.1,
     ease: "power2.inOut",
   },
-  "-=0.1"
+  "-=0.45"
 );
 
 tl.to(
