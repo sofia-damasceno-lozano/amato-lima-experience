@@ -452,7 +452,7 @@ filter:
     scale(calc(1.02 - (var(--home-bg-reveal, 1) * 0.02)));
 
   filter:
-  blur(calc((1 - var(--home-bg-reveal, 1)) * 4px));
+  blur(calc((1 - var(--home-bg-reveal, 1)) * 2px));
 
   transition:
     transform 2.2s cubic-bezier(0.22, 1, 0.36, 1),
