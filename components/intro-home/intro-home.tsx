@@ -97,7 +97,7 @@ export default function IntroHome() {
   {
     opacity: 0,
     scale: 1.04,
-    filter: "blur(10px)",
+    filter: "blur(4px)",
     duration: 1.25,
     ease: "power2.inOut",
   },
