@@ -96,14 +96,14 @@ tl.fromTo(
   veilRef.current,
   {
     opacity: 0,
-    scale: 1.015,
-    filter: "blur(1px)",
-    duration: 0.95,
-    ease: "power2.out",
+    scale: 1.01,
+    filter: "blur(0.5px)",
+    duration: 0.9,
+    ease: "power3.out",
   },
-  "-=1.05"
+  "-=0.85"
 );
-
+  
 tl.to(  
     root,  
     {  
