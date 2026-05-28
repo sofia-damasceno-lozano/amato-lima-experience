@@ -450,15 +450,15 @@ filter:
   opacity: var(--home-bg-reveal, 1);
 
   transform:
-    scale(calc(1.008 - (var(--home-bg-reveal, 1) * 0.008)));
+    scale(calc(1.003 - (var(--home-bg-reveal, 1) * 0.003)));
 
   filter:
-    blur(calc((1 - var(--home-bg-reveal, 1)) * 2px));
+    blur(calc((1 - var(--home-bg-reveal, 1)) * 0.8px));
 
   transition:
-    transform 2.2s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 2s ease,
-    opacity 1.8s ease;
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease,
+    opacity 0.95s ease;
 }
 
 .overlay {
