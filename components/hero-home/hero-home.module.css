@@ -445,13 +445,26 @@ filter:
     background-position: -200% 0;
   }
 }
-.background,
+.background {
+  opacity: var(--home-bg-reveal, 1);
+
+  transform:
+    scale(calc(1.02 - (var(--home-bg-reveal, 1) * 0.02)));
+
+  filter:
+    blur(calc((1 - var(--home-bg-reveal, 1)) * 8px));
+
+  transition:
+    transform 2.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 2s ease,
+    opacity 1.8s ease;
+}
+
 .overlay {
   opacity: var(--home-bg-reveal, 1);
 
-  transform: scale(calc(1.04 - (var(--home-bg-reveal, 1) * 0.04)));
-
-  filter: blur(calc((1 - var(--home-bg-reveal, 1)) * 10px));
+  transition:
+    opacity 2s ease;
 }
 
 .titleWrapper {
