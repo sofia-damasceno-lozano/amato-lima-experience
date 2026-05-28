@@ -450,22 +450,22 @@ filter:
   opacity: var(--home-bg-reveal, 1);
 
   transform:
-    scale(calc(1.003 - (var(--home-bg-reveal, 1) * 0.003)));
+    scale(calc(1.0015 - (var(--home-bg-reveal, 1) * 0.0015)));
 
   filter:
-    blur(calc((1 - var(--home-bg-reveal, 1)) * 0.8px));
+    blur(calc((1 - var(--home-bg-reveal, 1)) * 0.35px));
 
   transition:
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.9s ease,
-    opacity 0.95s ease;
+    opacity 1.4s ease,
+    filter 1.2s ease,
+    transform 1.4s ease;
 }
 
 .overlay {
   opacity: var(--home-bg-reveal, 1);
 
   transition:
-    opacity 2s ease;
+    opacity 1.4s ease;
 }
 
 .titleWrapper {
