@@ -136,6 +136,11 @@ export default function IntroHome() {
   fill="none"
   aria-hidden="true"
 >
+  <path
+    className={styles.framePath}
+    d="M82 58 L206 58 Q232 58 232 84 L232 194 L92 194 Q74 194 74 176 L74 88 Q74 58 82 58"
+  />
+
   <path d="M205 62 C238 62 258 82 258 114 L258 188 L222 188 L222 118 C222 101 211 94 194 94 L170 94" />
 
   <path d="M170 94 C123 94 92 123 92 168 C92 204 115 222 145 222 C181 222 205 194 205 156 C205 126 188 108 160 108" />
