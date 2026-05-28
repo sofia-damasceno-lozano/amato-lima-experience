@@ -87,7 +87,7 @@ tl.fromTo(
 
   tl.to(logoRef.current, {  
     y: "-31.6vh",  
-    scale: 0.48,  
+    scale: 0.485,  
     duration: 1.5,  
     delay: 0.15,  
   });  
