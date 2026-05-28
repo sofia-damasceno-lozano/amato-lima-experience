@@ -6,48 +6,48 @@ import gsap from "gsap";
 import styles from "./intro-home.module.css";
 
 export default function IntroHome() {
-const introRef = useRef<HTMLDivElement>(null);
-const veilRef = useRef<HTMLDivElement>(null);
-const traceRef = useRef<SVGSVGElement>(null);
-const logoRef = useRef<HTMLDivElement>(null);
-const transitionGlowRef = useRef<HTMLDivElement>(null);
-useEffect(() => {
-const root = document.documentElement;
+  const introRef = useRef<HTMLDivElement>(null);
+  const veilRef = useRef<HTMLDivElement>(null);
+  const traceRef = useRef<SVGSVGElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const transitionGlowRef = useRef<HTMLDivElement>(null);
 
-const ctx = gsap.context(() => {  
-  const paths = traceRef.current?.querySelectorAll("path");  
+  useEffect(() => {
+    const root = document.documentElement;
 
-  root.style.setProperty("--home-bg-reveal", "0");  
-  root.style.setProperty("--home-title-reveal", "0");  
-  root.style.setProperty("--home-explore-reveal", "0");  
-  root.style.setProperty("--home-menu-reveal", "0");  
-  root.style.setProperty("--home-real-logo-reveal", "0");
-  root.style.setProperty("--home-element-shine", "0");
+    const ctx = gsap.context(() => {
+      const paths = traceRef.current?.querySelectorAll("path");
 
-  if (paths) {  
-    paths.forEach((path) => {  
-      const length = path.getTotalLength();  
+      root.style.setProperty("--home-bg-reveal", "0");
+      root.style.setProperty("--home-title-reveal", "0");
+      root.style.setProperty("--home-explore-reveal", "0");
+      root.style.setProperty("--home-menu-reveal", "0");
+      root.style.setProperty("--home-real-logo-reveal", "0");
 
-      gsap.set(path, {  
-        strokeDasharray: length,  
-        strokeDashoffset: length,  
-      });  
-    });  
-  }  
+      if (paths) {
+        paths.forEach((path) => {
+          const length = path.getTotalLength();
 
-  const tl = gsap.timeline({  
-    defaults: { ease: "power3.inOut" },  
-    onComplete: () => {  
-      root.style.setProperty("--home-bg-reveal", "1");  
-      root.style.setProperty("--home-title-reveal", "1");  
-      root.style.setProperty("--home-explore-reveal", "1");  
-      root.style.setProperty("--home-menu-reveal", "1");  
-      root.style.setProperty("--home-real-logo-reveal", "1");  
+          gsap.set(path, {
+            strokeDasharray: length,
+            strokeDashoffset: length,
+          });
+        });
+      }
 
-      gsap.set(introRef.current, { display: "none" });  
-      gsap.set(document.body, { overflow: "auto" });  
-    },  
-  });  
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.inOut" },
+        onComplete: () => {
+          root.style.setProperty("--home-bg-reveal", "1");
+          root.style.setProperty("--home-title-reveal", "1");
+          root.style.setProperty("--home-explore-reveal", "1");
+          root.style.setProperty("--home-menu-reveal", "1");
+          root.style.setProperty("--home-real-logo-reveal", "1");
+
+          gsap.set(introRef.current, { display: "none" });
+          gsap.set(document.body, { overflow: "auto" });
+        },
+      });
 
   tl.set(document.body, { overflow: "hidden" });  
 
@@ -129,35 +129,25 @@ tl.to(
     "-=0.45"  
   );  
 
-tl.to(
-  root,
-  {
-    "--home-element-shine": 1,
-    duration: 2.1,
-    ease: "power2.inOut",
-  },
-  "-=0.45"
-);
-
-tl.to(
+ tl.to(
   transitionGlowRef.current,
   {
     opacity: 1,
     x: "145%",
-    duration: 2.1,
+    duration: 1.6,
     ease: "power2.inOut",
   },
-  "<"
+  "-=0.25"
 );
 
-/* TROCA ACONTECE DURANTE O BRILHO */
+/* HOME MUDA DURANTE O BRILHO */
 
 tl.set(
   root,
   {
     "--home-bg-reveal": 1,
   },
-  "<+=0.72"
+  "<+=0.65"
 );
 
 tl.set(
@@ -169,15 +159,33 @@ tl.set(
 );
 
 tl.to(
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.01,
+  },
+  "<+=0.08"
+);
+
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    duration: 0.12,
+    ease: "power1.out",
+  },
+  "<"
+);
+
+tl.to(
   transitionGlowRef.current,
   {
     opacity: 0,
     duration: 0.35,
     ease: "power1.out",
   },
-  "-=0.4"
-);
-  
+  "-=0.25"
+);    
 }, introRef);
 
 return () => ctx.revert();
