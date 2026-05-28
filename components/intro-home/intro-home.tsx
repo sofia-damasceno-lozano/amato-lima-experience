@@ -10,6 +10,7 @@ const introRef = useRef<HTMLDivElement>(null);
 const veilRef = useRef<HTMLDivElement>(null);
 const traceRef = useRef<SVGSVGElement>(null);
 const logoRef = useRef<HTMLDivElement>(null);
+const transitionGlowRef = useRef<HTMLDivElement>(null);
 useEffect(() => {
 const root = document.documentElement;
 
@@ -128,24 +129,31 @@ tl.to(
   );  
 
 tl.to(
-  root,
+  transitionGlowRef.current,
   {
-    "--home-bg-reveal": 1,
-    duration: 0.95,
-    ease: "none",
+    opacity: 1,
+    x: "145%",
+    duration: 0.72,
+    ease: "power2.inOut",
   },
-  "-=0.75"
+  "-=0.15"
 );
 
+tl.set(root, {
+  "--home-bg-reveal": 1,
+});
+
+tl.set(veilRef.current, {
+  opacity: 0,
+});
+
 tl.to(
-logoRef.current,
-{
-opacity: 0,
-filter: "blur(0.8px)",
-duration: 0.14,
-ease: "power1.out",
-},
-"+=0.01"
+  transitionGlowRef.current,
+  {
+    opacity: 0,
+    duration: 0.28,
+    ease: "power1.out",
+  }
 );
 
 }, introRef);
@@ -156,6 +164,7 @@ return () => ctx.revert();
 return (
 <div ref={introRef} className={styles.intro}>
 <div ref={veilRef} className={styles.veil} />
+<div ref={transitionGlowRef} className={styles.transitionGlow} />
 
 <svg  
     ref={traceRef}  
