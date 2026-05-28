@@ -457,19 +457,33 @@ filter:
 .titleWrapper {
   opacity: var(--home-title-reveal, 1);
 
-  filter: blur(calc((1 - var(--home-title-reveal, 1)) * 10px));
+  transform:
+    translateY(calc((1 - var(--home-title-reveal, 1)) * 6px))
+    scale(calc(0.985 + (var(--home-title-reveal, 1) * 0.015)));
 
-  transform: translateY(calc((1 - var(--home-title-reveal, 1)) * 18px));
+  filter:
+    blur(calc((1 - var(--home-title-reveal, 1)) * 6px));
+
+  transition:
+    transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.2s ease;
 }
 
 .exploreWrapper {
   opacity: var(--home-explore-reveal, 1);
 
-  filter: blur(calc((1 - var(--home-explore-reveal, 1)) * 8px));
-
   transform:
     translateX(-50%)
-    translateY(calc((1 - var(--home-explore-reveal, 1)) * 14px));
+    translateY(calc((1 - var(--home-explore-reveal, 1)) * 8px));
+
+  filter:
+    blur(calc((1 - var(--home-explore-reveal, 1)) * 4px));
+
+  transition:
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.1s ease,
+    filter 1.2s ease;
 }
 
 .menuButton {
@@ -477,5 +491,10 @@ filter:
 }
 
 .logoWrapper {
-  opacity: var(--home-real-logo-reveal, 1);
+  opacity: var(--home-real-logo-reveal, 0);
+
+  transition:
+    opacity 0.25s ease;
+
+  will-change: opacity;
 }
