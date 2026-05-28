@@ -93,13 +93,16 @@ export default function IntroHome() {
       });
 
       tl.to(
-        veilRef.current,
-        {
-          opacity: 0,
-          duration: 0.9,
-        },
-        "-=0.45"
-      );
+  veilRef.current,
+  {
+    opacity: 0,
+    scale: 1.04,
+    filter: "blur(10px)",
+    duration: 1.25,
+    ease: "power2.inOut",
+  },
+  "-=0.55"
+);
 
       tl.to(
         root,
@@ -125,13 +128,14 @@ export default function IntroHome() {
       );
 
       tl.to(
-        root,
-        {
-          "--home-bg-reveal": 1,
-          duration: 1.25,
-        },
-        "-=0.25"
-      );
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 1.7,
+    ease: "power2.out",
+  },
+  "-=0.55"
+);
 
       tl.to(
         root,
