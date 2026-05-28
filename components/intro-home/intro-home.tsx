@@ -146,8 +146,16 @@ export default function IntroHome() {
   "+=0.18"
 );
 
-tl.set(logoRef.current, {
-  opacity: 0,
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    filter: "blur(1.2px)",
+    duration: 0.14,
+    ease: "power1.out",
+  },
+  "+=0.01"
+);
 });
     }, introRef);
 
