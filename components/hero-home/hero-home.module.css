@@ -464,16 +464,18 @@ filter:
   opacity: var(--home-title-reveal, 1);
 
   transform:
-    translateY(calc((1 - var(--home-title-reveal, 1)) * 6px))
-    scale(calc(0.985 + (var(--home-title-reveal, 1) * 0.015)));
+    translateY(calc((1 - var(--home-title-reveal, 1)) * 4px))
+    scale(calc(0.99 + (var(--home-title-reveal, 1) * 0.01)));
 
   filter:
-    blur(calc((1 - var(--home-title-reveal, 1)) * 6px));
+    blur(calc((1 - var(--home-title-reveal, 1)) * 3px))
+    contrast(1.08)
+    saturate(1.08);
 
   transition:
-    transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 1.6s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 1.2s ease;
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
 }
 
 .exploreWrapper {
