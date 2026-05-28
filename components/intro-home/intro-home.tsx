@@ -21,7 +21,8 @@ const ctx = gsap.context(() => {
   root.style.setProperty("--home-title-reveal", "0");  
   root.style.setProperty("--home-explore-reveal", "0");  
   root.style.setProperty("--home-menu-reveal", "0");  
-  root.style.setProperty("--home-real-logo-reveal", "0");  
+  root.style.setProperty("--home-real-logo-reveal", "0");
+  root.style.setProperty("--home-element-shine", "0");
 
   if (paths) {  
     paths.forEach((path) => {  
@@ -164,6 +165,16 @@ tl.to(
     duration: 0.45,
     ease: "power1.out",
   }
+);
+
+  tl.to(
+  root,
+  {
+    "--home-element-shine": 1,
+    duration: 1.45,
+    ease: "power2.inOut",
+  },
+  "-=0.1"
 );
 
 }, introRef);
