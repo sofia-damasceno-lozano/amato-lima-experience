@@ -53,8 +53,8 @@ export default function IntroHome() {
       tl.to(paths, {
         strokeDashoffset: 0,
         opacity: 1,
-        duration: 1.8,
-        stagger: 0.08,
+        duration: 1.25,
+        stagger: 0.05,
       });
 
       tl.fromTo(
@@ -84,7 +84,7 @@ export default function IntroHome() {
           scale: 1,
           y: 0,
           filter: "blur(0px)",
-          duration: 1.15,
+          duration: 0.85,
         },
         "-=0.55"
       );
@@ -102,20 +102,20 @@ export default function IntroHome() {
       tl.to(logoRef.current, {
         y: "-31.6vh",
         scale: 0.48,
-        duration: 1.35,
-        delay: 0.15,
+        duration: 1.05,
+        delay: 0.05,
       });
 
       tl.to(
   veilRef.current,
   {
     opacity: 0,
-    scale: 1.04,
-    filter: "blur(4px)",
-    duration: 1.25,
+    scale: 1.02,
+    filter: "blur(2px)",
+    duration: 0.85,
     ease: "power2.inOut",
   },
-  "-=0.55"
+  "-=0.45"
 );
 
       tl.to(
@@ -145,10 +145,10 @@ export default function IntroHome() {
   root,
   {
     "--home-bg-reveal": 1,
-    duration: 1.7,
+    duration: 0.85,
     ease: "power2.out",
   },
-  "-=0.55"
+  "-=0.35"
 );
 
       tl.to(
