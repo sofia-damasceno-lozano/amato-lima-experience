@@ -144,39 +144,40 @@ tl.to(
   {
     opacity: 1,
     x: "145%",
-    duration: 1.45,
+    duration: 2.1,
     ease: "power2.inOut",
   },
   "<"
 );
 
-tl.set(root, {
-  "--home-bg-reveal": 1,
-});
+/* TROCA ACONTECE DURANTE O BRILHO */
 
-tl.set(veilRef.current, {
-  opacity: 0,
-});
+tl.set(
+  root,
+  {
+    "--home-bg-reveal": 1,
+  },
+  "<+=0.72"
+);
+
+tl.set(
+  veilRef.current,
+  {
+    opacity: 0,
+  },
+  "<"
+);
 
 tl.to(
   transitionGlowRef.current,
   {
     opacity: 0,
-    duration: 0.45,
+    duration: 0.35,
     ease: "power1.out",
-  }
-);
-
-  tl.to(
-  root,
-  {
-    "--home-element-shine": 1,
-    duration: 1.45,
-    ease: "power2.inOut",
   },
-  "-=0.1"
+  "-=0.4"
 );
-
+  
 }, introRef);
 
 return () => ctx.revert();
