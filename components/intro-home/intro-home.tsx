@@ -141,19 +141,14 @@ export default function IntroHome() {
   root,
   {
     "--home-real-logo-reveal": 1,
-    duration: 0.08,
+    duration: 0.01,
   },
-  "-=0.04"
+  "+=0.18"
 );
 
-tl.to(
-  logoRef.current,
-  {
-    opacity: 0,
-    duration: 0.18,
-  },
-  "+=0.02"
-);
+tl.set(logoRef.current, {
+  opacity: 0,
+});
     }, introRef);
 
     return () => ctx.revert();
