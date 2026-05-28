@@ -4,45 +4,51 @@
 
   z-index: 9999;
 
-  background:
-    linear-gradient(
-      to bottom,
-      #f3eee7 0%,
-      #e8dfd5 48%,
-      #d8c8b6 100%
-    );
+  background: #f3eee7;
 
   overflow: hidden;
-
-  clip-path: inset(0 0 0 0);
 }
 
-.inner {
-  position: relative;
+.trace {
+  position: absolute;
 
-  width: 100%;
-  height: 100svh;
+  top: 35vh;
+  left: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: min(76vw, 360px);
+  height: auto;
+
+  transform: translateX(-50%);
+
+  opacity: 0.88;
+
+  z-index: 1;
+}
+
+.trace path {
+  stroke: rgba(131, 107, 81, 0.42);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  opacity: 0;
 }
 
 .logoWrap {
   position: absolute;
 
-  top: 37vh;
+  top: 42vh;
   left: 50%;
 
-  transform: translateX(-50%);
-
   width: 240px;
+
+  transform: translateX(-50%);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  z-index: 3;
+  z-index: 2;
 }
 
 .logo {
@@ -50,112 +56,53 @@
   height: auto;
 
   object-fit: contain;
-
-  opacity: 0.92;
-}
-
-.markGlow {
-  position: absolute;
-
-  width: 76px;
-  height: 76px;
-
-  left: 3px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  border: 1px solid rgba(131, 107, 81, 0.38);
-
-  box-shadow:
-    0 0 18px rgba(244, 223, 191, 0.22),
-    inset 0 0 18px rgba(255, 250, 242, 0.22);
-
-  opacity: 0.7;
-}
-
-.lines {
-  position: absolute;
-
-  top: 37vh;
-  left: 50%;
-
-  width: 265px;
-  height: 92px;
-
-  transform: translateX(-50%);
-
-  z-index: 2;
-}
-
-.line {
-  position: absolute;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  transform-origin: center;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(61, 39, 4, 0) 0%,
-      rgba(131, 107, 81, 0.55) 28%,
-      rgba(244, 223, 191, 0.9) 50%,
-      rgba(131, 107, 81, 0.55) 72%,
-      rgba(61, 39, 4, 0) 100%
-    );
-}
-
-.line:first-child {
-  top: 0;
-}
-
-.line:last-child {
-  bottom: 0;
 }
 
 .phrase {
   position: absolute;
 
-  top: 54vh;
+  top: 46vh;
   left: 50%;
+
+  width: min(92vw, 760px);
+  height: 30vh;
 
   transform: translateX(-50%);
 
-  width: min(86vw, 760px);
-  height: 22vh;
+  pointer-events: none;
 
-  --shine-x: -80%;
-
-  z-index: 4;
+  z-index: 3;
 }
 
 .script {
   position: absolute;
 
-  top: -3vh;
+  top: -2.8vh;
   left: 50%;
 
   transform: translateX(-50%);
 
   font-family: var(--font-westwood);
-  font-size: clamp(7rem, 28vw, 13rem);
-  line-height: 0.8;
+
+  font-size: clamp(8rem, 32vw, 14rem);
   font-weight: 100;
+
+  line-height: 0.8;
   letter-spacing: -0.035em;
 
   background:
     linear-gradient(
-      90deg,
-      #d7bb93 0%,
-      #fffaf2 var(--shine-x),
-      #d7bb93 100%
+      to bottom,
+      #fffaf2 0%,
+      #fdf2df 26%,
+      #f3dec0 58%,
+      #d7bb93 82%,
+      #b79a74 100%
     );
 
   -webkit-background-clip: text;
   background-clip: text;
+
   -webkit-text-fill-color: transparent;
 
   filter:
@@ -166,27 +113,29 @@
 .de {
   position: absolute;
 
-  top: 8.5vh;
-  left: 7vw;
+  top: 11vh;
+  left: 8vw;
 
   font-family: var(--font-classy-vogue);
-  font-size: clamp(1.2rem, 7vw, 2.2rem);
+
+  font-size: clamp(1.2rem, 8vw, 2.2rem);
   font-weight: 100;
 
   color: #f4dfbf;
 
   text-shadow:
-    0 1px 2px rgba(120, 92, 58, 0.10);
+    0 1px 2px rgba(120, 92, 58, 0.08);
 }
 
 .title {
   position: absolute;
 
-  top: 12vh;
-  left: 6vw;
+  top: 15vh;
+  left: 7vw;
 
   font-family: var(--font-classy-vogue);
-  font-size: clamp(4.4rem, 17vw, 8rem);
+
+  font-size: clamp(4.8rem, 18vw, 8rem);
   font-weight: 100;
 
   line-height: 0.82;
@@ -195,5 +144,5 @@
   color: #f4dfbf;
 
   text-shadow:
-    0 1px 2px rgba(120, 92, 58, 0.10);
+    0 1px 2px rgba(120, 92, 58, 0.08);
 }
