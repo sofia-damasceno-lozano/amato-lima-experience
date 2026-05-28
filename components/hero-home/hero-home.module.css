@@ -445,3 +445,6 @@ filter:
     background-position: -200% 0;
   }
 }
+.header {
+  opacity: var(--home-header-reveal, 1);
+}
