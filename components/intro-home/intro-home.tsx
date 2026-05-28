@@ -18,7 +18,7 @@ export default function IntroHome() {
     const ctx = gsap.context(() => {
       const paths = traceRef.current?.querySelectorAll("path");
 
-      root.style.setProperty("--home-bg-reveal", "0.18");
+      root.style.setProperty("--home-bg-reveal", "0.09");
       root.style.setProperty("--home-title-reveal", "0");
       root.style.setProperty("--home-explore-reveal", "0");
       root.style.setProperty("--home-menu-reveal", "0");
@@ -99,7 +99,7 @@ tl.fromTo(
   {
     opacity: 0,
     scale: 1,
-    filter: "blur(0px)",
+    filter: "blur(0.02px)",
     duration: 0.75,
     ease: "none",
   },
