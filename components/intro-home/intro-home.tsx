@@ -98,10 +98,10 @@ tl.fromTo(
     opacity: 0,
     scale: 1,
     filter: "blur(0px)",
-    duration: 1.1,
+    duration: 0.75,
     ease: "none",
   },
-  "-=1.25"
+  "-=0.95"
 );
   
 tl.to(  
