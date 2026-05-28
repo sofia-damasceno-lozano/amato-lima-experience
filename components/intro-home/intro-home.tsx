@@ -105,19 +105,10 @@ export default function IntroHome() {
 tl.to(
   root,
   {
-    "--home-menu-reveal": 1,
-    duration: 0.75,
+    "--home-title-reveal": 1,
+    duration: 1.1,
   },
   "-=0.45"
-);
-
-tl.to(
-  root,
-  {
-    "--home-explore-reveal": 1,
-    duration: 0.85,
-  },
-  "-=0.35"
 );
 
 tl.to(
@@ -153,6 +144,8 @@ tl.to(
 tl.to(
   root,
   {
+    "--home-menu-reveal": 1,
+    "--home-explore-reveal": 1,
     "--home-real-logo-reveal": 1,
     duration: 0.22,
     ease: "power1.out",
