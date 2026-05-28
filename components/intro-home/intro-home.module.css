@@ -91,15 +91,11 @@
 .introPhrase {
   position: absolute;
 
-  top: 44vh;
-  left: 50%;
+  top: 26vh;
+  left: 0;
 
-  width: min(92vw, 760px);
-  height: 30vh;
-
-  transform: translateX(-50%);
-
-  --intro-phrase-shine: -120%;
+  width: 100%;
+  height: 28vh;
 
   opacity: 0;
 
@@ -108,30 +104,41 @@
   z-index: 4;
 }
 
+/* ================================
+   ARTE INTRO
+================================ */
+
 .introScript {
   position: absolute;
 
-  top: -2.8vh;
+  top: 1vh;
   left: 50%;
 
-  transform: translateX(-50%);
-
   font-family: var(--font-westwood);
-
-  font-size: clamp(8rem, 32vw, 14rem);
+  font-size: clamp(9rem, 36vw, 12rem);
   font-weight: 100;
 
   line-height: 0.8;
   letter-spacing: -0.035em;
 
+  transform: translateX(-50%) scaleX(1.02) translateY(3vh);
+
+  padding-inline: 0.18em;
+  padding-block: 0.08em;
+
+  white-space: nowrap;
+  overflow: visible;
+
+  z-index: 4;
+
   background:
     linear-gradient(
-      100deg,
-      #5f442b 0%,
-      #7a5c3b 26%,
-      #f8efe1 var(--intro-phrase-shine),
-      #8a6845 70%,
-      #4e3825 100%
+      to bottom,
+      #fffaf2 0%,
+      #fdf2df 26%,
+      #f3dec0 58%,
+      #d7bb93 82%,
+      #b79a74 100%
     );
 
   -webkit-background-clip: text;
@@ -140,45 +147,128 @@
   -webkit-text-fill-color: transparent;
 
   filter:
-    drop-shadow(0 1px 1px rgba(70, 48, 29, 0.10))
-    drop-shadow(0 6px 14px rgba(70, 48, 29, 0.08));
+    drop-shadow(0 1px 1px rgba(120, 92, 58, 0.10))
+    drop-shadow(0 6px 14px rgba(80, 52, 26, 0.10));
 }
+
+/* ================================
+   DE INTRO
+================================ */
 
 .introDe {
   position: absolute;
 
-  top: 11vh;
-  left: 8vw;
+  top: 1vh;
+  left: 9vw;
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1.2rem, 8vw, 2.2rem);
+  font-size: clamp(1.2rem, 8.2vw, 2.2rem);
   font-weight: 100;
 
-  color: #6b4f35;
+  line-height: 0.8;
+  letter-spacing: 0.02em;
+
+  color: #f4dfbf;
 
   text-shadow:
-    0 1px 2px rgba(70, 48, 29, 0.10);
+    0 1px 2px rgba(120, 92, 58, 0.08);
+
+  transform: scaleX(1) scaleY(1) translateY(16vh);
+
+  z-index: 5;
 }
+
+.introDe::after {
+  content: "DE";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,250,242,0) 0%,
+      rgba(255,250,242,0) 34%,
+      #fffaf2 46%,
+      #ffefd4 50%,
+      #f3dec0 54%,
+      #d7bb93 60%,
+      rgba(255,250,242,0) 74%,
+      rgba(255,250,242,0) 100%
+    );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 10s linear infinite;
+
+  pointer-events: none;
+}
+
+/* ================================
+   HABITAR INTRO
+================================ */
 
 .introTitle {
   position: absolute;
 
-  top: 15vh;
-  left: 7vw;
+  top: 1vh;
+  left: 8vw;
+
+  margin: 0;
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(4.8rem, 18vw, 8rem);
+  font-size: clamp(5rem, 19vw, 7.6rem);
   font-weight: 100;
 
   line-height: 0.82;
   letter-spacing: 0.045em;
 
-  color: #6b4f35;
+  color: #f4dfbf;
 
   text-shadow:
-    0 1px 2px rgba(70, 48, 29, 0.10);
+    0 1px 2px rgba(120, 92, 58, 0.08);
+
+  transform: scaleX(1) scaleY(1) translateY(22vh);
+
+  z-index: 3;
+}
+
+.introTitle::after {
+  content: "HABITAR";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,250,242,0) 0%,
+      rgba(255,250,242,0) 34%,
+      #fffaf2 46%,
+      #ffefd4 50%,
+      #f3dec0 54%,
+      #d7bb93 60%,
+      rgba(255,250,242,0) 74%,
+      rgba(255,250,242,0) 100%
+    );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: titleFlow 10s linear infinite;
+
+  pointer-events: none;
 }
 
 .transitionFlash {
@@ -200,4 +290,15 @@
     );
 
   mix-blend-mode: screen;
+}
+
+
+@keyframes titleFlow {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
