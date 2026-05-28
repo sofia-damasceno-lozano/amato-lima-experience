@@ -130,19 +130,18 @@ export default function IntroHome() {
   return (
     <div ref={introRef} className={styles.intro}>
       <svg
-        ref={traceRef}
-        className={styles.trace}
-        viewBox="0 0 320 180"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M82 118 L82 62 L132 62" />
-        <path d="M104 132 L104 82 L158 82 L158 50" />
-        <path d="M132 126 C166 126 196 104 196 72" />
-        <path d="M202 54 L238 54 L238 112 L188 112" />
-        <path d="M94 142 L176 142 C220 142 256 112 256 76" />
-      </svg>
+  ref={traceRef}
+  className={styles.trace}
+  viewBox="0 0 320 260"
+  fill="none"
+  aria-hidden="true"
+>
+  <path d="M205 62 C238 62 258 82 258 114 L258 188 L222 188 L222 118 C222 101 211 94 194 94 L170 94" />
 
+  <path d="M170 94 C123 94 92 123 92 168 C92 204 115 222 145 222 C181 222 205 194 205 156 C205 126 188 108 160 108" />
+
+  <path d="M132 70 L112 178 C107 205 121 222 145 222" />
+</svg>
       <div ref={logoRef} className={styles.logoWrap}>
         <Image
           src="/amato-lima-experience/logo/logo.png"
