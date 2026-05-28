@@ -94,78 +94,151 @@ export default function IntroHome() {
       });
 
       tl.to(
-        root,
-        {
-          "--home-title-reveal": 1,
-          duration: 1.1,
-        },
-        "-=0.45"
-      );
+  root,
+  {
+    "--home-title-reveal": 1,
+    duration: 1.1,
+  },
+  "-=0.45"
+);
 
-      tl.to(root, {
-        "--home-menu-reveal": 1,
-        duration: 0.75,
-      });
+tl.to(
+  root,
+  {
+    "--home-menu-reveal": 1,
+    duration: 0.75,
+  },
+  "-=0.45"
+);
 
-      tl.to(
-        root,
-        {
-          "--home-explore-reveal": 1,
-          duration: 0.85,
-        },
-        "-=0.35"
-      );
+tl.to(
+  root,
+  {
+    "--home-explore-reveal": 1,
+    duration: 0.85,
+  },
+  "-=0.35"
+);
 
-      tl.to(
-        flashRef.current,
-        {
-          opacity: 1,
-          duration: 0.09,
-          ease: "power1.out",
-        },
-        "-=0.05"
-      );
+tl.to(
+  flashRef.current,
+  {
+    opacity: 1,
+    duration: 0.1,
+    ease: "power1.out",
+  },
+  "-=0.08"
+);
 
-      tl.set(
-        root,
-        {
-          "--home-bg-reveal": 1,
-        },
-        "<+=0.04"
-      );
+tl.to(
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 0.32,
+    ease: "power1.inOut",
+  },
+  "<+=0.03"
+);
 
-      tl.set(
-        veilRef.current,
-        {
-          opacity: 0,
-        },
-        "<"
-      );
+tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    duration: 0.32,
+    ease: "power1.inOut",
+  },
+  "<"
+);
 
-      tl.to(
-        root,
-        {
-          "--home-real-logo-reveal": 1,
-          duration: 0.08,
-        },
-        "<+=0.04"
-      );
+tl.to(
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.22,
+    ease: "power1.out",
+  },
+  "<+=0.02"
+);
 
-      tl.to(
-        logoRef.current,
-        {
-          opacity: 0,
-          duration: 0.12,
-          ease: "power1.out",
-        },
-        "<"
-      );
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    duration: 0.28,
+    ease: "power1.out",
+  },
+  "<+=0.03"
+);
 
-      tl.to(flashRef.current, {
-        opacity: 0,
-        duration: 0.32,
-        ease: "power2.out",
-      });
+tl.to(
+  flashRef.current,
+  {
+    opacity: 0,
+    duration: 0.38,
+    ease: "power2.out",
+  },
+  "-=0.16"
+);
+
+tl.to(
+  flashRef.current,
+  {
+    opacity: 1,
+    duration: 0.1,
+    ease: "power1.out",
+  },
+  "-=0.08"
+);
+
+tl.to(
+  root,
+  {
+    "--home-bg-reveal": 1,
+    duration: 0.32,
+    ease: "power1.inOut",
+  },
+  "<+=0.03"
+);
+
+tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    duration: 0.32,
+    ease: "power1.inOut",
+  },
+  "<"
+);
+
+tl.to(
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.22,
+    ease: "power1.out",
+  },
+  "<+=0.02"
+);
+
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    duration: 0.28,
+    ease: "power1.out",
+  },
+  "<+=0.03"
+);
+
+tl.to(
+  flashRef.current,
+  {
+    opacity: 0,
+    duration: 0.38,
+    ease: "power2.out",
+  },
+  "-=0.16"
+);
     }, introRef);
 
     return () => ctx.revert();
