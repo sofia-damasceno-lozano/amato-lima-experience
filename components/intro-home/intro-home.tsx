@@ -11,6 +11,7 @@ export default function IntroHome() {
   const flashRef = useRef<HTMLDivElement>(null);
   const traceRef = useRef<SVGSVGElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const introPhraseRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -93,85 +94,97 @@ export default function IntroHome() {
         delay: 0.15,
       });
 
+      tl.fromTo(
+        introPhraseRef.current,
+        {
+          opacity: 0,
+          y: 10,
+          filter: "blur(4px)",
+          "--intro-phrase-shine": "-120%",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.05,
+          ease: "power2.out",
+        },
+        "-=0.25"
+      );
+
       tl.to(
-  root,
-  {
-    "--home-title-reveal": 1,
-    duration: 1.1,
-  },
-  "-=0.45"
-);
+        introPhraseRef.current,
+        {
+          "--intro-phrase-shine": "140%",
+          duration: 0.9,
+          ease: "power2.inOut",
+        },
+        "-=0.08"
+      );
 
-tl.to(
-  root,
-  {
-    "--home-title-reveal": 1,
-    duration: 1.1,
-  },
-  "-=0.45"
-);
+      tl.to(
+        flashRef.current,
+        {
+          opacity: 1,
+          duration: 0.1,
+          ease: "power1.out",
+        },
+        "-=0.08"
+      );
 
-tl.to(
-  flashRef.current,
-  {
-    opacity: 1,
-    duration: 0.1,
-    ease: "power1.out",
-  },
-  "-=0.08"
-);
+      tl.to(
+        root,
+        {
+          "--home-bg-reveal": 1,
+          "--home-title-reveal": 1,
+          "--home-menu-reveal": 1,
+          "--home-explore-reveal": 1,
+          "--home-real-logo-reveal": 1,
+          duration: 0.28,
+          ease: "power1.inOut",
+        },
+        "<+=0.05"
+      );
 
-tl.to(
-  root,
-  {
-    "--home-bg-reveal": 1,
-    duration: 0.32,
-    ease: "power1.inOut",
-  },
-  "<+=0.03"
-);
+      tl.to(
+        veilRef.current,
+        {
+          opacity: 0,
+          duration: 0.28,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
 
-tl.to(
-  veilRef.current,
-  {
-    opacity: 0,
-    duration: 0.32,
-    ease: "power1.inOut",
-  },
-  "<"
-);
+      tl.to(
+        logoRef.current,
+        {
+          opacity: 0,
+          duration: 0.28,
+          ease: "power1.out",
+        },
+        "<+=0.03"
+      );
 
-tl.to(
-  root,
-  {
-    "--home-menu-reveal": 1,
-    "--home-explore-reveal": 1,
-    "--home-real-logo-reveal": 1,
-    duration: 0.22,
-    ease: "power1.out",
-  },
-  "<+=0.02"
-);
+      tl.to(
+        introPhraseRef.current,
+        {
+          opacity: 0,
+          duration: 0.24,
+          ease: "power1.out",
+        },
+        "<"
+      );
 
-tl.to(
-  logoRef.current,
-  {
-    opacity: 0,
-    duration: 0.28,
-    ease: "power1.out",
-  },
-  "<+=0.03"
-);
-
-tl.to(
-  flashRef.current,
-  {
-    opacity: 0,
-    duration: 0.38,
-    ease: "power2.out",
-  },
-  "-=0.16"
-);
+      tl.to(
+        flashRef.current,
+        {
+          opacity: 0,
+          duration: 0.38,
+          ease: "power2.out",
+        },
+        "-=0.16"
+      );
     }, introRef);
 
     return () => ctx.revert();
@@ -207,6 +220,12 @@ tl.to(
           priority
           className={styles.logo}
         />
+      </div>
+
+      <div ref={introPhraseRef} className={styles.introPhrase}>
+        <span className={styles.introScript}>Arte</span>
+        <span className={styles.introDe}>DE</span>
+        <span className={styles.introTitle}>HABITAR</span>
       </div>
     </div>
   );
