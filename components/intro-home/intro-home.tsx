@@ -64,13 +64,12 @@ tl.fromTo(
       opacity: 0,  
       scale: 0.96,  
       y: 12,  
-      filter: "blur(8px)",  
+      filter: "blur(1px)",  
     },  
     {  
       opacity: 1,  
       scale: 1,  
-      y: 0,  
-      filter: "blur(0px)",  
+      y: 0,    
       duration: 1.15,  
     },  
     "-=0.55"  
@@ -98,7 +97,6 @@ tl.fromTo(
   {
     opacity: 0,
     scale: 1,
-    filter: "blur(0.02px)",
     duration: 0.75,
     ease: "none",
   },
