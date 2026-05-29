@@ -31,13 +31,14 @@ export default function HeroHome() {
         </div>
 
         <button
-          className={styles.menuButton}
-          aria-label="Abrir menu"
-          onClick={() => setMenuOpen(true)}
-        >
-          <span />
-          <span />
-        </button>
+  className={`${styles.menuButton} ${
+    menuOpen ? styles.menuButtonOpen : ""
+  }`}
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  <span />
+  <span />
+</button>
       </header>
 
       <div className={styles.content}>
@@ -65,13 +66,6 @@ export default function HeroHome() {
           menuOpen ? styles.sideMenuOpen : ""
         }`}
       >
-        <button
-          className={styles.closeMenu}
-          aria-label="Fechar menu"
-          onClick={() => setMenuOpen(false)}
-        >
-          ×
-        </button>
 
         <nav className={styles.menuNav}>
           <a href="#">Home</a>
