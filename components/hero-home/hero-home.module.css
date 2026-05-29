@@ -500,9 +500,12 @@ filter:
     filter 1.2s ease;
 }
 
-.menuButton {
+ .menuButton {
   opacity: var(--home-menu-reveal, 1);
+
+  z-index: 120;
 }
+
 .logoWrapper {
   opacity: var(--home-real-logo-reveal, 0);
 
@@ -518,6 +521,7 @@ filter:
     filter,
     transform;
 }
+
 .menuBackdrop {
   position: fixed;
   inset: 0;
@@ -546,6 +550,8 @@ filter:
 }
 
 .menuButton span {
+  transform-origin: center;
+
   transition:
     transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.35s ease;
@@ -609,7 +615,7 @@ filter:
 .menuNav a {
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(0.4rem, 5.8vw, 2.0rem);
+  font-size: clamp(0.4rem, 5.8vw, 2rem);
   font-weight: 100;
 
   letter-spacing: 0.03em;
