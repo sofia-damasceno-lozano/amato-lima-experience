@@ -20,16 +20,19 @@ export default function HeroHome() {
       <div className={styles.overlay} />
 
       <header className={styles.header}>
-        <div className={styles.logoWrapper}>
-          <Image
-            src="/amato-lima-experience/logo/logo.png"
-            alt="Amato Lima"
-            width={130}
-            height={42}
-            className={styles.logo}
-          />
-        </div>
-
+        <div
+  className={`${styles.logoWrapper} ${
+    menuOpen ? styles.logoWrapperMenuOpen : ""
+  }`}
+>
+  <Image
+    src="/amato-lima-experience/logo/logo.png"
+    alt="Amato Lima"
+    width={130}
+    height={42}
+    className={styles.logo}
+  />
+</div>
         <button
   className={`${styles.menuButton} ${
     menuOpen ? styles.menuButtonOpen : ""
