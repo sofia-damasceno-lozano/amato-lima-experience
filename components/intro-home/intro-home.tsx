@@ -109,8 +109,8 @@ export default function IntroHome() {
       tl.to(
   logoRef.current,
   {
-    opacity: 0.9,
-    duration: 0.35,
+    opacity: 0.98,
+    duration: 0.30,
     ease: "power1.out",
   },
   "-=0.1"
