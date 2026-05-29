@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./hero-home.module.css";
 
 export default function HeroHome() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <section className={styles.hero}>
       <Image
@@ -27,7 +30,11 @@ export default function HeroHome() {
           />
         </div>
 
-        <button className={styles.menuButton} aria-label="Abrir menu">
+        <button
+          className={styles.menuButton}
+          aria-label="Abrir menu"
+          onClick={() => setMenuOpen(true)}
+        >
           <span />
           <span />
         </button>
@@ -45,6 +52,35 @@ export default function HeroHome() {
           <span className={styles.explore}>EXPLORAR</span>
         </div>
       </div>
+
+      <div
+        className={`${styles.menuBackdrop} ${
+          menuOpen ? styles.menuBackdropOpen : ""
+        }`}
+        onClick={() => setMenuOpen(false)}
+      />
+
+      <aside
+        className={`${styles.sideMenu} ${
+          menuOpen ? styles.sideMenuOpen : ""
+        }`}
+      >
+        <button
+          className={styles.closeMenu}
+          aria-label="Fechar menu"
+          onClick={() => setMenuOpen(false)}
+        >
+          ×
+        </button>
+
+        <nav className={styles.menuNav}>
+          <a href="#">Home</a>
+          <a href="#">Institucional</a>
+          <a href="#">Viver Amato Lima</a>
+          <a href="#">Projetos</a>
+          <a href="#">Contato</a>
+        </nav>
+      </aside>
     </section>
   );
 }
