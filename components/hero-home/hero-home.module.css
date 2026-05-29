@@ -222,7 +222,7 @@
   line-height: 0.8;
   letter-spacing: -0.035em;
 
-  transform: translateX(-50%) scaleX(1.02) translateY(15vh);
+  transform: translateX(-50%) scaleX(1.02) scale Y(1.04) translateY(10vh);
 
   padding-inline: 0.18em;
   padding-block: 0.08em;
