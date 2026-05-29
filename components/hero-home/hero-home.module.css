@@ -265,7 +265,7 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1rem, 8vw, 2rem);
+  font-size: clamp(0.4rem, 3vw, 0.9rem);
   font-weight: 100;
 
   line-height: 0.8;
