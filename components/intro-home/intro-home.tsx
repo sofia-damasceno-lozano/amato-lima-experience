@@ -107,6 +107,16 @@ export default function IntroHome() {
       });
 
       tl.to(
+  logoRef.current,
+  {
+    opacity: 0.9,
+    duration: 0.35,
+    ease: "power1.out",
+  },
+  "-=0.1"
+);
+
+      tl.to(
   veilRef.current,
   {
     opacity: 0,
