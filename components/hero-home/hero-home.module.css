@@ -338,7 +338,7 @@ filter:
   text-shadow:
   0 1px 2px rgba(120, 92, 58, 0.08);
 
-  transform: scaleX(4) scaleY(5) translateY(25vh);
+  transform: scaleX(4) scaleY(5) translateY(5vh);
 
   z-index: 3;
 }
