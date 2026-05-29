@@ -612,7 +612,7 @@ filter:
 .menuNav a {
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1.8rem, 7.5vw, 3.8rem);
+  font-size: clamp(1.0rem, 6.7vw, 3.0rem);
   font-weight: 100;
 
   letter-spacing: 0.03em;
