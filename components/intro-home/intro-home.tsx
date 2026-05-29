@@ -101,7 +101,7 @@ export default function IntroHome() {
 
       tl.to(logoRef.current, {
         y: "-31.6vh",
-        scale: 0.52,
+        scale: 0.62,
         duration: 0.75,
         delay: 0,
       });
