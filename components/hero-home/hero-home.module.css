@@ -216,13 +216,13 @@
   left: 50%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(8.6rem, 35.6vw, 10.6rem);
+  font-size: clamp(9rem, 36vw, 11rem);
   font-weight: 100;
 
-  line-height: 0.8;
+  line-height: 12;
   letter-spacing: -0.035em;
 
-  transform: translateX(-50%) scaleX(1.02) translateY(20vh);
+  transform: translateX(-50%) scaleX(1.02) translateY(15vh);
 
   padding-inline: 0.18em;
   padding-block: 0.08em;
