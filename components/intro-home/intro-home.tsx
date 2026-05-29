@@ -129,58 +129,58 @@ export default function IntroHome() {
 );
 
       tl.to(
-        root,
-        {
-          "--home-title-reveal": 1,
-          duration: 1.1,
-        },
-        "-=0.45"
-      );
-
-      tl.to(root, {
-        "--home-explore-reveal": 1,
-        duration: 0.85,
-      });
-
-      tl.to(
-        root,
-        {
-          "--home-menu-reveal": 1,
-          duration: 0.75,
-        },
-        "-=0.45"
-      );
-
-      tl.to(
-  root,
+  veilRef.current,
   {
-    "--home-bg-reveal": 1,
-    duration: 0.45,
+    opacity: 0,
+    scale: 1.01,
+    filter: "blur(0.6px)",
+    duration: 0.38,
     ease: "power2.out",
   },
   "-=0.35"
 );
 
-      tl.to(
+tl.to(
+  root,
+  {
+    "--home-title-reveal": 1,
+    "--home-bg-reveal": 1,
+    duration: 0.48,
+    ease: "power2.out",
+  },
+  "-=0.28"
+);
+
+tl.to(
+  root,
+  {
+    "--home-explore-reveal": 1,
+    "--home-menu-reveal": 1,
+    duration: 0.42,
+    ease: "power2.out",
+  },
+  "-=0.28"
+);
+
+tl.to(
   root,
   {
     "--home-real-logo-reveal": 1,
     duration: 0.01,
   },
-  "+=0.18"
+  "-=0.12"
 );
 
 tl.to(
   logoRef.current,
   {
     opacity: 0,
-    filter: "blur(1.2px)",
-    duration: 0.14,
+    filter: "blur(0.4px)",
+    duration: 0.1,
     ease: "power1.out",
   },
-  "+=0.01"
+  "<+=0.02"
 );
-
 }, introRef);
 
 return () => ctx.revert();
