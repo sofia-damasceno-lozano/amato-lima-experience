@@ -7,7 +7,7 @@ const materials = [
   "/amato-lima-experience/visual-immersion/madeira.png",
   "/amato-lima-experience/visual-immersion/linho.png",
   "/amato-lima-experience/visual-immersion/vidros-reflecta-bronze.png",
-  "/amato-lima-experience/visual-immersion/quartzo-branco.png",
+  "/amato-lima-experience/visual-immersion/quartzo-branco.jpg",
   "/amato-lima-experience/visual-immersion/monograma-travertino.png",
 ];
 
