@@ -612,12 +612,14 @@ filter:
 .menuNav a {
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(0.2rem, 5vw, 1.6rem);
+  font-size: clamp(0.8rem, 6.2vw, 2.4rem);
   font-weight: 100;
 
   letter-spacing: 0.03em;
 
   color: #6b4f35;
+
+  white-space: nowrap;
 
   opacity: 0.86;
 
