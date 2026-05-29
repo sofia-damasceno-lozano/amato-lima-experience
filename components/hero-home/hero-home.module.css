@@ -604,7 +604,7 @@ filter:
   display: flex;
   flex-direction: column;
 
-  gap: 3.4vh;
+  gap: 5vh;
 
   margin-top: 10vh;
 }
@@ -612,7 +612,7 @@ filter:
 .menuNav a {
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(0.8rem, 6.2vw, 2.4rem);
+  font-size: clamp(0.4rem, 5.8vw, 2.0rem);
   font-weight: 100;
 
   letter-spacing: 0.03em;
