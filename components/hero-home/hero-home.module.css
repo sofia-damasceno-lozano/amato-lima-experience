@@ -103,10 +103,10 @@
 }
 
 .logo {
-  width: 166px;
+  width: 168px;
   height: auto;
 
-  opacity: 1;
+  opacity: 2;
 
   object-fit: contain;
 }
