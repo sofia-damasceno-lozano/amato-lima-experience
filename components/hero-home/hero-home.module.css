@@ -545,6 +545,24 @@ filter:
   -webkit-backdrop-filter: blur(10px);
 }
 
+.menuButton span {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.menuButtonOpen span:first-child {
+  transform:
+    translateY(4px)
+    rotate(45deg);
+}
+
+.menuButtonOpen span:last-child {
+  transform:
+    translateY(-4px)
+    rotate(-45deg);
+}
+
 .sideMenu {
   position: fixed;
 
@@ -577,27 +595,6 @@ filter:
 
 .sideMenuOpen {
   transform: translateX(0);
-}
-
-.closeMenu {
-  position: absolute;
-
-  top: 3vh;
-  right: 6vw;
-
-  width: 38px;
-  height: 38px;
-
-  border: none;
-  background: transparent;
-
-  font-family: var(--font-classy-vogue);
-  font-size: 2.2rem;
-  font-weight: 100;
-
-  color: #6b4f35;
-
-  cursor: pointer;
 }
 
 .menuNav {
