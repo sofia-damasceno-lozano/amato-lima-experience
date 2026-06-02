@@ -216,7 +216,7 @@
   left: 20%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(12rem, 39vw, 14rem);
+  font-size: clamp(11rem, 38vw, 13rem);
   font-weight: 100;
 
   line-height: 0.8;
