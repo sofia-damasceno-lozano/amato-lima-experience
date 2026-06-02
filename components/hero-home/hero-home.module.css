@@ -327,11 +327,11 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1.2rem, 0.2vw, 1.6rem);
+  font-size: clamp(1.3rem, 0.3vw, 1.7rem);
   font-weight: 100;
 
   line-height: 0.82;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.060em;
 
   color: #f4dfbf;
 
