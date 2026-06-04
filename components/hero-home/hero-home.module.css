@@ -213,10 +213,10 @@
   position: absolute;
 
   top: 1vh;
-  left: -5%;
+  left: -4%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(11rem, 38vw, 13rem);
+  font-size: clamp(9rem, 36vw, 11rem);
   font-weight: 100;
 
   line-height: 0.8;
