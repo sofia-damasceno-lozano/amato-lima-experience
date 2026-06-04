@@ -212,11 +212,11 @@
 .script {
   position: absolute;
 
-  top: 1vh;
+  top: 3vh;
   left: -4%;
 
   font-family: var(--font-westwood);
-  font-size: clamp(9rem, 36vw, 11rem);
+  font-size: clamp(8rem, 35vw, 10rem);
   font-weight: 100;
 
   line-height: 0.8;
@@ -265,7 +265,7 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(0.4rem, 3vw, 0.9rem);
+  font-size: clamp(0.2rem, 1vw, 0.7rem);
   font-weight: 100;
 
   line-height: 0.8;
@@ -327,7 +327,7 @@ filter:
 
   font-family: var(--font-classy-vogue);
 
-  font-size: clamp(1.3rem, 0.5vw, 1.8rem);
+  font-size: clamp(1.0rem, 0.2vw, 1.5rem);
   font-weight: 100;
 
   line-height: 0.82;
