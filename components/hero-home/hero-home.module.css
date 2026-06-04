@@ -213,7 +213,7 @@
   position: absolute;
 
   top: 1vh;
-  left: 20%;
+  left: 15%;
 
   font-family: var(--font-westwood);
   font-size: clamp(11rem, 38vw, 13rem);
