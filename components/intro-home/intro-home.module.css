@@ -1,94 +1,130 @@
-.hero {
-  height: 100vh;
-  background: #000;
+.intro {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(255,255,255,0.99) 0%,
+      rgba(248,248,246,0.97) 36%,
+      rgba(238,233,226,0.94) 100%
+    );
+
+  z-index: 1;
+}
+
+.trace {
+  position: absolute;
+
+  top: 25vh;
+  left: 50%;
+
+  width: min(62vw, 260px);
+  height: auto;
+
+  transform: translateX(-50%);
+
+  opacity: 0.78;
+
+  z-index: 2;
+}
+
+.trace path {
+  stroke: rgba(131, 107, 81, 0.28);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+
+  filter:
+    drop-shadow(0 0 3px rgba(244, 223, 191, 0.28))
+    drop-shadow(0 0 9px rgba(131, 107, 81, 0.10));
+
+  opacity: 0;
+}
+.logoWrap {
+  position: absolute;
+
+  top: 26vh;
+  left: 50%;
+
+  width: 340px;
+
+  transform: translateX(-50%);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  z-index: 3;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-
-/* ================= ICON ================= */
-
-.symbol {
-  opacity: 0;
-  transform: scale(0.96);
-  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.symbol img {
-  width: 120px;
+.logo {
+  width: 240px;
   height: auto;
+
+  object-fit: contain;
 }
 
-.symbolVisible {
-  opacity: 1;
-  transform: scale(1);
+.trace {
+  overflow: visible;
 }
 
-/* ================= TEXT ================= */
-
-.textBlock {
-  display: flex;
-  flex-direction: column;
+.trace path {
+  animation: traceGlow 4.8s ease-in-out infinite;
 }
 
-/* TITLE */
+@keyframes traceGlow {
+  0%,
+  100% {
+    stroke: rgba(131, 107, 81, 0.24);
+    filter:
+      drop-shadow(0 0 2px rgba(244, 223, 191, 0.18))
+      drop-shadow(0 0 7px rgba(131, 107, 81, 0.08));
+  }
 
-.title {
-  font-size: 56px;
-  letter-spacing: 0.25em;
-  color: #c6a27a;
-  margin: 0;
+  50% {
+    stroke: rgba(183, 154, 116, 0.42);
+    filter:
+      drop-shadow(0 0 4px rgba(244, 223, 191, 0.36))
+      drop-shadow(0 0 12px rgba(131, 107, 81, 0.14));
+  }
+}
+.logoShine {
+  position: absolute;
+
+  inset: -20%;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.00) 34%,
+      rgba(255,255,255,0.55) 50%,
+      rgba(255,255,255,0.00) 66%,
+      rgba(255,255,255,0) 100%
+    );
+
+  transform:
+    translateX(-140%)
+    skewX(-18deg);
 
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.8s ease;
-}
 
-.titleVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  pointer-events: none;
 
-/* LINE */
+  mix-blend-mode: screen;
 
-.line {
-  width: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    #8a6a4a,
-    #c6a27a,
-    #8a6a4a
-  );
-  margin: 12px 0;
-
-  transition: width 0.8s ease;
-}
-
-.lineVisible {
-  width: 100%;
-}
-
-/* SUBTITLE */
-
-.subtitle {
-  font-size: 18px;
-  letter-spacing: 0.3em;
-  color: #bfa07a;
-
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.8s ease;
-  transition-delay: 0.2s;
-}
-
-.subtitleVisible {
-  opacity: 1;
-  transform: translateY(0);
+  z-index: 5;
 }
