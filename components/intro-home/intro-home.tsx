@@ -5,47 +5,47 @@ import Image from "next/image";
 import gsap from "gsap";
 import styles from "./intro-home.module.css";
 
+function splitText(text: string) {
+  return text.split("").map((char, i) => (
+    <span key={i} className="char">
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ));
+}
+
 export default function IntroHome() {
   const introRef = useRef<HTMLDivElement>(null);
   const veilRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const root = document.documentElement;
-
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: "power3.inOut" },
+        defaults: { ease: "power3.out" },
         onComplete: () => {
-          // libera a home sem destruir o elemento
           gsap.set(introRef.current, { pointerEvents: "none" });
           gsap.set(document.body, { overflow: "auto" });
-
-          root.style.setProperty("--home-real-logo-reveal", "1");
         },
       });
 
       tl.set(document.body, { overflow: "hidden" });
 
-      // entrada suave
+      // AMATO LIMA (esquerda → direita)
       tl.fromTo(
-        logoRef.current,
+        ".title .char",
         {
           opacity: 0,
-          y: 30,
-          scale: 0.96,
-          filter: "blur(6px)",
+          y: 20,
         },
         {
           opacity: 1,
           y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 0.9,
+          stagger: 0.03,
+          duration: 0.4,
         }
       );
 
-      // linha aparece
+      // linha (quase junto)
       tl.fromTo(
         ".divider",
         {
@@ -55,42 +55,45 @@ export default function IntroHome() {
         {
           scaleX: 1,
           opacity: 1,
-          duration: 0.6,
+          duration: 0.3,
           transformOrigin: "center",
         },
-        "-=0.5"
+        "-=0.25"
       );
 
-      // subtitle aparece
+      // SUBTITLE (direita → esquerda)
       tl.fromTo(
-        ".subtitle",
+        ".subtitle .char",
         {
           opacity: 0,
-          y: 10,
+          y: 20,
         },
         {
           opacity: 1,
           y: 0,
-          duration: 0.5,
+          stagger: {
+            each: 0.02,
+            from: "end",
+          },
+          duration: 0.35,
         },
-        "-=0.4"
+        "-=0.28"
       );
 
-      // subida para header
+      // subir tudo
       tl.to(logoRef.current, {
-        y: "-28vh",
-        scale: 0.72,
-        duration: 0.9,
+        y: "-26vh",
+        scale: 0.65,
+        duration: 0.8,
       });
 
-      // fade do fundo
       tl.to(
         veilRef.current,
         {
           opacity: 0,
-          duration: 0.6,
+          duration: 0.5,
         },
-        "-=0.7"
+        "-=0.6"
       );
     }, introRef);
 
@@ -106,19 +109,21 @@ export default function IntroHome() {
           <Image
             src="/simbolo.png"
             alt="Amato Lima"
-            width={120}
-            height={120}
+            width={90}
+            height={90}
             priority
             className={styles.symbol}
           />
 
           <div className={styles.textBlock}>
-            <h1 className={styles.title}>AMATO LIMA</h1>
+            <h1 className={`${styles.title} title`}>
+              {splitText("AMATO LIMA")}
+            </h1>
 
             <div className={`${styles.divider} divider`} />
 
             <h2 className={`${styles.subtitle} subtitle`}>
-              ATIVOS IMOBILIÁRIOS
+              {splitText("ATIVOS IMOBILIÁRIOS")}
             </h2>
           </div>
         </div>
