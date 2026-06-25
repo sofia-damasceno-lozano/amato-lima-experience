@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default function IntroHome() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setLoaded(true), 100);
+    const timeout = setTimeout(() => {
+      setLoaded(true);
+    }, 100); // pequeno delay pra garantir mount
+
     return () => clearTimeout(timeout);
   }, []);
 
@@ -15,24 +18,41 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         
-        {/* Ícone */}
-        <div className={`${styles.symbol} ${loaded ? styles.symbolVisible : ""}`}>
-          <img src="/simbolo.png" alt="Símbolo Amato Lima" />
+        {/* SYMBOL */}
+        <div
+          className={`${styles.symbol} ${
+            loaded ? styles.symbolVisible : ""
+          }`}
+        >
+          <img src="/simbolo.png" alt="Amato Lima símbolo" />
         </div>
 
-        {/* Texto */}
+        {/* TEXT */}
         <div className={styles.textBlock}>
-          <h1 className={`${styles.title} ${loaded ? styles.titleVisible : ""}`}>
+          
+          <h1
+            className={`${styles.title} ${
+              loaded ? styles.titleVisible : ""
+            }`}
+          >
             AMATO LIMA
           </h1>
 
-          <div className={`${styles.line} ${loaded ? styles.lineVisible : ""}`} />
+          <div
+            className={`${styles.line} ${
+              loaded ? styles.lineVisible : ""
+            }`}
+          />
 
-          <p className={`${styles.subtitle} ${loaded ? styles.subtitleVisible : ""}`}>
+          <p
+            className={`${styles.subtitle} ${
+              loaded ? styles.subtitleVisible : ""
+            }`}
+          >
             ATIVOS IMOBILIÁRIOS
           </p>
-        </div>
 
+        </div>
       </div>
     </section>
   );
