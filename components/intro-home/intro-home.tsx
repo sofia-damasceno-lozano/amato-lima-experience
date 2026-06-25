@@ -1,59 +1,222 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import styles from "./Hero.module.css";
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import styles from "./intro-home.module.css";
 
 export default function IntroHome() {
-  const [loaded, setLoaded] = useState(false);
-
+  const introRef = useRef<HTMLDivElement>(null);
+  const veilRef = useRef<HTMLDivElement>(null);
+  const traceRef = useRef<SVGSVGElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const shineRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoaded(true);
-    }, 100); // pequeno delay pra garantir mount
+    const root = document.documentElement;
 
-    return () => clearTimeout(timeout);
-  }, []);
+    const ctx = gsap.context(() => {
+      const paths = traceRef.current?.querySelectorAll("path");
 
+      root.style.setProperty("--home-bg-reveal", "0");
+      root.style.setProperty("--home-title-reveal", "0");
+      root.style.setProperty("--home-explore-reveal", "0");
+      root.style.setProperty("--home-menu-reveal", "0");
+      root.style.setProperty("--home-real-logo-reveal", "0");
+
+      if (paths) {
+        paths.forEach((path) => {
+          const length = path.getTotalLength();
+
+          gsap.set(path, {
+            strokeDasharray: length,
+            strokeDashoffset: length,
+          });
+        });
+      }
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.inOut" },
+        onComplete: () => {
+          root.style.setProperty("--home-bg-reveal", "1");
+          root.style.setProperty("--home-title-reveal", "1");
+          root.style.setProperty("--home-explore-reveal", "1");
+          root.style.setProperty("--home-menu-reveal", "1");
+          root.style.setProperty("--home-real-logo-reveal", "1");
+
+          gsap.set(introRef.current, { display: "none" });
+          gsap.set(document.body, { overflow: "auto" });
+        },
+      });
+
+      tl.set(document.body, { overflow: "hidden" });
+
+      tl.to(paths, {
+        strokeDashoffset: 0,
+        opacity: 1,
+        duration: 0.85,
+        stagger: 0.03,
+      });
+
+      tl.fromTo(
+  shineRef.current,
+  {
+    opacity: 0,
+    x: "-140%",
+  },
+  {
+    opacity: 1,
+    x: "140%",
+    duration: 0.9,
+    ease: "power2.inOut",
+  }
+);
+
+      tl.fromTo(
+        logoRef.current,
+        {
+          opacity: 0,
+          scale: 0.96,
+          y: 12,
+          filter: "blur(8px)",
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.6,
+        },
+        "-=0.55"
+      );
+
+      tl.to(
+        traceRef.current,
+        {
+          opacity: 0,
+          scale: 1.03,
+          duration: 0.8,
+        },
+        "-=0.25"
+      );
+
+      tl.to(logoRef.current, {
+        y: "-29.8vh",
+        scale: 0.70,
+        duration: 0.75,
+        delay: 0,
+      });
+
+      tl.to(
+  logoRef.current,
+  {
+    opacity: 0.98,
+    duration: 0.30,
+    ease: "power1.out",
+  },
+  "-=0.1"
+);
+
+      tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    scale: 1.02,
+    filter: "blur(2px)",
+    duration: 0.55,
+    ease: "power2.inOut",
+  },
+  "-=0.45"
+);
+
+      tl.to(
+  veilRef.current,
+  {
+    opacity: 0,
+    scale: 1.01,
+    filter: "blur(0.6px)",
+    duration: 0.38,
+    ease: "power2.out",
+  },
+  "-=0.35"
+);
+
+tl.to(
+  root,
+  {
+    "--home-title-reveal": 1,
+    "--home-bg-reveal": 1,
+    duration: 0.48,
+    ease: "power2.out",
+  },
+  "-=0.28"
+);
+
+tl.to(
+  root,
+  {
+    "--home-explore-reveal": 1,
+    "--home-menu-reveal": 1,
+    duration: 0.42,
+    ease: "power2.out",
+  },
+  "-=0.28"
+);
+
+tl.to(
+  root,
+  {
+    "--home-real-logo-reveal": 1,
+    duration: 0.01,
+  },
+  "-=0.12"
+);
+
+tl.to(
+  logoRef.current,
+  {
+    opacity: 0,
+    filter: "blur(0.4px)",
+    duration: 0.1,
+    ease: "power1.out",
+  },
+  "<+=0.02"
+);
+}, introRef);
+
+return () => ctx.revert();
+}, []);
+  
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
-        
-        {/* SYMBOL */}
-        <div
-          className={`${styles.symbol} ${
-            loaded ? styles.symbolVisible : ""
-          }`}
-        >
-          <img src="/simbolo.png" alt="Amato Lima símbolo" />
-        </div>
+    <div ref={introRef} className={styles.intro}>
+      <div ref={veilRef} className={styles.veil} />
 
-        {/* TEXT */}
-        <div className={styles.textBlock}>
-          
-          <h1
-            className={`${styles.title} ${
-              loaded ? styles.titleVisible : ""
-            }`}
-          >
-            AMATO LIMA
-          </h1>
+      <svg
+        ref={traceRef}
+        className={styles.trace}
+        viewBox="0 0 420 320"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M105 52 H315 Q340 52 340 77 V243 Q340 268 315 268 H105 Q80 268 80 243 V77 Q80 52 105 52" />
 
-          <div
-            className={`${styles.line} ${
-              loaded ? styles.lineVisible : ""
-            }`}
-          />
+        <path d="M238 88 C276 88 300 112 300 146 L300 214 L258 214 L258 150 C258 129 244 120 224 120 L194 120" />
 
-          <p
-            className={`${styles.subtitle} ${
-              loaded ? styles.subtitleVisible : ""
-            }`}
-          >
-            ATIVOS IMOBILIÁRIOS
-          </p>
+        <path d="M194 120 C140 120 106 154 106 206 C106 248 132 272 168 272 C210 272 238 240 238 196 C238 160 218 138 184 138" />
 
-        </div>
+        <path d="M154 92 L130 216 C124 248 142 272 168 272" />
+      </svg>
+
+      <div ref={logoRef} className={styles.logoWrap}>
+  <div ref={shineRef} className={styles.logoShine} />
+        <Image
+          src="/amato-lima-experience/logo/logo.png"
+          alt="Amato Lima"
+          width={240}
+          height={80}
+          priority
+          className={styles.logo}
+        />
       </div>
-    </section>
+    </div>
   );
-}
+      }
