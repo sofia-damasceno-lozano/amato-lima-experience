@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Cinzel";
   src: url("/fonts/Cinzel-Regular.otf") format("opentype");
+  font-display: swap;
 }
 
 /* overlay */
@@ -8,7 +9,6 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  overflow: hidden;
 }
 
 /* fundo */
@@ -25,37 +25,34 @@
     );
 }
 
-/* container principal */
+/* container */
 .logoWrap {
   position: absolute;
-
-  top: 26vh;
+  top: 28vh;
   left: 50%;
 
-  transform: translateX(-58%);
+  transform: translateX(-57%);
 
-  width: 520px;
+  width: 420px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-/* layout horizontal */
+/* layout */
 .brand {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
 }
 
-/* símbolo */
+/* símbolo menor */
 .symbol {
-  width: 120px;
+  width: 90px;
   height: auto;
-  object-fit: contain;
 }
 
-/* bloco texto */
+/* texto */
 .textBlock {
   display: flex;
   flex-direction: column;
@@ -63,23 +60,24 @@
 
 /* título */
 .title {
-  font-family: "Cinzel";
-  font-size: 38px;
-  letter-spacing: 3px;
-
+  font-family: "Cinzel", serif;
+  font-size: 28px;
+  letter-spacing: 2px;
   color: #c6a47a;
-
   margin: 0;
 }
 
-/* linha estilizada */
+/* letras animadas */
+.char {
+  display: inline-block;
+}
+
+/* linha */
 .divider {
   height: 2px;
   width: 100%;
 
-  margin: 10px 0 8px;
-
-  transform: scaleX(1);
+  margin: 6px 0 6px;
 
   background: linear-gradient(
     90deg,
@@ -93,11 +91,9 @@
 
 /* subtítulo */
 .subtitle {
-  font-family: "Cinzel";
-  font-size: 16px;
-  letter-spacing: 4px;
-
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 3px;
   color: #b89b74;
-
   margin: 0;
 }
